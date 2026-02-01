@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.*;
 
@@ -11,9 +12,7 @@ import java.util.Set;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public sealed interface ShaderSource {
-    MemorySegment toNative(SegmentAllocator allocator);
-
+public sealed interface ShaderSource extends WgpuStruct {
     record SpirV(int[] code) implements ShaderSource {
         @Override
         public MemorySegment toNative(SegmentAllocator allocator) {

@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPURenderPassColorAttachment;
 import sh.adelessfox.wgpu_native.WGPURenderPassDescriptor;
@@ -17,12 +18,13 @@ public record RenderPassDescriptor(
     Optional<RenderPassDepthStencilAttachment> depthStencilAttachment,
     Optional<QuerySet> occlusionQuerySet,
     Optional<RenderPassTimestampWrites> timestampWrites
-) {
+) implements WgpuStruct {
     public static RenderPassDescriptorBuilder builder() {
         return new RenderPassDescriptorBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPURenderPassDescriptor.allocate(allocator);
         WgpuUtils.setString(allocator, WGPURenderPassDescriptor.label(segment), label);
         WgpuUtils.setArray(allocator, segment, WGPURenderPassDescriptor.colorAttachmentCount$offset(), WGPURenderPassColorAttachment.layout(), colorAttachments, RenderPassColorAttachment::toNative);

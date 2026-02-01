@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuObject;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 
 import java.lang.foreign.Arena;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Queue(MemorySegment segment) implements AutoCloseable {
+public record Queue(MemorySegment segment) implements WgpuObject {
     // public WGPUFuture wgpuQueueOnSubmittedWorkDone(WGPUQueueWorkDoneCallbackInfo callbackInfo);
 
     public void setLabel(String label) {

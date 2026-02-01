@@ -1,11 +1,13 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuObject;
+
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Device(MemorySegment segment) implements AutoCloseable {
+public record Device(MemorySegment segment) implements WgpuObject {
     public Buffer createBuffer(BufferDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new Buffer(wgpuDeviceCreateBuffer(segment, descriptor.toNative(arena)));

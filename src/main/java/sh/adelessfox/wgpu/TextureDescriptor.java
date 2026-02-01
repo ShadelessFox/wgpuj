@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUTextureDescriptor;
 
@@ -21,7 +22,7 @@ public record TextureDescriptor(
     TextureFormat format,
     Set<TextureUsage> usages,
     List<TextureFormat> viewFormats
-) {
+) implements WgpuStruct {
     public TextureDescriptor {
         usages = Set.copyOf(usages);
         viewFormats = List.copyOf(viewFormats);
@@ -31,7 +32,8 @@ public record TextureDescriptor(
         return new TextureDescriptorBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUTextureDescriptor.allocate(allocator);
         label.ifPresent(l -> WgpuUtils.setString(allocator, WGPUTextureDescriptor.label(segment), l));
         WGPUTextureDescriptor.size(segment, size.toNative(allocator));

@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu_native.WGPUBlendComponent;
 
 import java.lang.foreign.MemorySegment;
@@ -9,8 +10,9 @@ public record BlendComponent(
     BlendOperation operation,
     BlendFactor srcFactor,
     BlendFactor dstFactor
-) {
-    MemorySegment toNative(SegmentAllocator allocator) {
+) implements WgpuStruct {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUBlendComponent.allocate(allocator);
         WGPUBlendComponent.operation(segment, operation.value());
         WGPUBlendComponent.srcFactor(segment, srcFactor.value());

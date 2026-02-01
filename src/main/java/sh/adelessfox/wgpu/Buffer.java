@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import sh.adelessfox.wgpu.util.WgpuFlags;
+import sh.adelessfox.wgpu.util.WgpuObject;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUBufferMapCallback;
 import sh.adelessfox.wgpu_native.WGPUBufferMapCallbackInfo;
@@ -12,7 +13,7 @@ import java.util.Set;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Buffer(MemorySegment segment) implements AutoCloseable {
+public record Buffer(MemorySegment segment) implements WgpuObject {
     public interface Mapped extends AutoCloseable {
         ByteBuffer getMappedRange(long offset, long size);
 

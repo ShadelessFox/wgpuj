@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUMultisampleState;
 
@@ -12,12 +13,13 @@ public record MultisampleState(
     int count,
     int mask,
     boolean alphaToCoverageEnabled
-) {
+) implements WgpuStruct {
     public static MultisampleStateBuilder builder() {
         return new MultisampleStateBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUMultisampleState.allocate(allocator);
         WGPUMultisampleState.count(segment, count);
         WGPUMultisampleState.mask(segment, mask);

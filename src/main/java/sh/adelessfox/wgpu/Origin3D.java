@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu_native.WGPUOrigin3D;
 
 import java.lang.foreign.MemorySegment;
@@ -9,8 +10,9 @@ public record Origin3D(
     int x,
     int y,
     int z
-) {
-    MemorySegment toNative(SegmentAllocator allocator) {
+) implements WgpuStruct {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUOrigin3D.allocate(allocator);
         WGPUOrigin3D.x(segment, x);
         WGPUOrigin3D.y(segment, y);

@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUChainedStruct;
 import sh.adelessfox.wgpu_native.WGPUInstanceDescriptor;
@@ -15,7 +16,7 @@ import static sh.adelessfox.wgpu_native.wgpu_h.WGPUSType_InstanceExtras;
 @Value.Builder
 public record InstanceDescriptor(
     Set<InstanceFlag> flags
-) {
+) implements WgpuStruct {
     public InstanceDescriptor {
         flags = Set.copyOf(flags);
     }
@@ -24,7 +25,8 @@ public record InstanceDescriptor(
         return new InstanceDescriptorBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var extras = WGPUInstanceExtras.allocate(allocator);
         WGPUChainedStruct.sType(WGPUInstanceExtras.chain(extras), WGPUSType_InstanceExtras());
         WGPUInstanceExtras.flags(extras, WgpuUtils.toNative(flags));

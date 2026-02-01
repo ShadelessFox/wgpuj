@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuObject;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 
 import java.lang.foreign.Arena;
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record RenderPass(MemorySegment segment) implements AutoCloseable {
+public record RenderPass(MemorySegment segment) implements WgpuObject {
     public void beginOcclusionQuery(int queryIndex) {
         wgpuRenderPassEncoderBeginOcclusionQuery(segment, queryIndex);
     }

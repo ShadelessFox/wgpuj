@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuObject;
 import sh.adelessfox.wgpu_native.WGPURequestDeviceCallback;
 import sh.adelessfox.wgpu_native.WGPURequestDeviceCallbackInfo;
 
@@ -9,7 +10,7 @@ import java.lang.foreign.ValueLayout;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Adapter(MemorySegment segment) implements AutoCloseable {
+public record Adapter(MemorySegment segment) implements WgpuObject {
     public Device requestDevice(DeviceDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             var result = arena.allocate(ValueLayout.ADDRESS);

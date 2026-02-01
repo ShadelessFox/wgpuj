@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuObject;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 
 import java.lang.foreign.Arena;
@@ -8,7 +9,7 @@ import java.util.Optional;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record CommandEncoder(MemorySegment segment) implements AutoCloseable {
+public record CommandEncoder(MemorySegment segment) implements WgpuObject {
     public ComputePass beginComputePass(Optional<ComputePassDescriptor> descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new ComputePass(wgpuCommandEncoderBeginComputePass(

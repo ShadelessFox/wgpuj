@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUConstantEntry;
 import sh.adelessfox.wgpu_native.WGPUVertexBufferLayout;
@@ -17,12 +18,13 @@ public record VertexState(
     Optional<String> entryPoint,
     List<ConstantEntry> constants,
     List<VertexBufferLayout> buffers
-) {
+) implements WgpuStruct {
     public static VertexStateBuilder builder() {
         return new VertexStateBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUVertexState.allocate(allocator);
         WGPUVertexState.module(segment, module.segment());
         entryPoint.ifPresent(ep -> WgpuUtils.setString(allocator, WGPUVertexState.entryPoint(segment), ep));

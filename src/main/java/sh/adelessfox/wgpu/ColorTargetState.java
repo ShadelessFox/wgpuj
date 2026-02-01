@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUColorTargetState;
 
@@ -14,7 +15,7 @@ public record ColorTargetState(
     TextureFormat format,
     Optional<BlendState> blend,
     Set<ColorWrites> writeMask
-) {
+) implements WgpuStruct {
     public ColorTargetState {
         writeMask = Set.copyOf(writeMask);
     }
@@ -23,7 +24,8 @@ public record ColorTargetState(
         return new ColorTargetStateBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUColorTargetState.allocate(allocator);
         WGPUColorTargetState.format(segment, format.value());
         blend.ifPresent(blend -> WGPUColorTargetState.blend(segment, blend.toNative(allocator)));

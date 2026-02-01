@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUPrimitiveState;
 import sh.adelessfox.wgpu_native.wgpu_h;
@@ -19,12 +20,13 @@ public record PrimitiveState(
     Optional<Face> cullMode,
     @Value.Default.Boolean(false)
     boolean unclippedDepth
-) {
+) implements WgpuStruct {
     public static PrimitiveStateBuilder builder() {
         return new PrimitiveStateBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUPrimitiveState.allocate(allocator);
         WGPUPrimitiveState.topology(segment, topology.value());
         WGPUPrimitiveState.stripIndexFormat(segment, stripIndexFormat.map(IndexFormat::value).orElse(WGPUIndexFormat_Undefined()));

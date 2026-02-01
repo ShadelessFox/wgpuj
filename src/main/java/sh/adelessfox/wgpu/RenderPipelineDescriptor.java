@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPURenderPipelineDescriptor;
 
@@ -17,12 +18,13 @@ public record RenderPipelineDescriptor(
     Optional<DepthStencilState> depthStencil,
     MultisampleState multisample,
     Optional<FragmentState> fragment
-) {
+) implements WgpuStruct {
     public static RenderPipelineDescriptorBuilder builder() {
         return new RenderPipelineDescriptorBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPURenderPipelineDescriptor.allocate(allocator);
         WgpuUtils.setString(allocator, WGPURenderPipelineDescriptor.label(segment), label);
         WGPURenderPipelineDescriptor.layout(segment, layout.map(PipelineLayout::segment).orElse(MemorySegment.NULL));

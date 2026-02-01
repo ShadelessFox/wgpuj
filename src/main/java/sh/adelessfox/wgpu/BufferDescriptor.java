@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUBufferDescriptor;
 
@@ -15,7 +16,7 @@ public record BufferDescriptor(
     long size,
     Set<BufferUsage> usages,
     boolean mappedAtCreation
-) {
+) implements WgpuStruct {
     public BufferDescriptor {
         usages = Set.copyOf(usages);
     }
@@ -24,7 +25,8 @@ public record BufferDescriptor(
         return new BufferDescriptorBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUBufferDescriptor.allocate(allocator);
         WgpuUtils.setString(allocator, WGPUBufferDescriptor.label(segment), label);
         WGPUBufferDescriptor.usage(segment, WgpuUtils.toNative(usages));

@@ -1,5 +1,6 @@
 package sh.adelessfox.wgpu;
 
+import sh.adelessfox.wgpu.util.WgpuObject;
 import sh.adelessfox.wgpu_native.WGPURequestAdapterCallback;
 import sh.adelessfox.wgpu_native.WGPURequestAdapterCallbackInfo;
 import sh.adelessfox.wgpu_native.WGPURequestAdapterOptions;
@@ -10,7 +11,7 @@ import java.lang.foreign.ValueLayout;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Instance(MemorySegment segment) implements AutoCloseable {
+public record Instance(MemorySegment segment) implements WgpuObject {
     public static Instance create(InstanceDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new Instance(wgpuCreateInstance(descriptor.toNative(arena)));

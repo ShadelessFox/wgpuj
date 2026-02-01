@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu_native.WGPURenderPassColorAttachment;
 
 import java.lang.foreign.MemorySegment;
@@ -17,12 +18,13 @@ public record RenderPassColorAttachment(
     Optional<TextureView> resolveTarget,
     LoadOp<Color> load,
     StoreOp store
-) {
+) implements WgpuStruct {
     public static RenderPassColorAttachmentBuilder builder() {
         return new RenderPassColorAttachmentBuilder();
     }
 
-    MemorySegment toNative(SegmentAllocator allocator) {
+    @Override
+    public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPURenderPassColorAttachment.allocate(allocator);
         WGPURenderPassColorAttachment.view(segment, view.segment());
         WGPURenderPassColorAttachment.depthSlice(segment, depthSlice.orElse(WGPU_DEPTH_SLICE_UNDEFINED()));
