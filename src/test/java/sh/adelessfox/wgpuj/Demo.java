@@ -3,44 +3,55 @@ package sh.adelessfox.wgpuj;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
-public class App implements AutoCloseable {
-    private final Instance instance;
-    private final Adapter adapter;
-    private final Device device;
+public class Demo {
+    private static final String SHADER = """
+        @vertex
+        fn vs_main(@builtin(vertex_index) in_vertex_index: u32) -> @builtin(position) vec4<f32> {
+            let x = f32(i32(in_vertex_index) - 1);
+            let y = f32(i32(in_vertex_index & 1u) * 2 - 1);
+            return vec4<f32>(x, y, 0.0, 1.0);
+        }
+        
+        @fragment
+        fn fs_main() -> @location(0) vec4<f32> {
+            return vec4<f32>(0.2, 0.6, 0.4, 1.0);
+        }
+        """;
 
-    public App() {
-        instance = Instance.create(InstanceDescriptor.builder()
+    static void main() {
+        System.loadLibrary("lib/wgpu_native");
+
+        var instance = Instance.create(InstanceDescriptor.builder()
             .addFlags(InstanceFlag.DEBUG, InstanceFlag.VALIDATION)
             .build());
-        adapter = instance.requestAdapter();
-        device = adapter.requestDevice(DeviceDescriptor.builder()
+
+        var adapter = instance.requestAdapter();
+
+        var device = adapter.requestDevice(DeviceDescriptor.builder()
             .label("default device")
             .build());
-    }
 
-    void run() throws IOException {
-        var queue = device.getQueue();
+        int width = 1024;
+        int height = 512;
+        var format = TextureFormat.RGBA8_UNORM;
 
         var buffer = device.createBuffer(BufferDescriptor.builder()
             .label("buffer")
-            .size(512 * 512 * 4)
+            .size(width * height * 4)
             .addUsages(BufferUsage.COPY_DST, BufferUsage.MAP_READ)
             .mappedAtCreation(false)
             .build());
 
         var texture = device.createTexture(TextureDescriptor.builder()
             .label("texture")
-            .size(new Extent3D(512, 512, 1))
+            .size(new Extent3D(width, height, 1))
             .mipLevelCount(1)
             .sampleCount(1)
             .dimension(TextureDimension.D2)
-            .format(TextureFormat.RGBA8_UNORM)
+            .format(format)
             .addUsages(TextureUsage.COPY_SRC, TextureUsage.RENDER_ATTACHMENT)
             .build());
 
@@ -48,10 +59,10 @@ public class App implements AutoCloseable {
 
         var module = device.createShaderModule(ShaderModuleDescriptor.builder()
             .label("shader")
-            .source(new ShaderSource.Wgsl(Files.readString(Path.of("src/main/resources/main.wgsl"))))
+            .source(new ShaderSource.Wgsl(SHADER))
             .build());
 
-        var renderPipeline = createRenderPipeline(module, TextureFormat.RGBA8_UNORM);
+        var renderPipeline = createRenderPipeline(device, module, format);
 
         try (var encoder = device.createCommandEncoder(CommandEncoderDescriptor.builder().build())) {
             var descriptor = RenderPassDescriptor.builder()
@@ -79,23 +90,25 @@ public class App implements AutoCloseable {
                     .buffer(buffer)
                     .layout(TexelCopyBufferLayout.builder()
                         .offset(0)
-                        .bytesPerRow(512 * 4)
-                        .rowsPerImage(512)
+                        .bytesPerRow(width * 4)
+                        .rowsPerImage(height)
                         .build())
                     .build(),
-                new Extent3D(512, 512, 1)
+                new Extent3D(width, height, 1)
             );
 
             try (var encoded = encoder.finish(Optional.empty())) {
-                queue.submit(List.of(encoded));
+                try (var queue = device.getQueue()) {
+                    queue.submit(List.of(encoded));
+                }
             }
 
-            try (var mapped = buffer.map(instance, 0, 512 * 512 * 4, MapMode.READ)) {
-                var image = new BufferedImage(512, 512, BufferedImage.TYPE_4BYTE_ABGR);
+            try (var mapped = buffer.map(instance, 0, width * height * 4, MapMode.READ)) {
+                var image = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
                 var imageBuffer = (DataBufferByte) image.getRaster().getDataBuffer();
 
-                var data = mapped.getMappedRange(0, 512 * 512 * 4);
-                for (int i = 0; i < 512 * 512 * 4; i += 4) {
+                var data = mapped.getMappedRange(0, width * height * 4);
+                for (int i = 0; i < width * height * 4; i += 4) {
                     imageBuffer.getData()[i/**/] = data.get(i + 3); // A
                     imageBuffer.getData()[i + 1] = data.get(i + 2); // B
                     imageBuffer.getData()[i + 2] = data.get(i + 1); // G
@@ -108,12 +121,18 @@ public class App implements AutoCloseable {
 
         renderPipeline.close();
         module.close();
+
         view.close();
         texture.close();
+
         buffer.close();
+
+        device.close();
+        adapter.close();
+        instance.close();
     }
 
-    private RenderPipeline createRenderPipeline(ShaderModule module, TextureFormat format) {
+    private static RenderPipeline createRenderPipeline(Device device, ShaderModule module, TextureFormat format) {
         var vertex = VertexState.builder()
             .module(module)
             .entryPoint("vs_main")
@@ -147,20 +166,5 @@ public class App implements AutoCloseable {
             .build();
 
         return device.createRenderPipeline(renderPipelineDescriptor);
-    }
-
-    @Override
-    public void close() {
-        device.close();
-        adapter.close();
-        instance.close();
-    }
-
-    static void main() throws IOException {
-        System.loadLibrary("lib/wgpu_native");
-
-        try (var main = new App()) {
-            main.run();
-        }
     }
 }
