@@ -4,6 +4,7 @@ import org.immutables.value.Value;
 import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu_native.WGPUTexelCopyBufferLayout;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
@@ -15,6 +16,11 @@ public record TexelCopyBufferLayout(
 ) implements WgpuStruct {
     public static TexelCopyBufferLayoutBuilder builder() {
         return new TexelCopyBufferLayoutBuilder();
+    }
+
+    @Override
+    public MemoryLayout nativeLayout() {
+        return WGPUTexelCopyBufferLayout.layout();
     }
 
     @Override

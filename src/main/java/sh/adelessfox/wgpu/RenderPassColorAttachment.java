@@ -4,6 +4,7 @@ import org.immutables.value.Value;
 import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu_native.WGPURenderPassColorAttachment;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
@@ -21,6 +22,11 @@ public record RenderPassColorAttachment(
 ) implements WgpuStruct {
     public static RenderPassColorAttachmentBuilder builder() {
         return new RenderPassColorAttachmentBuilder();
+    }
+
+    @Override
+    public MemoryLayout nativeLayout() {
+        return WGPURenderPassColorAttachment.layout();
     }
 
     @Override

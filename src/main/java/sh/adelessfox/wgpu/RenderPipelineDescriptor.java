@@ -5,6 +5,7 @@ import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPURenderPipelineDescriptor;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
@@ -21,6 +22,11 @@ public record RenderPipelineDescriptor(
 ) implements WgpuStruct {
     public static RenderPipelineDescriptorBuilder builder() {
         return new RenderPipelineDescriptorBuilder();
+    }
+
+    @Override
+    public MemoryLayout nativeLayout() {
+        return WGPURenderPipelineDescriptor.layout();
     }
 
     @Override

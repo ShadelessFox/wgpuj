@@ -1,12 +1,13 @@
 package sh.adelessfox.wgpu;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpu.util.WgpuFlags;
 import sh.adelessfox.wgpu.util.WgpuStruct;
-import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUChainedStruct;
 import sh.adelessfox.wgpu_native.WGPUInstanceDescriptor;
 import sh.adelessfox.wgpu_native.WGPUInstanceExtras;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Set;
@@ -26,10 +27,15 @@ public record InstanceDescriptor(
     }
 
     @Override
+    public MemoryLayout nativeLayout() {
+        return WGPUInstanceDescriptor.layout();
+    }
+
+    @Override
     public MemorySegment toNative(SegmentAllocator allocator) {
         var extras = WGPUInstanceExtras.allocate(allocator);
         WGPUChainedStruct.sType(WGPUInstanceExtras.chain(extras), WGPUSType_InstanceExtras());
-        WGPUInstanceExtras.flags(extras, WgpuUtils.toNative(flags));
+        WGPUInstanceExtras.flags(extras, WgpuFlags.toNative(flags));
 
         var descriptor = WGPUInstanceDescriptor.allocate(allocator);
         WGPUInstanceDescriptor.nextInChain(descriptor, extras);

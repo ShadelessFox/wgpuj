@@ -32,7 +32,7 @@ public record Buffer(MemorySegment segment) implements WgpuObject {
                 }
                 complete[0] = true;
             }, arena));
-            wgpuBufferMapAsync(arena, segment, WgpuUtils.toNative(mode), offset, size, callback);
+            wgpuBufferMapAsync(arena, segment, WgpuFlags.toNative(mode), offset, size, callback);
             while (!complete[0]) {
                 wgpuInstanceProcessEvents(instance.segment());
             }

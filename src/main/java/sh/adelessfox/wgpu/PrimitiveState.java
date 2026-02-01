@@ -6,6 +6,7 @@ import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUPrimitiveState;
 import sh.adelessfox.wgpu_native.wgpu_h;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
@@ -23,6 +24,11 @@ public record PrimitiveState(
 ) implements WgpuStruct {
     public static PrimitiveStateBuilder builder() {
         return new PrimitiveStateBuilder();
+    }
+
+    @Override
+    public MemoryLayout nativeLayout() {
+        return WGPUPrimitiveState.layout();
     }
 
     @Override

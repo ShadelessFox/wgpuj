@@ -3,10 +3,9 @@ package sh.adelessfox.wgpu;
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
-import sh.adelessfox.wgpu_native.WGPUConstantEntry;
-import sh.adelessfox.wgpu_native.WGPUVertexBufferLayout;
 import sh.adelessfox.wgpu_native.WGPUVertexState;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.List;
@@ -24,12 +23,17 @@ public record VertexState(
     }
 
     @Override
+    public MemoryLayout nativeLayout() {
+        return WGPUVertexState.layout();
+    }
+
+    @Override
     public MemorySegment toNative(SegmentAllocator allocator) {
         var segment = WGPUVertexState.allocate(allocator);
         WGPUVertexState.module(segment, module.segment());
         entryPoint.ifPresent(ep -> WgpuUtils.setString(allocator, WGPUVertexState.entryPoint(segment), ep));
-        WgpuUtils.setArray(allocator, segment, WGPUVertexState.constantCount$offset(), WGPUConstantEntry.layout(), constants, ConstantEntry::toNative);
-        WgpuUtils.setArray(allocator, segment, WGPUVertexState.bufferCount$offset(), WGPUVertexBufferLayout.layout(), buffers, VertexBufferLayout::toNative);
+        WgpuUtils.setArray(allocator, segment, WGPUVertexState.constantCount$offset(), constants);
+        WgpuUtils.setArray(allocator, segment, WGPUVertexState.bufferCount$offset(), buffers);
         return segment;
     }
 }

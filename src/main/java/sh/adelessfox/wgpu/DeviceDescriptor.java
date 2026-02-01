@@ -5,6 +5,7 @@ import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUDeviceDescriptor;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
@@ -15,6 +16,11 @@ public record DeviceDescriptor(
 ) implements WgpuStruct {
     public static DeviceDescriptorBuilder builder() {
         return new DeviceDescriptorBuilder();
+    }
+
+    @Override
+    public MemoryLayout nativeLayout() {
+        return WGPUDeviceDescriptor.layout();
     }
 
     @Override

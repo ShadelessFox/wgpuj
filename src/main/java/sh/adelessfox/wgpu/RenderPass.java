@@ -45,7 +45,7 @@ public record RenderPass(MemorySegment segment) implements WgpuObject {
             wgpuRenderPassEncoderExecuteBundles(
                 segment,
                 bundles.size(),
-                WgpuUtils.toNative(arena, ValueLayout.ADDRESS, bundles, RenderBundle::segment)
+                WgpuUtils.toNative(arena, bundles)
             );
         }
     }

@@ -5,7 +5,6 @@ import sh.adelessfox.wgpu.util.WgpuUtils;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
 import java.util.List;
 
@@ -25,12 +24,7 @@ public record Queue(MemorySegment segment) implements WgpuObject {
             wgpuQueueSubmit(
                 segment,
                 commands.size(),
-                WgpuUtils.toNative(
-                    arena,
-                    ValueLayout.ADDRESS,
-                    commands,
-                    cb -> arena.allocateFrom(ValueLayout.ADDRESS, cb.segment())
-                )
+                WgpuUtils.toNative(arena, commands)
             );
         }
     }

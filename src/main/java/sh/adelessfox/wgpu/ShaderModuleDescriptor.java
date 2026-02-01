@@ -5,6 +5,7 @@ import sh.adelessfox.wgpu.util.WgpuStruct;
 import sh.adelessfox.wgpu.util.WgpuUtils;
 import sh.adelessfox.wgpu_native.WGPUShaderModuleDescriptor;
 
+import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
@@ -16,6 +17,11 @@ public record ShaderModuleDescriptor(
 ) implements WgpuStruct {
     public static ShaderModuleDescriptorBuilder builder() {
         return new ShaderModuleDescriptorBuilder();
+    }
+
+    @Override
+    public MemoryLayout nativeLayout() {
+        return WGPUShaderModuleDescriptor.layout();
     }
 
     @Override
