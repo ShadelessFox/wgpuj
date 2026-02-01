@@ -32,13 +32,11 @@ public record PrimitiveState(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUPrimitiveState.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUPrimitiveState.topology(segment, topology.value());
         WGPUPrimitiveState.stripIndexFormat(segment, stripIndexFormat.map(IndexFormat::value).orElse(WGPUIndexFormat_Undefined()));
         WGPUPrimitiveState.frontFace(segment, frontFace.value());
         WGPUPrimitiveState.cullMode(segment, cullMode.map(Face::value).orElse(wgpu_h.WGPUCullMode_None()));
         WGPUPrimitiveState.unclippedDepth(segment, WgpuUtils.toNative(unclippedDepth));
-        return segment;
     }
 }

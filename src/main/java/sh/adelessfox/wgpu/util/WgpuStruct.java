@@ -7,5 +7,11 @@ import java.lang.foreign.SegmentAllocator;
 public interface WgpuStruct {
     MemoryLayout nativeLayout();
 
-    MemorySegment toNative(SegmentAllocator allocator);
+    void toNative(SegmentAllocator allocator, MemorySegment segment);
+
+    default MemorySegment toNative(SegmentAllocator allocator) {
+        var segment = allocator.allocate(nativeLayout());
+        toNative(allocator, segment);
+        return segment;
+    }
 }

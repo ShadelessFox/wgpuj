@@ -25,12 +25,10 @@ public record TexelCopyTextureInfo(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUTexelCopyTextureInfo.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUTexelCopyTextureInfo.texture(segment, texture.segment());
         WGPUTexelCopyTextureInfo.mipLevel(segment, mipLevel);
-        WGPUTexelCopyTextureInfo.origin(segment, origin.toNative(allocator));
+        origin.toNative(allocator, WGPUTexelCopyTextureInfo.origin(segment));
         WGPUTexelCopyTextureInfo.aspect(segment, aspect.value());
-        return segment;
     }
 }

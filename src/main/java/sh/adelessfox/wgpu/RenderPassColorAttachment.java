@@ -30,20 +30,18 @@ public record RenderPassColorAttachment(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPURenderPassColorAttachment.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPURenderPassColorAttachment.view(segment, view.segment());
         WGPURenderPassColorAttachment.depthSlice(segment, depthSlice.orElse(WGPU_DEPTH_SLICE_UNDEFINED()));
         WGPURenderPassColorAttachment.resolveTarget(segment, resolveTarget.map(TextureView::segment).orElse(MemorySegment.NULL));
         WGPURenderPassColorAttachment.loadOp(segment, switch (load) {
             case LoadOp.Clear<Color>(var color) -> {
-                WGPURenderPassColorAttachment.clearValue(segment, color.toNative(allocator));
+                color.toNative(allocator, WGPURenderPassColorAttachment.clearValue(segment));
                 yield WGPULoadOp_Clear();
             }
             case LoadOp.Load<Color> _ -> WGPULoadOp_Load();
             case LoadOp.DontCare<Color> _ -> WGPULoadOp_Undefined();
         });
         WGPURenderPassColorAttachment.storeOp(segment, store.value());
-        return segment;
     }
 }

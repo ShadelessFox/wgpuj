@@ -18,11 +18,9 @@ public record BlendComponent(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUBlendComponent.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUBlendComponent.operation(segment, operation.value());
         WGPUBlendComponent.srcFactor(segment, srcFactor.value());
         WGPUBlendComponent.dstFactor(segment, dstFactor.value());
-        return segment;
     }
 }

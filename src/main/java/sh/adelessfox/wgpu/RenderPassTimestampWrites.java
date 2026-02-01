@@ -18,11 +18,9 @@ public record RenderPassTimestampWrites(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPURenderPassTimestampWrites.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPURenderPassTimestampWrites.querySet(segment, querySet.segment());
         WGPURenderPassTimestampWrites.beginningOfPassWriteIndex(segment, beginningOfPassWriteIndex);
         WGPURenderPassTimestampWrites.endOfPassWriteIndex(segment, endOfPassWriteIndex);
-        return segment;
     }
 }

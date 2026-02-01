@@ -42,8 +42,7 @@ public record TextureViewDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUTextureViewDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         label.ifPresent(l -> WgpuUtils.setString(allocator, WGPUTextureViewDescriptor.label(segment), l));
         WGPUTextureViewDescriptor.format(segment, format.orElse(TextureFormat.UNDEFINED).value());
         WGPUTextureViewDescriptor.dimension(segment, dimension.orElse(TextureViewDimension.UNDEFINED).value());
@@ -53,6 +52,5 @@ public record TextureViewDescriptor(
         WGPUTextureViewDescriptor.mipLevelCount(segment, mipLevelCount.orElse(WGPU_MIP_LEVEL_COUNT_UNDEFINED()));
         WGPUTextureViewDescriptor.baseArrayLayer(segment, baseArrayLayer);
         WGPUTextureViewDescriptor.arrayLayerCount(segment, arrayLayerCount.orElse(WGPU_ARRAY_LAYER_COUNT_UNDEFINED()));
-        return segment;
     }
 }

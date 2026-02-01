@@ -23,10 +23,8 @@ public record BlendState(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUBlendState.allocate(allocator);
-        WGPUBlendState.color(segment, color.toNative(allocator));
-        WGPUBlendState.alpha(segment, alpha.toNative(allocator));
-        return segment;
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        color.toNative(allocator, WGPUBlendState.color(segment));
+        alpha.toNative(allocator, WGPUBlendState.alpha(segment));
     }
 }

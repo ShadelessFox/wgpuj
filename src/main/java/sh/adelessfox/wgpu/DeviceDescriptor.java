@@ -24,9 +24,7 @@ public record DeviceDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUDeviceDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPUDeviceDescriptor.label(segment), label);
-        return segment;
     }
 }

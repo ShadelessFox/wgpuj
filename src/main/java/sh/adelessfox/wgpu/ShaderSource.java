@@ -25,12 +25,10 @@ public sealed interface ShaderSource extends WgpuStruct {
         }
 
         @Override
-        public MemorySegment toNative(SegmentAllocator allocator) {
-            var segment = WGPUShaderSourceSPIRV.allocate(allocator);
+        public void toNative(SegmentAllocator allocator, MemorySegment segment) {
             WGPUChainedStruct.sType(WGPUShaderSourceSPIRV.chain(segment), WGPUSType_ShaderSourceSPIRV());
             WGPUShaderSourceSPIRV.codeSize(segment, code.length);
             WGPUShaderSourceSPIRV.code(segment, allocator.allocateFrom(ValueLayout.JAVA_INT, code));
-            return segment;
         }
     }
 
@@ -41,13 +39,11 @@ public sealed interface ShaderSource extends WgpuStruct {
         }
 
         @Override
-        public MemorySegment toNative(SegmentAllocator allocator) {
-            var segment = WGPUShaderSourceGLSL.allocate(allocator);
+        public void toNative(SegmentAllocator allocator, MemorySegment segment) {
             WGPUChainedStruct.sType(WGPUShaderSourceGLSL.chain(segment), WGPUSType_ShaderSourceGLSL());
             WGPUShaderSourceGLSL.stage(segment, WgpuFlags.toNative(stages));
             WgpuUtils.setString(allocator, WGPUShaderSourceGLSL.code(segment), code);
             WgpuUtils.setArray(allocator, segment, WGPUShaderSourceGLSL.defineCount$offset(), defines);
-            return segment;
         }
     }
 
@@ -58,11 +54,9 @@ public sealed interface ShaderSource extends WgpuStruct {
         }
 
         @Override
-        public MemorySegment toNative(SegmentAllocator allocator) {
-            var segment = WGPUShaderSourceWGSL.allocate(allocator);
+        public void toNative(SegmentAllocator allocator, MemorySegment segment) {
             WGPUChainedStruct.sType(WGPUShaderSourceWGSL.chain(segment), WGPUSType_ShaderSourceWGSL());
             WgpuUtils.setString(allocator, WGPUShaderSourceWGSL.code(segment), code);
-            return segment;
         }
     }
 }

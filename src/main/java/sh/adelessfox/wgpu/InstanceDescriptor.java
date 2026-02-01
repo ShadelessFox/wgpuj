@@ -32,14 +32,11 @@ public record InstanceDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         var extras = WGPUInstanceExtras.allocate(allocator);
         WGPUChainedStruct.sType(WGPUInstanceExtras.chain(extras), WGPUSType_InstanceExtras());
         WGPUInstanceExtras.flags(extras, WgpuFlags.toNative(flags));
 
-        var descriptor = WGPUInstanceDescriptor.allocate(allocator);
-        WGPUInstanceDescriptor.nextInChain(descriptor, extras);
-
-        return descriptor;
+        WGPUInstanceDescriptor.nextInChain(segment, extras);
     }
 }

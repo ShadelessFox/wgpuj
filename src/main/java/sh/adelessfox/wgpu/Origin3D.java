@@ -18,11 +18,9 @@ public record Origin3D(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUOrigin3D.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUOrigin3D.x(segment, x);
         WGPUOrigin3D.y(segment, y);
         WGPUOrigin3D.z(segment, z);
-        return segment;
     }
 }

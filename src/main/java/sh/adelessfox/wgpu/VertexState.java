@@ -28,12 +28,10 @@ public record VertexState(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUVertexState.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUVertexState.module(segment, module.segment());
         entryPoint.ifPresent(ep -> WgpuUtils.setString(allocator, WGPUVertexState.entryPoint(segment), ep));
         WgpuUtils.setArray(allocator, segment, WGPUVertexState.constantCount$offset(), constants);
         WgpuUtils.setArray(allocator, segment, WGPUVertexState.bufferCount$offset(), buffers);
-        return segment;
     }
 }

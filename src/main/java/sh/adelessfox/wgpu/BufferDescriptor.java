@@ -33,12 +33,10 @@ public record BufferDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUBufferDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPUBufferDescriptor.label(segment), label);
         WGPUBufferDescriptor.usage(segment, WgpuFlags.toNative(usages));
         WGPUBufferDescriptor.size(segment, size);
         WGPUBufferDescriptor.mappedAtCreation(segment, WgpuUtils.toNative(mappedAtCreation));
-        return segment;
     }
 }

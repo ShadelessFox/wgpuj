@@ -14,7 +14,7 @@ public record ConstantEntry(String key, double value) implements WgpuStruct {
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         throw new UnsupportedOperationException();
     }
 }

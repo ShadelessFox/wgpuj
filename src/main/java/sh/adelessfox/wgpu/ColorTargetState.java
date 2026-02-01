@@ -31,11 +31,9 @@ public record ColorTargetState(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUColorTargetState.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUColorTargetState.format(segment, format.value());
         blend.ifPresent(blend -> WGPUColorTargetState.blend(segment, blend.toNative(allocator)));
         WGPUColorTargetState.writeMask(segment, WgpuFlags.toNative(writeMask));
-        return segment;
     }
 }

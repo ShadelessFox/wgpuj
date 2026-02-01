@@ -24,11 +24,9 @@ public record TexelCopyBufferLayout(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUTexelCopyBufferLayout.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUTexelCopyBufferLayout.offset(segment, offset);
         WGPUTexelCopyBufferLayout.bytesPerRow(segment, bytesPerRow);
         WGPUTexelCopyBufferLayout.rowsPerImage(segment, rowsPerImage);
-        return segment;
     }
 }

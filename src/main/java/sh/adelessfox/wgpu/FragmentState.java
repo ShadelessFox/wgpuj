@@ -28,12 +28,10 @@ public record FragmentState(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUFragmentState.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUFragmentState.module(segment, module.segment());
         entryPoint.ifPresent(ep -> WgpuUtils.setString(allocator, WGPUFragmentState.entryPoint(segment), ep));
         WgpuUtils.setArray(allocator, segment, WGPUFragmentState.constantCount$offset(), constants);
         WgpuUtils.setArray(allocator, segment, WGPUFragmentState.targetCount$offset(), targets);
-        return segment;
     }
 }

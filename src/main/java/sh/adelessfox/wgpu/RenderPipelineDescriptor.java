@@ -30,15 +30,13 @@ public record RenderPipelineDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPURenderPipelineDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPURenderPipelineDescriptor.label(segment), label);
         WGPURenderPipelineDescriptor.layout(segment, layout.map(PipelineLayout::segment).orElse(MemorySegment.NULL));
-        WGPURenderPipelineDescriptor.vertex(segment, vertex.toNative(allocator));
-        WGPURenderPipelineDescriptor.primitive(segment, primitive.toNative(allocator));
+        vertex.toNative(allocator, WGPURenderPipelineDescriptor.vertex(segment));
+        primitive.toNative(allocator, WGPURenderPipelineDescriptor.primitive(segment));
         WGPURenderPipelineDescriptor.depthStencil(segment, depthStencil.map(ds -> ds.toNative(allocator)).orElse(MemorySegment.NULL));
-        WGPURenderPipelineDescriptor.multisample(segment, multisample.toNative(allocator));
+        multisample.toNative(allocator, WGPURenderPipelineDescriptor.multisample(segment));
         WGPURenderPipelineDescriptor.fragment(segment, fragment.map(f -> f.toNative(allocator)).orElse(MemorySegment.NULL));
-        return segment;
     }
 }

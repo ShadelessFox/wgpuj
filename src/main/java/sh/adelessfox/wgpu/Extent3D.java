@@ -18,11 +18,9 @@ public record Extent3D(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUExtent3D.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUExtent3D.width(segment, width);
         WGPUExtent3D.height(segment, height);
         WGPUExtent3D.depthOrArrayLayers(segment, depthOrArrayLayers);
-        return segment;
     }
 }

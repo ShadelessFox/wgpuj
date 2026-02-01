@@ -29,13 +29,11 @@ public record RenderPassDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPURenderPassDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPURenderPassDescriptor.label(segment), label);
         WgpuUtils.setArray(allocator, segment, WGPURenderPassDescriptor.colorAttachmentCount$offset(), colorAttachments);
         WGPURenderPassDescriptor.depthStencilAttachment(segment, depthStencilAttachment.map(dsa -> dsa.toNative(allocator)).orElse(MemorySegment.NULL));
         WGPURenderPassDescriptor.occlusionQuerySet(segment, occlusionQuerySet.map(QuerySet::segment).orElse(MemorySegment.NULL));
         WGPURenderPassDescriptor.timestampWrites(segment, timestampWrites.map(tw -> tw.toNative(allocator)).orElse(MemorySegment.NULL));
-        return segment;
     }
 }

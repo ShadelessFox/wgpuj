@@ -24,9 +24,7 @@ public record CommandEncoderDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUCommandEncoderDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPUCommandEncoderDescriptor.label(segment), label);
-        return segment;
     }
 }

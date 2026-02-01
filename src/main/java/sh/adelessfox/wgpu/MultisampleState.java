@@ -25,11 +25,9 @@ public record MultisampleState(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUMultisampleState.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUMultisampleState.count(segment, count);
         WGPUMultisampleState.mask(segment, mask);
         WGPUMultisampleState.alphaToCoverageEnabled(segment, WgpuUtils.toNative(alphaToCoverageEnabled));
-        return segment;
     }
 }

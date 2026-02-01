@@ -15,10 +15,8 @@ public record ShaderDefine(String name, String value) implements WgpuStruct {
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUShaderDefine.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPUShaderDefine.name(segment), name);
         WgpuUtils.setString(allocator, WGPUShaderDefine.value(segment), value);
-        return segment;
     }
 }

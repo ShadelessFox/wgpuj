@@ -25,10 +25,8 @@ public record ShaderModuleDescriptor(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = WGPUShaderModuleDescriptor.allocate(allocator);
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WgpuUtils.setString(allocator, WGPUShaderModuleDescriptor.label(segment), label);
         WGPUShaderModuleDescriptor.nextInChain(segment, source.toNative(allocator));
-        return segment;
     }
 }

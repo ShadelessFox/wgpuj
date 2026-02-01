@@ -19,12 +19,10 @@ public record Color(
     }
 
     @Override
-    public MemorySegment toNative(SegmentAllocator allocator) {
-        var segment = allocator.allocate(WGPUColor.layout());
+    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUColor.r(segment, r);
         WGPUColor.g(segment, g);
         WGPUColor.b(segment, b);
         WGPUColor.a(segment, a);
-        return segment;
     }
 }
