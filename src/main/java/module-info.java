@@ -1,6 +1,5 @@
-module sh.adelessfox.wgpu {
-    requires static java.desktop; // java.awt.image.BufferedImage
+module sh.adelessfox.wgpuj {
     requires static org.immutables.value;
 
-    exports sh.adelessfox.wgpu;
+    exports sh.adelessfox.wgpuj;
 }
