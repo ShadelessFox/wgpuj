@@ -19,7 +19,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPURequestAdapterCallbackInfo {
+public final class WGPURequestAdapterCallbackInfo {
 
     WGPURequestAdapterCallbackInfo() {
         // Should not be called directly
@@ -37,7 +37,7 @@ public class WGPURequestAdapterCallbackInfo {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -49,7 +49,7 @@ public class WGPURequestAdapterCallbackInfo {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -61,7 +61,7 @@ public class WGPURequestAdapterCallbackInfo {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -93,7 +93,7 @@ public class WGPURequestAdapterCallbackInfo {
      * WGPUCallbackMode mode
      * }
      */
-    public static final OfInt mode$layout() {
+    public static OfInt mode$layout() {
         return mode$LAYOUT;
     }
 
@@ -105,7 +105,7 @@ public class WGPURequestAdapterCallbackInfo {
      * WGPUCallbackMode mode
      * }
      */
-    public static final long mode$offset() {
+    public static long mode$offset() {
         return mode$OFFSET;
     }
 
@@ -137,7 +137,7 @@ public class WGPURequestAdapterCallbackInfo {
      * WGPURequestAdapterCallback callback
      * }
      */
-    public static final AddressLayout callback$layout() {
+    public static AddressLayout callback$layout() {
         return callback$LAYOUT;
     }
 
@@ -149,7 +149,7 @@ public class WGPURequestAdapterCallbackInfo {
      * WGPURequestAdapterCallback callback
      * }
      */
-    public static final long callback$offset() {
+    public static long callback$offset() {
         return callback$OFFSET;
     }
 
@@ -181,7 +181,7 @@ public class WGPURequestAdapterCallbackInfo {
      * void *userdata1
      * }
      */
-    public static final AddressLayout userdata1$layout() {
+    public static AddressLayout userdata1$layout() {
         return userdata1$LAYOUT;
     }
 
@@ -193,7 +193,7 @@ public class WGPURequestAdapterCallbackInfo {
      * void *userdata1
      * }
      */
-    public static final long userdata1$offset() {
+    public static long userdata1$offset() {
         return userdata1$OFFSET;
     }
 
@@ -225,7 +225,7 @@ public class WGPURequestAdapterCallbackInfo {
      * void *userdata2
      * }
      */
-    public static final AddressLayout userdata2$layout() {
+    public static AddressLayout userdata2$layout() {
         return userdata2$LAYOUT;
     }
 
@@ -237,7 +237,7 @@ public class WGPURequestAdapterCallbackInfo {
      * void *userdata2
      * }
      */
-    public static final long userdata2$offset() {
+    public static long userdata2$offset() {
         return userdata2$OFFSET;
     }
 

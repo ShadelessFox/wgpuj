@@ -21,7 +21,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPURenderPipelineDescriptor {
+public final class WGPURenderPipelineDescriptor {
 
     WGPURenderPipelineDescriptor() {
         // Should not be called directly
@@ -41,7 +41,7 @@ public class WGPURenderPipelineDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPURenderPipelineDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -65,7 +65,7 @@ public class WGPURenderPipelineDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -97,7 +97,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -109,7 +109,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -141,7 +141,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUPipelineLayout layout
      * }
      */
-    public static final AddressLayout layout$layout() {
+    public static AddressLayout layout$layout() {
         return layout$LAYOUT;
     }
 
@@ -153,7 +153,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUPipelineLayout layout
      * }
      */
-    public static final long layout$offset() {
+    public static long layout$offset() {
         return layout$OFFSET;
     }
 
@@ -185,7 +185,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUVertexState vertex
      * }
      */
-    public static final GroupLayout vertex$layout() {
+    public static GroupLayout vertex$layout() {
         return vertex$LAYOUT;
     }
 
@@ -197,7 +197,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUVertexState vertex
      * }
      */
-    public static final long vertex$offset() {
+    public static long vertex$offset() {
         return vertex$OFFSET;
     }
 
@@ -229,7 +229,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUPrimitiveState primitive
      * }
      */
-    public static final GroupLayout primitive$layout() {
+    public static GroupLayout primitive$layout() {
         return primitive$LAYOUT;
     }
 
@@ -241,7 +241,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUPrimitiveState primitive
      * }
      */
-    public static final long primitive$offset() {
+    public static long primitive$offset() {
         return primitive$OFFSET;
     }
 
@@ -273,7 +273,7 @@ public class WGPURenderPipelineDescriptor {
      * const WGPUDepthStencilState *depthStencil
      * }
      */
-    public static final AddressLayout depthStencil$layout() {
+    public static AddressLayout depthStencil$layout() {
         return depthStencil$LAYOUT;
     }
 
@@ -285,7 +285,7 @@ public class WGPURenderPipelineDescriptor {
      * const WGPUDepthStencilState *depthStencil
      * }
      */
-    public static final long depthStencil$offset() {
+    public static long depthStencil$offset() {
         return depthStencil$OFFSET;
     }
 
@@ -317,7 +317,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUMultisampleState multisample
      * }
      */
-    public static final GroupLayout multisample$layout() {
+    public static GroupLayout multisample$layout() {
         return multisample$LAYOUT;
     }
 
@@ -329,7 +329,7 @@ public class WGPURenderPipelineDescriptor {
      * WGPUMultisampleState multisample
      * }
      */
-    public static final long multisample$offset() {
+    public static long multisample$offset() {
         return multisample$OFFSET;
     }
 
@@ -361,7 +361,7 @@ public class WGPURenderPipelineDescriptor {
      * const WGPUFragmentState *fragment
      * }
      */
-    public static final AddressLayout fragment$layout() {
+    public static AddressLayout fragment$layout() {
         return fragment$LAYOUT;
     }
 
@@ -373,7 +373,7 @@ public class WGPURenderPipelineDescriptor {
      * const WGPUFragmentState *fragment
      * }
      */
-    public static final long fragment$offset() {
+    public static long fragment$offset() {
         return fragment$OFFSET;
     }
 

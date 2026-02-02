@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUStringView {
+public final class WGPUStringView {
 
     WGPUStringView() {
         // Should not be called directly
@@ -30,7 +30,7 @@ public class WGPUStringView {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -42,7 +42,7 @@ public class WGPUStringView {
      * const char *data
      * }
      */
-    public static final AddressLayout data$layout() {
+    public static AddressLayout data$layout() {
         return data$LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUStringView {
      * const char *data
      * }
      */
-    public static final long data$offset() {
+    public static long data$offset() {
         return data$OFFSET;
     }
 
@@ -86,7 +86,7 @@ public class WGPUStringView {
      * size_t length
      * }
      */
-    public static final OfLong length$layout() {
+    public static OfLong length$layout() {
         return length$LAYOUT;
     }
 
@@ -98,7 +98,7 @@ public class WGPUStringView {
      * size_t length
      * }
      */
-    public static final long length$offset() {
+    public static long length$offset() {
         return length$OFFSET;
     }
 

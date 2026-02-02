@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUExtent3D {
+public final class WGPUExtent3D {
 
     WGPUExtent3D() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUExtent3D {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUExtent3D {
      * uint32_t width
      * }
      */
-    public static final OfInt width$layout() {
+    public static OfInt width$layout() {
         return width$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUExtent3D {
      * uint32_t width
      * }
      */
-    public static final long width$offset() {
+    public static long width$offset() {
         return width$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUExtent3D {
      * uint32_t height
      * }
      */
-    public static final OfInt height$layout() {
+    public static OfInt height$layout() {
         return height$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUExtent3D {
      * uint32_t height
      * }
      */
-    public static final long height$offset() {
+    public static long height$offset() {
         return height$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUExtent3D {
      * uint32_t depthOrArrayLayers
      * }
      */
-    public static final OfInt depthOrArrayLayers$layout() {
+    public static OfInt depthOrArrayLayers$layout() {
         return depthOrArrayLayers$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUExtent3D {
      * uint32_t depthOrArrayLayers
      * }
      */
-    public static final long depthOrArrayLayers$offset() {
+    public static long depthOrArrayLayers$offset() {
         return depthOrArrayLayers$OFFSET;
     }
 

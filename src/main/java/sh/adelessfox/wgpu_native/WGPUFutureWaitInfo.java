@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUFutureWaitInfo {
+public final class WGPUFutureWaitInfo {
 
     WGPUFutureWaitInfo() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUFutureWaitInfo {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUFutureWaitInfo {
      * WGPUFuture future
      * }
      */
-    public static final GroupLayout future$layout() {
+    public static GroupLayout future$layout() {
         return future$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUFutureWaitInfo {
      * WGPUFuture future
      * }
      */
-    public static final long future$offset() {
+    public static long future$offset() {
         return future$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUFutureWaitInfo {
      * WGPUBool completed
      * }
      */
-    public static final OfInt completed$layout() {
+    public static OfInt completed$layout() {
         return completed$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUFutureWaitInfo {
      * WGPUBool completed
      * }
      */
-    public static final long completed$offset() {
+    public static long completed$offset() {
         return completed$OFFSET;
     }
 

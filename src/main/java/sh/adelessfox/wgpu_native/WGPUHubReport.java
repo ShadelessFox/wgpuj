@@ -30,7 +30,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUHubReport {
+public final class WGPUHubReport {
 
     WGPUHubReport() {
         // Should not be called directly
@@ -59,7 +59,7 @@ public class WGPUHubReport {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -71,7 +71,7 @@ public class WGPUHubReport {
      * WGPURegistryReport adapters
      * }
      */
-    public static final GroupLayout adapters$layout() {
+    public static GroupLayout adapters$layout() {
         return adapters$LAYOUT;
     }
 
@@ -83,7 +83,7 @@ public class WGPUHubReport {
      * WGPURegistryReport adapters
      * }
      */
-    public static final long adapters$offset() {
+    public static long adapters$offset() {
         return adapters$OFFSET;
     }
 
@@ -115,7 +115,7 @@ public class WGPUHubReport {
      * WGPURegistryReport devices
      * }
      */
-    public static final GroupLayout devices$layout() {
+    public static GroupLayout devices$layout() {
         return devices$LAYOUT;
     }
 
@@ -127,7 +127,7 @@ public class WGPUHubReport {
      * WGPURegistryReport devices
      * }
      */
-    public static final long devices$offset() {
+    public static long devices$offset() {
         return devices$OFFSET;
     }
 
@@ -159,7 +159,7 @@ public class WGPUHubReport {
      * WGPURegistryReport queues
      * }
      */
-    public static final GroupLayout queues$layout() {
+    public static GroupLayout queues$layout() {
         return queues$LAYOUT;
     }
 
@@ -171,7 +171,7 @@ public class WGPUHubReport {
      * WGPURegistryReport queues
      * }
      */
-    public static final long queues$offset() {
+    public static long queues$offset() {
         return queues$OFFSET;
     }
 
@@ -203,7 +203,7 @@ public class WGPUHubReport {
      * WGPURegistryReport pipelineLayouts
      * }
      */
-    public static final GroupLayout pipelineLayouts$layout() {
+    public static GroupLayout pipelineLayouts$layout() {
         return pipelineLayouts$LAYOUT;
     }
 
@@ -215,7 +215,7 @@ public class WGPUHubReport {
      * WGPURegistryReport pipelineLayouts
      * }
      */
-    public static final long pipelineLayouts$offset() {
+    public static long pipelineLayouts$offset() {
         return pipelineLayouts$OFFSET;
     }
 
@@ -247,7 +247,7 @@ public class WGPUHubReport {
      * WGPURegistryReport shaderModules
      * }
      */
-    public static final GroupLayout shaderModules$layout() {
+    public static GroupLayout shaderModules$layout() {
         return shaderModules$LAYOUT;
     }
 
@@ -259,7 +259,7 @@ public class WGPUHubReport {
      * WGPURegistryReport shaderModules
      * }
      */
-    public static final long shaderModules$offset() {
+    public static long shaderModules$offset() {
         return shaderModules$OFFSET;
     }
 
@@ -291,7 +291,7 @@ public class WGPUHubReport {
      * WGPURegistryReport bindGroupLayouts
      * }
      */
-    public static final GroupLayout bindGroupLayouts$layout() {
+    public static GroupLayout bindGroupLayouts$layout() {
         return bindGroupLayouts$LAYOUT;
     }
 
@@ -303,7 +303,7 @@ public class WGPUHubReport {
      * WGPURegistryReport bindGroupLayouts
      * }
      */
-    public static final long bindGroupLayouts$offset() {
+    public static long bindGroupLayouts$offset() {
         return bindGroupLayouts$OFFSET;
     }
 
@@ -335,7 +335,7 @@ public class WGPUHubReport {
      * WGPURegistryReport bindGroups
      * }
      */
-    public static final GroupLayout bindGroups$layout() {
+    public static GroupLayout bindGroups$layout() {
         return bindGroups$LAYOUT;
     }
 
@@ -347,7 +347,7 @@ public class WGPUHubReport {
      * WGPURegistryReport bindGroups
      * }
      */
-    public static final long bindGroups$offset() {
+    public static long bindGroups$offset() {
         return bindGroups$OFFSET;
     }
 
@@ -379,7 +379,7 @@ public class WGPUHubReport {
      * WGPURegistryReport commandBuffers
      * }
      */
-    public static final GroupLayout commandBuffers$layout() {
+    public static GroupLayout commandBuffers$layout() {
         return commandBuffers$LAYOUT;
     }
 
@@ -391,7 +391,7 @@ public class WGPUHubReport {
      * WGPURegistryReport commandBuffers
      * }
      */
-    public static final long commandBuffers$offset() {
+    public static long commandBuffers$offset() {
         return commandBuffers$OFFSET;
     }
 
@@ -423,7 +423,7 @@ public class WGPUHubReport {
      * WGPURegistryReport renderBundles
      * }
      */
-    public static final GroupLayout renderBundles$layout() {
+    public static GroupLayout renderBundles$layout() {
         return renderBundles$LAYOUT;
     }
 
@@ -435,7 +435,7 @@ public class WGPUHubReport {
      * WGPURegistryReport renderBundles
      * }
      */
-    public static final long renderBundles$offset() {
+    public static long renderBundles$offset() {
         return renderBundles$OFFSET;
     }
 
@@ -467,7 +467,7 @@ public class WGPUHubReport {
      * WGPURegistryReport renderPipelines
      * }
      */
-    public static final GroupLayout renderPipelines$layout() {
+    public static GroupLayout renderPipelines$layout() {
         return renderPipelines$LAYOUT;
     }
 
@@ -479,7 +479,7 @@ public class WGPUHubReport {
      * WGPURegistryReport renderPipelines
      * }
      */
-    public static final long renderPipelines$offset() {
+    public static long renderPipelines$offset() {
         return renderPipelines$OFFSET;
     }
 
@@ -511,7 +511,7 @@ public class WGPUHubReport {
      * WGPURegistryReport computePipelines
      * }
      */
-    public static final GroupLayout computePipelines$layout() {
+    public static GroupLayout computePipelines$layout() {
         return computePipelines$LAYOUT;
     }
 
@@ -523,7 +523,7 @@ public class WGPUHubReport {
      * WGPURegistryReport computePipelines
      * }
      */
-    public static final long computePipelines$offset() {
+    public static long computePipelines$offset() {
         return computePipelines$OFFSET;
     }
 
@@ -555,7 +555,7 @@ public class WGPUHubReport {
      * WGPURegistryReport pipelineCaches
      * }
      */
-    public static final GroupLayout pipelineCaches$layout() {
+    public static GroupLayout pipelineCaches$layout() {
         return pipelineCaches$LAYOUT;
     }
 
@@ -567,7 +567,7 @@ public class WGPUHubReport {
      * WGPURegistryReport pipelineCaches
      * }
      */
-    public static final long pipelineCaches$offset() {
+    public static long pipelineCaches$offset() {
         return pipelineCaches$OFFSET;
     }
 
@@ -599,7 +599,7 @@ public class WGPUHubReport {
      * WGPURegistryReport querySets
      * }
      */
-    public static final GroupLayout querySets$layout() {
+    public static GroupLayout querySets$layout() {
         return querySets$LAYOUT;
     }
 
@@ -611,7 +611,7 @@ public class WGPUHubReport {
      * WGPURegistryReport querySets
      * }
      */
-    public static final long querySets$offset() {
+    public static long querySets$offset() {
         return querySets$OFFSET;
     }
 
@@ -643,7 +643,7 @@ public class WGPUHubReport {
      * WGPURegistryReport buffers
      * }
      */
-    public static final GroupLayout buffers$layout() {
+    public static GroupLayout buffers$layout() {
         return buffers$LAYOUT;
     }
 
@@ -655,7 +655,7 @@ public class WGPUHubReport {
      * WGPURegistryReport buffers
      * }
      */
-    public static final long buffers$offset() {
+    public static long buffers$offset() {
         return buffers$OFFSET;
     }
 
@@ -687,7 +687,7 @@ public class WGPUHubReport {
      * WGPURegistryReport textures
      * }
      */
-    public static final GroupLayout textures$layout() {
+    public static GroupLayout textures$layout() {
         return textures$LAYOUT;
     }
 
@@ -699,7 +699,7 @@ public class WGPUHubReport {
      * WGPURegistryReport textures
      * }
      */
-    public static final long textures$offset() {
+    public static long textures$offset() {
         return textures$OFFSET;
     }
 
@@ -731,7 +731,7 @@ public class WGPUHubReport {
      * WGPURegistryReport textureViews
      * }
      */
-    public static final GroupLayout textureViews$layout() {
+    public static GroupLayout textureViews$layout() {
         return textureViews$LAYOUT;
     }
 
@@ -743,7 +743,7 @@ public class WGPUHubReport {
      * WGPURegistryReport textureViews
      * }
      */
-    public static final long textureViews$offset() {
+    public static long textureViews$offset() {
         return textureViews$OFFSET;
     }
 
@@ -775,7 +775,7 @@ public class WGPUHubReport {
      * WGPURegistryReport samplers
      * }
      */
-    public static final GroupLayout samplers$layout() {
+    public static GroupLayout samplers$layout() {
         return samplers$LAYOUT;
     }
 
@@ -787,7 +787,7 @@ public class WGPUHubReport {
      * WGPURegistryReport samplers
      * }
      */
-    public static final long samplers$offset() {
+    public static long samplers$offset() {
         return samplers$OFFSET;
     }
 

@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUSupportedFeatures {
+public final class WGPUSupportedFeatures {
 
     WGPUSupportedFeatures() {
         // Should not be called directly
@@ -30,7 +30,7 @@ public class WGPUSupportedFeatures {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -42,7 +42,7 @@ public class WGPUSupportedFeatures {
      * size_t featureCount
      * }
      */
-    public static final OfLong featureCount$layout() {
+    public static OfLong featureCount$layout() {
         return featureCount$LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUSupportedFeatures {
      * size_t featureCount
      * }
      */
-    public static final long featureCount$offset() {
+    public static long featureCount$offset() {
         return featureCount$OFFSET;
     }
 
@@ -86,7 +86,7 @@ public class WGPUSupportedFeatures {
      * const WGPUFeatureName *features
      * }
      */
-    public static final AddressLayout features$layout() {
+    public static AddressLayout features$layout() {
         return features$LAYOUT;
     }
 
@@ -98,7 +98,7 @@ public class WGPUSupportedFeatures {
      * const WGPUFeatureName *features
      * }
      */
-    public static final long features$offset() {
+    public static long features$offset() {
         return features$OFFSET;
     }
 

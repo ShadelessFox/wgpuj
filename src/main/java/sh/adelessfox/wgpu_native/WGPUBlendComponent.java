@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUBlendComponent {
+public final class WGPUBlendComponent {
 
     WGPUBlendComponent() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUBlendComponent {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUBlendComponent {
      * WGPUBlendOperation operation
      * }
      */
-    public static final OfInt operation$layout() {
+    public static OfInt operation$layout() {
         return operation$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUBlendComponent {
      * WGPUBlendOperation operation
      * }
      */
-    public static final long operation$offset() {
+    public static long operation$offset() {
         return operation$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUBlendComponent {
      * WGPUBlendFactor srcFactor
      * }
      */
-    public static final OfInt srcFactor$layout() {
+    public static OfInt srcFactor$layout() {
         return srcFactor$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUBlendComponent {
      * WGPUBlendFactor srcFactor
      * }
      */
-    public static final long srcFactor$offset() {
+    public static long srcFactor$offset() {
         return srcFactor$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUBlendComponent {
      * WGPUBlendFactor dstFactor
      * }
      */
-    public static final OfInt dstFactor$layout() {
+    public static OfInt dstFactor$layout() {
         return dstFactor$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUBlendComponent {
      * WGPUBlendFactor dstFactor
      * }
      */
-    public static final long dstFactor$offset() {
+    public static long dstFactor$offset() {
         return dstFactor$OFFSET;
     }
 

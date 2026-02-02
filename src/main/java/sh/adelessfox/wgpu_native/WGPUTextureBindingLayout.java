@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUTextureBindingLayout {
+public final class WGPUTextureBindingLayout {
 
     WGPUTextureBindingLayout() {
         // Should not be called directly
@@ -35,7 +35,7 @@ public class WGPUTextureBindingLayout {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -47,7 +47,7 @@ public class WGPUTextureBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -59,7 +59,7 @@ public class WGPUTextureBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -91,7 +91,7 @@ public class WGPUTextureBindingLayout {
      * WGPUTextureSampleType sampleType
      * }
      */
-    public static final OfInt sampleType$layout() {
+    public static OfInt sampleType$layout() {
         return sampleType$LAYOUT;
     }
 
@@ -103,7 +103,7 @@ public class WGPUTextureBindingLayout {
      * WGPUTextureSampleType sampleType
      * }
      */
-    public static final long sampleType$offset() {
+    public static long sampleType$offset() {
         return sampleType$OFFSET;
     }
 
@@ -135,7 +135,7 @@ public class WGPUTextureBindingLayout {
      * WGPUTextureViewDimension viewDimension
      * }
      */
-    public static final OfInt viewDimension$layout() {
+    public static OfInt viewDimension$layout() {
         return viewDimension$LAYOUT;
     }
 
@@ -147,7 +147,7 @@ public class WGPUTextureBindingLayout {
      * WGPUTextureViewDimension viewDimension
      * }
      */
-    public static final long viewDimension$offset() {
+    public static long viewDimension$offset() {
         return viewDimension$OFFSET;
     }
 
@@ -179,7 +179,7 @@ public class WGPUTextureBindingLayout {
      * WGPUBool multisampled
      * }
      */
-    public static final OfInt multisampled$layout() {
+    public static OfInt multisampled$layout() {
         return multisampled$LAYOUT;
     }
 
@@ -191,7 +191,7 @@ public class WGPUTextureBindingLayout {
      * WGPUBool multisampled
      * }
      */
-    public static final long multisampled$offset() {
+    public static long multisampled$offset() {
         return multisampled$OFFSET;
     }
 

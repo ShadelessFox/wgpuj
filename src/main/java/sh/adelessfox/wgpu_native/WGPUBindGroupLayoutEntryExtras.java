@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUBindGroupLayoutEntryExtras {
+public final class WGPUBindGroupLayoutEntryExtras {
 
     WGPUBindGroupLayoutEntryExtras() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUBindGroupLayoutEntryExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUBindGroupLayoutEntryExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUBindGroupLayoutEntryExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUBindGroupLayoutEntryExtras {
      * uint32_t count
      * }
      */
-    public static final OfInt count$layout() {
+    public static OfInt count$layout() {
         return count$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUBindGroupLayoutEntryExtras {
      * uint32_t count
      * }
      */
-    public static final long count$offset() {
+    public static long count$offset() {
         return count$OFFSET;
     }
 

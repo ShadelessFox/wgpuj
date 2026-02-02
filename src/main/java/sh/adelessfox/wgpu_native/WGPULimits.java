@@ -47,7 +47,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPULimits {
+public final class WGPULimits {
 
     WGPULimits() {
         // Should not be called directly
@@ -93,7 +93,7 @@ public class WGPULimits {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -105,7 +105,7 @@ public class WGPULimits {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -117,7 +117,7 @@ public class WGPULimits {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -149,7 +149,7 @@ public class WGPULimits {
      * uint32_t maxTextureDimension1D
      * }
      */
-    public static final OfInt maxTextureDimension1D$layout() {
+    public static OfInt maxTextureDimension1D$layout() {
         return maxTextureDimension1D$LAYOUT;
     }
 
@@ -161,7 +161,7 @@ public class WGPULimits {
      * uint32_t maxTextureDimension1D
      * }
      */
-    public static final long maxTextureDimension1D$offset() {
+    public static long maxTextureDimension1D$offset() {
         return maxTextureDimension1D$OFFSET;
     }
 
@@ -193,7 +193,7 @@ public class WGPULimits {
      * uint32_t maxTextureDimension2D
      * }
      */
-    public static final OfInt maxTextureDimension2D$layout() {
+    public static OfInt maxTextureDimension2D$layout() {
         return maxTextureDimension2D$LAYOUT;
     }
 
@@ -205,7 +205,7 @@ public class WGPULimits {
      * uint32_t maxTextureDimension2D
      * }
      */
-    public static final long maxTextureDimension2D$offset() {
+    public static long maxTextureDimension2D$offset() {
         return maxTextureDimension2D$OFFSET;
     }
 
@@ -237,7 +237,7 @@ public class WGPULimits {
      * uint32_t maxTextureDimension3D
      * }
      */
-    public static final OfInt maxTextureDimension3D$layout() {
+    public static OfInt maxTextureDimension3D$layout() {
         return maxTextureDimension3D$LAYOUT;
     }
 
@@ -249,7 +249,7 @@ public class WGPULimits {
      * uint32_t maxTextureDimension3D
      * }
      */
-    public static final long maxTextureDimension3D$offset() {
+    public static long maxTextureDimension3D$offset() {
         return maxTextureDimension3D$OFFSET;
     }
 
@@ -281,7 +281,7 @@ public class WGPULimits {
      * uint32_t maxTextureArrayLayers
      * }
      */
-    public static final OfInt maxTextureArrayLayers$layout() {
+    public static OfInt maxTextureArrayLayers$layout() {
         return maxTextureArrayLayers$LAYOUT;
     }
 
@@ -293,7 +293,7 @@ public class WGPULimits {
      * uint32_t maxTextureArrayLayers
      * }
      */
-    public static final long maxTextureArrayLayers$offset() {
+    public static long maxTextureArrayLayers$offset() {
         return maxTextureArrayLayers$OFFSET;
     }
 
@@ -325,7 +325,7 @@ public class WGPULimits {
      * uint32_t maxBindGroups
      * }
      */
-    public static final OfInt maxBindGroups$layout() {
+    public static OfInt maxBindGroups$layout() {
         return maxBindGroups$LAYOUT;
     }
 
@@ -337,7 +337,7 @@ public class WGPULimits {
      * uint32_t maxBindGroups
      * }
      */
-    public static final long maxBindGroups$offset() {
+    public static long maxBindGroups$offset() {
         return maxBindGroups$OFFSET;
     }
 
@@ -369,7 +369,7 @@ public class WGPULimits {
      * uint32_t maxBindGroupsPlusVertexBuffers
      * }
      */
-    public static final OfInt maxBindGroupsPlusVertexBuffers$layout() {
+    public static OfInt maxBindGroupsPlusVertexBuffers$layout() {
         return maxBindGroupsPlusVertexBuffers$LAYOUT;
     }
 
@@ -381,7 +381,7 @@ public class WGPULimits {
      * uint32_t maxBindGroupsPlusVertexBuffers
      * }
      */
-    public static final long maxBindGroupsPlusVertexBuffers$offset() {
+    public static long maxBindGroupsPlusVertexBuffers$offset() {
         return maxBindGroupsPlusVertexBuffers$OFFSET;
     }
 
@@ -413,7 +413,7 @@ public class WGPULimits {
      * uint32_t maxBindingsPerBindGroup
      * }
      */
-    public static final OfInt maxBindingsPerBindGroup$layout() {
+    public static OfInt maxBindingsPerBindGroup$layout() {
         return maxBindingsPerBindGroup$LAYOUT;
     }
 
@@ -425,7 +425,7 @@ public class WGPULimits {
      * uint32_t maxBindingsPerBindGroup
      * }
      */
-    public static final long maxBindingsPerBindGroup$offset() {
+    public static long maxBindingsPerBindGroup$offset() {
         return maxBindingsPerBindGroup$OFFSET;
     }
 
@@ -457,7 +457,7 @@ public class WGPULimits {
      * uint32_t maxDynamicUniformBuffersPerPipelineLayout
      * }
      */
-    public static final OfInt maxDynamicUniformBuffersPerPipelineLayout$layout() {
+    public static OfInt maxDynamicUniformBuffersPerPipelineLayout$layout() {
         return maxDynamicUniformBuffersPerPipelineLayout$LAYOUT;
     }
 
@@ -469,7 +469,7 @@ public class WGPULimits {
      * uint32_t maxDynamicUniformBuffersPerPipelineLayout
      * }
      */
-    public static final long maxDynamicUniformBuffersPerPipelineLayout$offset() {
+    public static long maxDynamicUniformBuffersPerPipelineLayout$offset() {
         return maxDynamicUniformBuffersPerPipelineLayout$OFFSET;
     }
 
@@ -501,7 +501,7 @@ public class WGPULimits {
      * uint32_t maxDynamicStorageBuffersPerPipelineLayout
      * }
      */
-    public static final OfInt maxDynamicStorageBuffersPerPipelineLayout$layout() {
+    public static OfInt maxDynamicStorageBuffersPerPipelineLayout$layout() {
         return maxDynamicStorageBuffersPerPipelineLayout$LAYOUT;
     }
 
@@ -513,7 +513,7 @@ public class WGPULimits {
      * uint32_t maxDynamicStorageBuffersPerPipelineLayout
      * }
      */
-    public static final long maxDynamicStorageBuffersPerPipelineLayout$offset() {
+    public static long maxDynamicStorageBuffersPerPipelineLayout$offset() {
         return maxDynamicStorageBuffersPerPipelineLayout$OFFSET;
     }
 
@@ -545,7 +545,7 @@ public class WGPULimits {
      * uint32_t maxSampledTexturesPerShaderStage
      * }
      */
-    public static final OfInt maxSampledTexturesPerShaderStage$layout() {
+    public static OfInt maxSampledTexturesPerShaderStage$layout() {
         return maxSampledTexturesPerShaderStage$LAYOUT;
     }
 
@@ -557,7 +557,7 @@ public class WGPULimits {
      * uint32_t maxSampledTexturesPerShaderStage
      * }
      */
-    public static final long maxSampledTexturesPerShaderStage$offset() {
+    public static long maxSampledTexturesPerShaderStage$offset() {
         return maxSampledTexturesPerShaderStage$OFFSET;
     }
 
@@ -589,7 +589,7 @@ public class WGPULimits {
      * uint32_t maxSamplersPerShaderStage
      * }
      */
-    public static final OfInt maxSamplersPerShaderStage$layout() {
+    public static OfInt maxSamplersPerShaderStage$layout() {
         return maxSamplersPerShaderStage$LAYOUT;
     }
 
@@ -601,7 +601,7 @@ public class WGPULimits {
      * uint32_t maxSamplersPerShaderStage
      * }
      */
-    public static final long maxSamplersPerShaderStage$offset() {
+    public static long maxSamplersPerShaderStage$offset() {
         return maxSamplersPerShaderStage$OFFSET;
     }
 
@@ -633,7 +633,7 @@ public class WGPULimits {
      * uint32_t maxStorageBuffersPerShaderStage
      * }
      */
-    public static final OfInt maxStorageBuffersPerShaderStage$layout() {
+    public static OfInt maxStorageBuffersPerShaderStage$layout() {
         return maxStorageBuffersPerShaderStage$LAYOUT;
     }
 
@@ -645,7 +645,7 @@ public class WGPULimits {
      * uint32_t maxStorageBuffersPerShaderStage
      * }
      */
-    public static final long maxStorageBuffersPerShaderStage$offset() {
+    public static long maxStorageBuffersPerShaderStage$offset() {
         return maxStorageBuffersPerShaderStage$OFFSET;
     }
 
@@ -677,7 +677,7 @@ public class WGPULimits {
      * uint32_t maxStorageTexturesPerShaderStage
      * }
      */
-    public static final OfInt maxStorageTexturesPerShaderStage$layout() {
+    public static OfInt maxStorageTexturesPerShaderStage$layout() {
         return maxStorageTexturesPerShaderStage$LAYOUT;
     }
 
@@ -689,7 +689,7 @@ public class WGPULimits {
      * uint32_t maxStorageTexturesPerShaderStage
      * }
      */
-    public static final long maxStorageTexturesPerShaderStage$offset() {
+    public static long maxStorageTexturesPerShaderStage$offset() {
         return maxStorageTexturesPerShaderStage$OFFSET;
     }
 
@@ -721,7 +721,7 @@ public class WGPULimits {
      * uint32_t maxUniformBuffersPerShaderStage
      * }
      */
-    public static final OfInt maxUniformBuffersPerShaderStage$layout() {
+    public static OfInt maxUniformBuffersPerShaderStage$layout() {
         return maxUniformBuffersPerShaderStage$LAYOUT;
     }
 
@@ -733,7 +733,7 @@ public class WGPULimits {
      * uint32_t maxUniformBuffersPerShaderStage
      * }
      */
-    public static final long maxUniformBuffersPerShaderStage$offset() {
+    public static long maxUniformBuffersPerShaderStage$offset() {
         return maxUniformBuffersPerShaderStage$OFFSET;
     }
 
@@ -765,7 +765,7 @@ public class WGPULimits {
      * uint64_t maxUniformBufferBindingSize
      * }
      */
-    public static final OfLong maxUniformBufferBindingSize$layout() {
+    public static OfLong maxUniformBufferBindingSize$layout() {
         return maxUniformBufferBindingSize$LAYOUT;
     }
 
@@ -777,7 +777,7 @@ public class WGPULimits {
      * uint64_t maxUniformBufferBindingSize
      * }
      */
-    public static final long maxUniformBufferBindingSize$offset() {
+    public static long maxUniformBufferBindingSize$offset() {
         return maxUniformBufferBindingSize$OFFSET;
     }
 
@@ -809,7 +809,7 @@ public class WGPULimits {
      * uint64_t maxStorageBufferBindingSize
      * }
      */
-    public static final OfLong maxStorageBufferBindingSize$layout() {
+    public static OfLong maxStorageBufferBindingSize$layout() {
         return maxStorageBufferBindingSize$LAYOUT;
     }
 
@@ -821,7 +821,7 @@ public class WGPULimits {
      * uint64_t maxStorageBufferBindingSize
      * }
      */
-    public static final long maxStorageBufferBindingSize$offset() {
+    public static long maxStorageBufferBindingSize$offset() {
         return maxStorageBufferBindingSize$OFFSET;
     }
 
@@ -853,7 +853,7 @@ public class WGPULimits {
      * uint32_t minUniformBufferOffsetAlignment
      * }
      */
-    public static final OfInt minUniformBufferOffsetAlignment$layout() {
+    public static OfInt minUniformBufferOffsetAlignment$layout() {
         return minUniformBufferOffsetAlignment$LAYOUT;
     }
 
@@ -865,7 +865,7 @@ public class WGPULimits {
      * uint32_t minUniformBufferOffsetAlignment
      * }
      */
-    public static final long minUniformBufferOffsetAlignment$offset() {
+    public static long minUniformBufferOffsetAlignment$offset() {
         return minUniformBufferOffsetAlignment$OFFSET;
     }
 
@@ -897,7 +897,7 @@ public class WGPULimits {
      * uint32_t minStorageBufferOffsetAlignment
      * }
      */
-    public static final OfInt minStorageBufferOffsetAlignment$layout() {
+    public static OfInt minStorageBufferOffsetAlignment$layout() {
         return minStorageBufferOffsetAlignment$LAYOUT;
     }
 
@@ -909,7 +909,7 @@ public class WGPULimits {
      * uint32_t minStorageBufferOffsetAlignment
      * }
      */
-    public static final long minStorageBufferOffsetAlignment$offset() {
+    public static long minStorageBufferOffsetAlignment$offset() {
         return minStorageBufferOffsetAlignment$OFFSET;
     }
 
@@ -941,7 +941,7 @@ public class WGPULimits {
      * uint32_t maxVertexBuffers
      * }
      */
-    public static final OfInt maxVertexBuffers$layout() {
+    public static OfInt maxVertexBuffers$layout() {
         return maxVertexBuffers$LAYOUT;
     }
 
@@ -953,7 +953,7 @@ public class WGPULimits {
      * uint32_t maxVertexBuffers
      * }
      */
-    public static final long maxVertexBuffers$offset() {
+    public static long maxVertexBuffers$offset() {
         return maxVertexBuffers$OFFSET;
     }
 
@@ -985,7 +985,7 @@ public class WGPULimits {
      * uint64_t maxBufferSize
      * }
      */
-    public static final OfLong maxBufferSize$layout() {
+    public static OfLong maxBufferSize$layout() {
         return maxBufferSize$LAYOUT;
     }
 
@@ -997,7 +997,7 @@ public class WGPULimits {
      * uint64_t maxBufferSize
      * }
      */
-    public static final long maxBufferSize$offset() {
+    public static long maxBufferSize$offset() {
         return maxBufferSize$OFFSET;
     }
 
@@ -1029,7 +1029,7 @@ public class WGPULimits {
      * uint32_t maxVertexAttributes
      * }
      */
-    public static final OfInt maxVertexAttributes$layout() {
+    public static OfInt maxVertexAttributes$layout() {
         return maxVertexAttributes$LAYOUT;
     }
 
@@ -1041,7 +1041,7 @@ public class WGPULimits {
      * uint32_t maxVertexAttributes
      * }
      */
-    public static final long maxVertexAttributes$offset() {
+    public static long maxVertexAttributes$offset() {
         return maxVertexAttributes$OFFSET;
     }
 
@@ -1073,7 +1073,7 @@ public class WGPULimits {
      * uint32_t maxVertexBufferArrayStride
      * }
      */
-    public static final OfInt maxVertexBufferArrayStride$layout() {
+    public static OfInt maxVertexBufferArrayStride$layout() {
         return maxVertexBufferArrayStride$LAYOUT;
     }
 
@@ -1085,7 +1085,7 @@ public class WGPULimits {
      * uint32_t maxVertexBufferArrayStride
      * }
      */
-    public static final long maxVertexBufferArrayStride$offset() {
+    public static long maxVertexBufferArrayStride$offset() {
         return maxVertexBufferArrayStride$OFFSET;
     }
 
@@ -1117,7 +1117,7 @@ public class WGPULimits {
      * uint32_t maxInterStageShaderVariables
      * }
      */
-    public static final OfInt maxInterStageShaderVariables$layout() {
+    public static OfInt maxInterStageShaderVariables$layout() {
         return maxInterStageShaderVariables$LAYOUT;
     }
 
@@ -1129,7 +1129,7 @@ public class WGPULimits {
      * uint32_t maxInterStageShaderVariables
      * }
      */
-    public static final long maxInterStageShaderVariables$offset() {
+    public static long maxInterStageShaderVariables$offset() {
         return maxInterStageShaderVariables$OFFSET;
     }
 
@@ -1161,7 +1161,7 @@ public class WGPULimits {
      * uint32_t maxColorAttachments
      * }
      */
-    public static final OfInt maxColorAttachments$layout() {
+    public static OfInt maxColorAttachments$layout() {
         return maxColorAttachments$LAYOUT;
     }
 
@@ -1173,7 +1173,7 @@ public class WGPULimits {
      * uint32_t maxColorAttachments
      * }
      */
-    public static final long maxColorAttachments$offset() {
+    public static long maxColorAttachments$offset() {
         return maxColorAttachments$OFFSET;
     }
 
@@ -1205,7 +1205,7 @@ public class WGPULimits {
      * uint32_t maxColorAttachmentBytesPerSample
      * }
      */
-    public static final OfInt maxColorAttachmentBytesPerSample$layout() {
+    public static OfInt maxColorAttachmentBytesPerSample$layout() {
         return maxColorAttachmentBytesPerSample$LAYOUT;
     }
 
@@ -1217,7 +1217,7 @@ public class WGPULimits {
      * uint32_t maxColorAttachmentBytesPerSample
      * }
      */
-    public static final long maxColorAttachmentBytesPerSample$offset() {
+    public static long maxColorAttachmentBytesPerSample$offset() {
         return maxColorAttachmentBytesPerSample$OFFSET;
     }
 
@@ -1249,7 +1249,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupStorageSize
      * }
      */
-    public static final OfInt maxComputeWorkgroupStorageSize$layout() {
+    public static OfInt maxComputeWorkgroupStorageSize$layout() {
         return maxComputeWorkgroupStorageSize$LAYOUT;
     }
 
@@ -1261,7 +1261,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupStorageSize
      * }
      */
-    public static final long maxComputeWorkgroupStorageSize$offset() {
+    public static long maxComputeWorkgroupStorageSize$offset() {
         return maxComputeWorkgroupStorageSize$OFFSET;
     }
 
@@ -1293,7 +1293,7 @@ public class WGPULimits {
      * uint32_t maxComputeInvocationsPerWorkgroup
      * }
      */
-    public static final OfInt maxComputeInvocationsPerWorkgroup$layout() {
+    public static OfInt maxComputeInvocationsPerWorkgroup$layout() {
         return maxComputeInvocationsPerWorkgroup$LAYOUT;
     }
 
@@ -1305,7 +1305,7 @@ public class WGPULimits {
      * uint32_t maxComputeInvocationsPerWorkgroup
      * }
      */
-    public static final long maxComputeInvocationsPerWorkgroup$offset() {
+    public static long maxComputeInvocationsPerWorkgroup$offset() {
         return maxComputeInvocationsPerWorkgroup$OFFSET;
     }
 
@@ -1337,7 +1337,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupSizeX
      * }
      */
-    public static final OfInt maxComputeWorkgroupSizeX$layout() {
+    public static OfInt maxComputeWorkgroupSizeX$layout() {
         return maxComputeWorkgroupSizeX$LAYOUT;
     }
 
@@ -1349,7 +1349,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupSizeX
      * }
      */
-    public static final long maxComputeWorkgroupSizeX$offset() {
+    public static long maxComputeWorkgroupSizeX$offset() {
         return maxComputeWorkgroupSizeX$OFFSET;
     }
 
@@ -1381,7 +1381,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupSizeY
      * }
      */
-    public static final OfInt maxComputeWorkgroupSizeY$layout() {
+    public static OfInt maxComputeWorkgroupSizeY$layout() {
         return maxComputeWorkgroupSizeY$LAYOUT;
     }
 
@@ -1393,7 +1393,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupSizeY
      * }
      */
-    public static final long maxComputeWorkgroupSizeY$offset() {
+    public static long maxComputeWorkgroupSizeY$offset() {
         return maxComputeWorkgroupSizeY$OFFSET;
     }
 
@@ -1425,7 +1425,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupSizeZ
      * }
      */
-    public static final OfInt maxComputeWorkgroupSizeZ$layout() {
+    public static OfInt maxComputeWorkgroupSizeZ$layout() {
         return maxComputeWorkgroupSizeZ$LAYOUT;
     }
 
@@ -1437,7 +1437,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupSizeZ
      * }
      */
-    public static final long maxComputeWorkgroupSizeZ$offset() {
+    public static long maxComputeWorkgroupSizeZ$offset() {
         return maxComputeWorkgroupSizeZ$OFFSET;
     }
 
@@ -1469,7 +1469,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupsPerDimension
      * }
      */
-    public static final OfInt maxComputeWorkgroupsPerDimension$layout() {
+    public static OfInt maxComputeWorkgroupsPerDimension$layout() {
         return maxComputeWorkgroupsPerDimension$LAYOUT;
     }
 
@@ -1481,7 +1481,7 @@ public class WGPULimits {
      * uint32_t maxComputeWorkgroupsPerDimension
      * }
      */
-    public static final long maxComputeWorkgroupsPerDimension$offset() {
+    public static long maxComputeWorkgroupsPerDimension$offset() {
         return maxComputeWorkgroupsPerDimension$OFFSET;
     }
 

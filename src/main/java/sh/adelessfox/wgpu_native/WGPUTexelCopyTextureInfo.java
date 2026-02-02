@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUTexelCopyTextureInfo {
+public final class WGPUTexelCopyTextureInfo {
 
     WGPUTexelCopyTextureInfo() {
         // Should not be called directly
@@ -35,7 +35,7 @@ public class WGPUTexelCopyTextureInfo {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -47,7 +47,7 @@ public class WGPUTexelCopyTextureInfo {
      * WGPUTexture texture
      * }
      */
-    public static final AddressLayout texture$layout() {
+    public static AddressLayout texture$layout() {
         return texture$LAYOUT;
     }
 
@@ -59,7 +59,7 @@ public class WGPUTexelCopyTextureInfo {
      * WGPUTexture texture
      * }
      */
-    public static final long texture$offset() {
+    public static long texture$offset() {
         return texture$OFFSET;
     }
 
@@ -91,7 +91,7 @@ public class WGPUTexelCopyTextureInfo {
      * uint32_t mipLevel
      * }
      */
-    public static final OfInt mipLevel$layout() {
+    public static OfInt mipLevel$layout() {
         return mipLevel$LAYOUT;
     }
 
@@ -103,7 +103,7 @@ public class WGPUTexelCopyTextureInfo {
      * uint32_t mipLevel
      * }
      */
-    public static final long mipLevel$offset() {
+    public static long mipLevel$offset() {
         return mipLevel$OFFSET;
     }
 
@@ -135,7 +135,7 @@ public class WGPUTexelCopyTextureInfo {
      * WGPUOrigin3D origin
      * }
      */
-    public static final GroupLayout origin$layout() {
+    public static GroupLayout origin$layout() {
         return origin$LAYOUT;
     }
 
@@ -147,7 +147,7 @@ public class WGPUTexelCopyTextureInfo {
      * WGPUOrigin3D origin
      * }
      */
-    public static final long origin$offset() {
+    public static long origin$offset() {
         return origin$OFFSET;
     }
 
@@ -179,7 +179,7 @@ public class WGPUTexelCopyTextureInfo {
      * WGPUTextureAspect aspect
      * }
      */
-    public static final OfInt aspect$layout() {
+    public static OfInt aspect$layout() {
         return aspect$LAYOUT;
     }
 
@@ -191,7 +191,7 @@ public class WGPUTexelCopyTextureInfo {
      * WGPUTextureAspect aspect
      * }
      */
-    public static final long aspect$offset() {
+    public static long aspect$offset() {
         return aspect$OFFSET;
     }
 

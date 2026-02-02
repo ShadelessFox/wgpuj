@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUSurfaceSourceXCBWindow {
+public final class WGPUSurfaceSourceXCBWindow {
 
     WGPUSurfaceSourceXCBWindow() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUSurfaceSourceXCBWindow {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUSurfaceSourceXCBWindow {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUSurfaceSourceXCBWindow {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUSurfaceSourceXCBWindow {
      * void *connection
      * }
      */
-    public static final AddressLayout connection$layout() {
+    public static AddressLayout connection$layout() {
         return connection$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUSurfaceSourceXCBWindow {
      * void *connection
      * }
      */
-    public static final long connection$offset() {
+    public static long connection$offset() {
         return connection$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUSurfaceSourceXCBWindow {
      * uint32_t window
      * }
      */
-    public static final OfInt window$layout() {
+    public static OfInt window$layout() {
         return window$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUSurfaceSourceXCBWindow {
      * uint32_t window
      * }
      */
-    public static final long window$offset() {
+    public static long window$offset() {
         return window$OFFSET;
     }
 

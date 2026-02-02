@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUShaderSourceSPIRV {
+public final class WGPUShaderSourceSPIRV {
 
     WGPUShaderSourceSPIRV() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUShaderSourceSPIRV {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUShaderSourceSPIRV {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUShaderSourceSPIRV {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUShaderSourceSPIRV {
      * uint32_t codeSize
      * }
      */
-    public static final OfInt codeSize$layout() {
+    public static OfInt codeSize$layout() {
         return codeSize$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUShaderSourceSPIRV {
      * uint32_t codeSize
      * }
      */
-    public static final long codeSize$offset() {
+    public static long codeSize$offset() {
         return codeSize$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUShaderSourceSPIRV {
      * const uint32_t *code
      * }
      */
-    public static final AddressLayout code$layout() {
+    public static AddressLayout code$layout() {
         return code$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUShaderSourceSPIRV {
      * const uint32_t *code
      * }
      */
-    public static final long code$offset() {
+    public static long code$offset() {
         return code$OFFSET;
     }
 

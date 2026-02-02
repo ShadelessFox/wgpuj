@@ -21,7 +21,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUVertexState {
+public final class WGPUVertexState {
 
     WGPUVertexState() {
         // Should not be called directly
@@ -40,7 +40,7 @@ public class WGPUVertexState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -52,7 +52,7 @@ public class WGPUVertexState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -64,7 +64,7 @@ public class WGPUVertexState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -96,7 +96,7 @@ public class WGPUVertexState {
      * WGPUShaderModule module
      * }
      */
-    public static final AddressLayout module$layout() {
+    public static AddressLayout module$layout() {
         return module$LAYOUT;
     }
 
@@ -108,7 +108,7 @@ public class WGPUVertexState {
      * WGPUShaderModule module
      * }
      */
-    public static final long module$offset() {
+    public static long module$offset() {
         return module$OFFSET;
     }
 
@@ -140,7 +140,7 @@ public class WGPUVertexState {
      * WGPUStringView entryPoint
      * }
      */
-    public static final GroupLayout entryPoint$layout() {
+    public static GroupLayout entryPoint$layout() {
         return entryPoint$LAYOUT;
     }
 
@@ -152,7 +152,7 @@ public class WGPUVertexState {
      * WGPUStringView entryPoint
      * }
      */
-    public static final long entryPoint$offset() {
+    public static long entryPoint$offset() {
         return entryPoint$OFFSET;
     }
 
@@ -184,7 +184,7 @@ public class WGPUVertexState {
      * size_t constantCount
      * }
      */
-    public static final OfLong constantCount$layout() {
+    public static OfLong constantCount$layout() {
         return constantCount$LAYOUT;
     }
 
@@ -196,7 +196,7 @@ public class WGPUVertexState {
      * size_t constantCount
      * }
      */
-    public static final long constantCount$offset() {
+    public static long constantCount$offset() {
         return constantCount$OFFSET;
     }
 
@@ -228,7 +228,7 @@ public class WGPUVertexState {
      * const WGPUConstantEntry *constants
      * }
      */
-    public static final AddressLayout constants$layout() {
+    public static AddressLayout constants$layout() {
         return constants$LAYOUT;
     }
 
@@ -240,7 +240,7 @@ public class WGPUVertexState {
      * const WGPUConstantEntry *constants
      * }
      */
-    public static final long constants$offset() {
+    public static long constants$offset() {
         return constants$OFFSET;
     }
 
@@ -272,7 +272,7 @@ public class WGPUVertexState {
      * size_t bufferCount
      * }
      */
-    public static final OfLong bufferCount$layout() {
+    public static OfLong bufferCount$layout() {
         return bufferCount$LAYOUT;
     }
 
@@ -284,7 +284,7 @@ public class WGPUVertexState {
      * size_t bufferCount
      * }
      */
-    public static final long bufferCount$offset() {
+    public static long bufferCount$offset() {
         return bufferCount$OFFSET;
     }
 
@@ -316,7 +316,7 @@ public class WGPUVertexState {
      * const WGPUVertexBufferLayout *buffers
      * }
      */
-    public static final AddressLayout buffers$layout() {
+    public static AddressLayout buffers$layout() {
         return buffers$LAYOUT;
     }
 
@@ -328,7 +328,7 @@ public class WGPUVertexState {
      * const WGPUVertexBufferLayout *buffers
      * }
      */
-    public static final long buffers$offset() {
+    public static long buffers$offset() {
         return buffers$OFFSET;
     }
 

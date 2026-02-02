@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUVertexAttribute {
+public final class WGPUVertexAttribute {
 
     WGPUVertexAttribute() {
         // Should not be called directly
@@ -35,7 +35,7 @@ public class WGPUVertexAttribute {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -47,7 +47,7 @@ public class WGPUVertexAttribute {
      * WGPUVertexFormat format
      * }
      */
-    public static final OfInt format$layout() {
+    public static OfInt format$layout() {
         return format$LAYOUT;
     }
 
@@ -59,7 +59,7 @@ public class WGPUVertexAttribute {
      * WGPUVertexFormat format
      * }
      */
-    public static final long format$offset() {
+    public static long format$offset() {
         return format$OFFSET;
     }
 
@@ -91,7 +91,7 @@ public class WGPUVertexAttribute {
      * uint64_t offset
      * }
      */
-    public static final OfLong offset$layout() {
+    public static OfLong offset$layout() {
         return offset$LAYOUT;
     }
 
@@ -103,7 +103,7 @@ public class WGPUVertexAttribute {
      * uint64_t offset
      * }
      */
-    public static final long offset$offset() {
+    public static long offset$offset() {
         return offset$OFFSET;
     }
 
@@ -135,7 +135,7 @@ public class WGPUVertexAttribute {
      * uint32_t shaderLocation
      * }
      */
-    public static final OfInt shaderLocation$layout() {
+    public static OfInt shaderLocation$layout() {
         return shaderLocation$LAYOUT;
     }
 
@@ -147,7 +147,7 @@ public class WGPUVertexAttribute {
      * uint32_t shaderLocation
      * }
      */
-    public static final long shaderLocation$offset() {
+    public static long shaderLocation$offset() {
         return shaderLocation$OFFSET;
     }
 

@@ -16,7 +16,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUSurfaceSourceWaylandSurface {
+public final class WGPUSurfaceSourceWaylandSurface {
 
     WGPUSurfaceSourceWaylandSurface() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUSurfaceSourceWaylandSurface {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUSurfaceSourceWaylandSurface {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUSurfaceSourceWaylandSurface {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUSurfaceSourceWaylandSurface {
      * void *display
      * }
      */
-    public static final AddressLayout display$layout() {
+    public static AddressLayout display$layout() {
         return display$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUSurfaceSourceWaylandSurface {
      * void *display
      * }
      */
-    public static final long display$offset() {
+    public static long display$offset() {
         return display$OFFSET;
     }
 
@@ -131,7 +131,7 @@ public class WGPUSurfaceSourceWaylandSurface {
      * void *surface
      * }
      */
-    public static final AddressLayout surface$layout() {
+    public static AddressLayout surface$layout() {
         return surface$LAYOUT;
     }
 
@@ -143,7 +143,7 @@ public class WGPUSurfaceSourceWaylandSurface {
      * void *surface
      * }
      */
-    public static final long surface$offset() {
+    public static long surface$offset() {
         return surface$OFFSET;
     }
 

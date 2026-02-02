@@ -15,7 +15,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUFuture {
+public final class WGPUFuture {
 
     WGPUFuture() {
         // Should not be called directly
@@ -28,7 +28,7 @@ public class WGPUFuture {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -40,7 +40,7 @@ public class WGPUFuture {
      * uint64_t id
      * }
      */
-    public static final OfLong id$layout() {
+    public static OfLong id$layout() {
         return id$LAYOUT;
     }
 
@@ -52,7 +52,7 @@ public class WGPUFuture {
      * uint64_t id
      * }
      */
-    public static final long id$offset() {
+    public static long id$offset() {
         return id$OFFSET;
     }
 

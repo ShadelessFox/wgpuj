@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUChainedStruct {
+public final class WGPUChainedStruct {
 
     WGPUChainedStruct() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUChainedStruct {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUChainedStruct {
      * const struct WGPUChainedStruct *next
      * }
      */
-    public static final AddressLayout next$layout() {
+    public static AddressLayout next$layout() {
         return next$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUChainedStruct {
      * const struct WGPUChainedStruct *next
      * }
      */
-    public static final long next$offset() {
+    public static long next$offset() {
         return next$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUChainedStruct {
      * WGPUSType sType
      * }
      */
-    public static final OfInt sType$layout() {
+    public static OfInt sType$layout() {
         return sType$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUChainedStruct {
      * WGPUSType sType
      * }
      */
-    public static final long sType$offset() {
+    public static long sType$offset() {
         return sType$OFFSET;
     }
 

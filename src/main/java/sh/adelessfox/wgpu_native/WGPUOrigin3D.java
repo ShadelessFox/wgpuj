@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUOrigin3D {
+public final class WGPUOrigin3D {
 
     WGPUOrigin3D() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUOrigin3D {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUOrigin3D {
      * uint32_t x
      * }
      */
-    public static final OfInt x$layout() {
+    public static OfInt x$layout() {
         return x$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUOrigin3D {
      * uint32_t x
      * }
      */
-    public static final long x$offset() {
+    public static long x$offset() {
         return x$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUOrigin3D {
      * uint32_t y
      * }
      */
-    public static final OfInt y$layout() {
+    public static OfInt y$layout() {
         return y$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUOrigin3D {
      * uint32_t y
      * }
      */
-    public static final long y$offset() {
+    public static long y$offset() {
         return y$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUOrigin3D {
      * uint32_t z
      * }
      */
-    public static final OfInt z$layout() {
+    public static OfInt z$layout() {
         return z$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUOrigin3D {
      * uint32_t z
      * }
      */
-    public static final long z$offset() {
+    public static long z$offset() {
         return z$OFFSET;
     }
 

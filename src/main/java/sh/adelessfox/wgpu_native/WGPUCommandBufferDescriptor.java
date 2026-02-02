@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUCommandBufferDescriptor {
+public final class WGPUCommandBufferDescriptor {
 
     WGPUCommandBufferDescriptor() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUCommandBufferDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUCommandBufferDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUCommandBufferDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUCommandBufferDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUCommandBufferDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 

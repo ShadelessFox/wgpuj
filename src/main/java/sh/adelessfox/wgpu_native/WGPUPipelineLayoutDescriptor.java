@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUPipelineLayoutDescriptor {
+public final class WGPUPipelineLayoutDescriptor {
 
     WGPUPipelineLayoutDescriptor() {
         // Should not be called directly
@@ -34,7 +34,7 @@ public class WGPUPipelineLayoutDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -46,7 +46,7 @@ public class WGPUPipelineLayoutDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -58,7 +58,7 @@ public class WGPUPipelineLayoutDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -90,7 +90,7 @@ public class WGPUPipelineLayoutDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class WGPUPipelineLayoutDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -134,7 +134,7 @@ public class WGPUPipelineLayoutDescriptor {
      * size_t bindGroupLayoutCount
      * }
      */
-    public static final OfLong bindGroupLayoutCount$layout() {
+    public static OfLong bindGroupLayoutCount$layout() {
         return bindGroupLayoutCount$LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class WGPUPipelineLayoutDescriptor {
      * size_t bindGroupLayoutCount
      * }
      */
-    public static final long bindGroupLayoutCount$offset() {
+    public static long bindGroupLayoutCount$offset() {
         return bindGroupLayoutCount$OFFSET;
     }
 
@@ -178,7 +178,7 @@ public class WGPUPipelineLayoutDescriptor {
      * const WGPUBindGroupLayout *bindGroupLayouts
      * }
      */
-    public static final AddressLayout bindGroupLayouts$layout() {
+    public static AddressLayout bindGroupLayouts$layout() {
         return bindGroupLayouts$LAYOUT;
     }
 
@@ -190,7 +190,7 @@ public class WGPUPipelineLayoutDescriptor {
      * const WGPUBindGroupLayout *bindGroupLayouts
      * }
      */
-    public static final long bindGroupLayouts$offset() {
+    public static long bindGroupLayouts$offset() {
         return bindGroupLayouts$OFFSET;
     }
 

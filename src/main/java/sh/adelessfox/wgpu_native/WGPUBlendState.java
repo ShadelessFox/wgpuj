@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUBlendState {
+public final class WGPUBlendState {
 
     WGPUBlendState() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUBlendState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUBlendState {
      * WGPUBlendComponent color
      * }
      */
-    public static final GroupLayout color$layout() {
+    public static GroupLayout color$layout() {
         return color$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUBlendState {
      * WGPUBlendComponent color
      * }
      */
-    public static final long color$offset() {
+    public static long color$offset() {
         return color$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUBlendState {
      * WGPUBlendComponent alpha
      * }
      */
-    public static final GroupLayout alpha$layout() {
+    public static GroupLayout alpha$layout() {
         return alpha$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUBlendState {
      * WGPUBlendComponent alpha
      * }
      */
-    public static final long alpha$offset() {
+    public static long alpha$offset() {
         return alpha$OFFSET;
     }
 

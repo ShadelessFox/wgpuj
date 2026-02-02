@@ -21,7 +21,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPURenderPassColorAttachment {
+public final class WGPURenderPassColorAttachment {
 
     WGPURenderPassColorAttachment() {
         // Should not be called directly
@@ -41,7 +41,7 @@ public class WGPURenderPassColorAttachment {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPURenderPassColorAttachment {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -65,7 +65,7 @@ public class WGPURenderPassColorAttachment {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -97,7 +97,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUTextureView view
      * }
      */
-    public static final AddressLayout view$layout() {
+    public static AddressLayout view$layout() {
         return view$LAYOUT;
     }
 
@@ -109,7 +109,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUTextureView view
      * }
      */
-    public static final long view$offset() {
+    public static long view$offset() {
         return view$OFFSET;
     }
 
@@ -141,7 +141,7 @@ public class WGPURenderPassColorAttachment {
      * uint32_t depthSlice
      * }
      */
-    public static final OfInt depthSlice$layout() {
+    public static OfInt depthSlice$layout() {
         return depthSlice$LAYOUT;
     }
 
@@ -153,7 +153,7 @@ public class WGPURenderPassColorAttachment {
      * uint32_t depthSlice
      * }
      */
-    public static final long depthSlice$offset() {
+    public static long depthSlice$offset() {
         return depthSlice$OFFSET;
     }
 
@@ -185,7 +185,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUTextureView resolveTarget
      * }
      */
-    public static final AddressLayout resolveTarget$layout() {
+    public static AddressLayout resolveTarget$layout() {
         return resolveTarget$LAYOUT;
     }
 
@@ -197,7 +197,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUTextureView resolveTarget
      * }
      */
-    public static final long resolveTarget$offset() {
+    public static long resolveTarget$offset() {
         return resolveTarget$OFFSET;
     }
 
@@ -229,7 +229,7 @@ public class WGPURenderPassColorAttachment {
      * WGPULoadOp loadOp
      * }
      */
-    public static final OfInt loadOp$layout() {
+    public static OfInt loadOp$layout() {
         return loadOp$LAYOUT;
     }
 
@@ -241,7 +241,7 @@ public class WGPURenderPassColorAttachment {
      * WGPULoadOp loadOp
      * }
      */
-    public static final long loadOp$offset() {
+    public static long loadOp$offset() {
         return loadOp$OFFSET;
     }
 
@@ -273,7 +273,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUStoreOp storeOp
      * }
      */
-    public static final OfInt storeOp$layout() {
+    public static OfInt storeOp$layout() {
         return storeOp$LAYOUT;
     }
 
@@ -285,7 +285,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUStoreOp storeOp
      * }
      */
-    public static final long storeOp$offset() {
+    public static long storeOp$offset() {
         return storeOp$OFFSET;
     }
 
@@ -317,7 +317,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUColor clearValue
      * }
      */
-    public static final GroupLayout clearValue$layout() {
+    public static GroupLayout clearValue$layout() {
         return clearValue$LAYOUT;
     }
 
@@ -329,7 +329,7 @@ public class WGPURenderPassColorAttachment {
      * WGPUColor clearValue
      * }
      */
-    public static final long clearValue$offset() {
+    public static long clearValue$offset() {
         return clearValue$OFFSET;
     }
 

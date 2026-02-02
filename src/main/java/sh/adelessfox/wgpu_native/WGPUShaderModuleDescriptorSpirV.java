@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUShaderModuleDescriptorSpirV {
+public final class WGPUShaderModuleDescriptorSpirV {
 
     WGPUShaderModuleDescriptorSpirV() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUShaderModuleDescriptorSpirV {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUShaderModuleDescriptorSpirV {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUShaderModuleDescriptorSpirV {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUShaderModuleDescriptorSpirV {
      * uint32_t sourceSize
      * }
      */
-    public static final OfInt sourceSize$layout() {
+    public static OfInt sourceSize$layout() {
         return sourceSize$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUShaderModuleDescriptorSpirV {
      * uint32_t sourceSize
      * }
      */
-    public static final long sourceSize$offset() {
+    public static long sourceSize$offset() {
         return sourceSize$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUShaderModuleDescriptorSpirV {
      * const uint32_t *source
      * }
      */
-    public static final AddressLayout source$layout() {
+    public static AddressLayout source$layout() {
         return source$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUShaderModuleDescriptorSpirV {
      * const uint32_t *source
      * }
      */
-    public static final long source$offset() {
+    public static long source$offset() {
         return source$OFFSET;
     }
 

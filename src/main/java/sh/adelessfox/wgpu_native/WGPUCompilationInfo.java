@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUCompilationInfo {
+public final class WGPUCompilationInfo {
 
     WGPUCompilationInfo() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUCompilationInfo {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUCompilationInfo {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUCompilationInfo {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUCompilationInfo {
      * size_t messageCount
      * }
      */
-    public static final OfLong messageCount$layout() {
+    public static OfLong messageCount$layout() {
         return messageCount$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUCompilationInfo {
      * size_t messageCount
      * }
      */
-    public static final long messageCount$offset() {
+    public static long messageCount$offset() {
         return messageCount$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUCompilationInfo {
      * const WGPUCompilationMessage *messages
      * }
      */
-    public static final AddressLayout messages$layout() {
+    public static AddressLayout messages$layout() {
         return messages$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUCompilationInfo {
      * const WGPUCompilationMessage *messages
      * }
      */
-    public static final long messages$offset() {
+    public static long messages$offset() {
         return messages$OFFSET;
     }
 

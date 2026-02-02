@@ -26,7 +26,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUDepthStencilState {
+public final class WGPUDepthStencilState {
 
     WGPUDepthStencilState() {
         // Should not be called directly
@@ -49,7 +49,7 @@ public class WGPUDepthStencilState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -61,7 +61,7 @@ public class WGPUDepthStencilState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -73,7 +73,7 @@ public class WGPUDepthStencilState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -105,7 +105,7 @@ public class WGPUDepthStencilState {
      * WGPUTextureFormat format
      * }
      */
-    public static final OfInt format$layout() {
+    public static OfInt format$layout() {
         return format$LAYOUT;
     }
 
@@ -117,7 +117,7 @@ public class WGPUDepthStencilState {
      * WGPUTextureFormat format
      * }
      */
-    public static final long format$offset() {
+    public static long format$offset() {
         return format$OFFSET;
     }
 
@@ -149,7 +149,7 @@ public class WGPUDepthStencilState {
      * WGPUOptionalBool depthWriteEnabled
      * }
      */
-    public static final OfInt depthWriteEnabled$layout() {
+    public static OfInt depthWriteEnabled$layout() {
         return depthWriteEnabled$LAYOUT;
     }
 
@@ -161,7 +161,7 @@ public class WGPUDepthStencilState {
      * WGPUOptionalBool depthWriteEnabled
      * }
      */
-    public static final long depthWriteEnabled$offset() {
+    public static long depthWriteEnabled$offset() {
         return depthWriteEnabled$OFFSET;
     }
 
@@ -193,7 +193,7 @@ public class WGPUDepthStencilState {
      * WGPUCompareFunction depthCompare
      * }
      */
-    public static final OfInt depthCompare$layout() {
+    public static OfInt depthCompare$layout() {
         return depthCompare$LAYOUT;
     }
 
@@ -205,7 +205,7 @@ public class WGPUDepthStencilState {
      * WGPUCompareFunction depthCompare
      * }
      */
-    public static final long depthCompare$offset() {
+    public static long depthCompare$offset() {
         return depthCompare$OFFSET;
     }
 
@@ -237,7 +237,7 @@ public class WGPUDepthStencilState {
      * WGPUStencilFaceState stencilFront
      * }
      */
-    public static final GroupLayout stencilFront$layout() {
+    public static GroupLayout stencilFront$layout() {
         return stencilFront$LAYOUT;
     }
 
@@ -249,7 +249,7 @@ public class WGPUDepthStencilState {
      * WGPUStencilFaceState stencilFront
      * }
      */
-    public static final long stencilFront$offset() {
+    public static long stencilFront$offset() {
         return stencilFront$OFFSET;
     }
 
@@ -281,7 +281,7 @@ public class WGPUDepthStencilState {
      * WGPUStencilFaceState stencilBack
      * }
      */
-    public static final GroupLayout stencilBack$layout() {
+    public static GroupLayout stencilBack$layout() {
         return stencilBack$LAYOUT;
     }
 
@@ -293,7 +293,7 @@ public class WGPUDepthStencilState {
      * WGPUStencilFaceState stencilBack
      * }
      */
-    public static final long stencilBack$offset() {
+    public static long stencilBack$offset() {
         return stencilBack$OFFSET;
     }
 
@@ -325,7 +325,7 @@ public class WGPUDepthStencilState {
      * uint32_t stencilReadMask
      * }
      */
-    public static final OfInt stencilReadMask$layout() {
+    public static OfInt stencilReadMask$layout() {
         return stencilReadMask$LAYOUT;
     }
 
@@ -337,7 +337,7 @@ public class WGPUDepthStencilState {
      * uint32_t stencilReadMask
      * }
      */
-    public static final long stencilReadMask$offset() {
+    public static long stencilReadMask$offset() {
         return stencilReadMask$OFFSET;
     }
 
@@ -369,7 +369,7 @@ public class WGPUDepthStencilState {
      * uint32_t stencilWriteMask
      * }
      */
-    public static final OfInt stencilWriteMask$layout() {
+    public static OfInt stencilWriteMask$layout() {
         return stencilWriteMask$LAYOUT;
     }
 
@@ -381,7 +381,7 @@ public class WGPUDepthStencilState {
      * uint32_t stencilWriteMask
      * }
      */
-    public static final long stencilWriteMask$offset() {
+    public static long stencilWriteMask$offset() {
         return stencilWriteMask$OFFSET;
     }
 
@@ -413,7 +413,7 @@ public class WGPUDepthStencilState {
      * int32_t depthBias
      * }
      */
-    public static final OfInt depthBias$layout() {
+    public static OfInt depthBias$layout() {
         return depthBias$LAYOUT;
     }
 
@@ -425,7 +425,7 @@ public class WGPUDepthStencilState {
      * int32_t depthBias
      * }
      */
-    public static final long depthBias$offset() {
+    public static long depthBias$offset() {
         return depthBias$OFFSET;
     }
 
@@ -457,7 +457,7 @@ public class WGPUDepthStencilState {
      * float depthBiasSlopeScale
      * }
      */
-    public static final OfFloat depthBiasSlopeScale$layout() {
+    public static OfFloat depthBiasSlopeScale$layout() {
         return depthBiasSlopeScale$LAYOUT;
     }
 
@@ -469,7 +469,7 @@ public class WGPUDepthStencilState {
      * float depthBiasSlopeScale
      * }
      */
-    public static final long depthBiasSlopeScale$offset() {
+    public static long depthBiasSlopeScale$offset() {
         return depthBiasSlopeScale$OFFSET;
     }
 
@@ -501,7 +501,7 @@ public class WGPUDepthStencilState {
      * float depthBiasClamp
      * }
      */
-    public static final OfFloat depthBiasClamp$layout() {
+    public static OfFloat depthBiasClamp$layout() {
         return depthBiasClamp$LAYOUT;
     }
 
@@ -513,7 +513,7 @@ public class WGPUDepthStencilState {
      * float depthBiasClamp
      * }
      */
-    public static final long depthBiasClamp$offset() {
+    public static long depthBiasClamp$offset() {
         return depthBiasClamp$OFFSET;
     }
 

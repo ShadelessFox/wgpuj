@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUDeviceExtras {
+public final class WGPUDeviceExtras {
 
     WGPUDeviceExtras() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUDeviceExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUDeviceExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUDeviceExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUDeviceExtras {
      * WGPUStringView tracePath
      * }
      */
-    public static final GroupLayout tracePath$layout() {
+    public static GroupLayout tracePath$layout() {
         return tracePath$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUDeviceExtras {
      * WGPUStringView tracePath
      * }
      */
-    public static final long tracePath$offset() {
+    public static long tracePath$offset() {
         return tracePath$OFFSET;
     }
 

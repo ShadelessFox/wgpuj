@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfDouble;
  * }
  * }
  */
-public class WGPUColor {
+public final class WGPUColor {
 
     WGPUColor() {
         // Should not be called directly
@@ -34,7 +34,7 @@ public class WGPUColor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -46,7 +46,7 @@ public class WGPUColor {
      * double r
      * }
      */
-    public static final OfDouble r$layout() {
+    public static OfDouble r$layout() {
         return r$LAYOUT;
     }
 
@@ -58,7 +58,7 @@ public class WGPUColor {
      * double r
      * }
      */
-    public static final long r$offset() {
+    public static long r$offset() {
         return r$OFFSET;
     }
 
@@ -90,7 +90,7 @@ public class WGPUColor {
      * double g
      * }
      */
-    public static final OfDouble g$layout() {
+    public static OfDouble g$layout() {
         return g$LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class WGPUColor {
      * double g
      * }
      */
-    public static final long g$offset() {
+    public static long g$offset() {
         return g$OFFSET;
     }
 
@@ -134,7 +134,7 @@ public class WGPUColor {
      * double b
      * }
      */
-    public static final OfDouble b$layout() {
+    public static OfDouble b$layout() {
         return b$LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class WGPUColor {
      * double b
      * }
      */
-    public static final long b$offset() {
+    public static long b$offset() {
         return b$OFFSET;
     }
 
@@ -178,7 +178,7 @@ public class WGPUColor {
      * double a
      * }
      */
-    public static final OfDouble a$layout() {
+    public static OfDouble a$layout() {
         return a$LAYOUT;
     }
 
@@ -190,7 +190,7 @@ public class WGPUColor {
      * double a
      * }
      */
-    public static final long a$offset() {
+    public static long a$offset() {
         return a$OFFSET;
     }
 

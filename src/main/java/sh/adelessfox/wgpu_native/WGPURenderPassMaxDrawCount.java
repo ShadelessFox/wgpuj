@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPURenderPassMaxDrawCount {
+public final class WGPURenderPassMaxDrawCount {
 
     WGPURenderPassMaxDrawCount() {
         // Should not be called directly
@@ -30,7 +30,7 @@ public class WGPURenderPassMaxDrawCount {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -42,7 +42,7 @@ public class WGPURenderPassMaxDrawCount {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPURenderPassMaxDrawCount {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -86,7 +86,7 @@ public class WGPURenderPassMaxDrawCount {
      * uint64_t maxDrawCount
      * }
      */
-    public static final OfLong maxDrawCount$layout() {
+    public static OfLong maxDrawCount$layout() {
         return maxDrawCount$LAYOUT;
     }
 
@@ -98,7 +98,7 @@ public class WGPURenderPassMaxDrawCount {
      * uint64_t maxDrawCount
      * }
      */
-    public static final long maxDrawCount$offset() {
+    public static long maxDrawCount$offset() {
         return maxDrawCount$OFFSET;
     }
 

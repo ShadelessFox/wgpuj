@@ -23,7 +23,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPURenderBundleEncoderDescriptor {
+public final class WGPURenderBundleEncoderDescriptor {
 
     WGPURenderBundleEncoderDescriptor() {
         // Should not be called directly
@@ -43,7 +43,7 @@ public class WGPURenderBundleEncoderDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -67,7 +67,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -99,7 +99,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -111,7 +111,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -143,7 +143,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * size_t colorFormatCount
      * }
      */
-    public static final OfLong colorFormatCount$layout() {
+    public static OfLong colorFormatCount$layout() {
         return colorFormatCount$LAYOUT;
     }
 
@@ -155,7 +155,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * size_t colorFormatCount
      * }
      */
-    public static final long colorFormatCount$offset() {
+    public static long colorFormatCount$offset() {
         return colorFormatCount$OFFSET;
     }
 
@@ -187,7 +187,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * const WGPUTextureFormat *colorFormats
      * }
      */
-    public static final AddressLayout colorFormats$layout() {
+    public static AddressLayout colorFormats$layout() {
         return colorFormats$LAYOUT;
     }
 
@@ -199,7 +199,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * const WGPUTextureFormat *colorFormats
      * }
      */
-    public static final long colorFormats$offset() {
+    public static long colorFormats$offset() {
         return colorFormats$OFFSET;
     }
 
@@ -231,7 +231,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUTextureFormat depthStencilFormat
      * }
      */
-    public static final OfInt depthStencilFormat$layout() {
+    public static OfInt depthStencilFormat$layout() {
         return depthStencilFormat$LAYOUT;
     }
 
@@ -243,7 +243,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUTextureFormat depthStencilFormat
      * }
      */
-    public static final long depthStencilFormat$offset() {
+    public static long depthStencilFormat$offset() {
         return depthStencilFormat$OFFSET;
     }
 
@@ -275,7 +275,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * uint32_t sampleCount
      * }
      */
-    public static final OfInt sampleCount$layout() {
+    public static OfInt sampleCount$layout() {
         return sampleCount$LAYOUT;
     }
 
@@ -287,7 +287,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * uint32_t sampleCount
      * }
      */
-    public static final long sampleCount$offset() {
+    public static long sampleCount$offset() {
         return sampleCount$OFFSET;
     }
 
@@ -319,7 +319,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUBool depthReadOnly
      * }
      */
-    public static final OfInt depthReadOnly$layout() {
+    public static OfInt depthReadOnly$layout() {
         return depthReadOnly$LAYOUT;
     }
 
@@ -331,7 +331,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUBool depthReadOnly
      * }
      */
-    public static final long depthReadOnly$offset() {
+    public static long depthReadOnly$offset() {
         return depthReadOnly$OFFSET;
     }
 
@@ -363,7 +363,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUBool stencilReadOnly
      * }
      */
-    public static final OfInt stencilReadOnly$layout() {
+    public static OfInt stencilReadOnly$layout() {
         return stencilReadOnly$LAYOUT;
     }
 
@@ -375,7 +375,7 @@ public class WGPURenderBundleEncoderDescriptor {
      * WGPUBool stencilReadOnly
      * }
      */
-    public static final long stencilReadOnly$offset() {
+    public static long stencilReadOnly$offset() {
         return stencilReadOnly$OFFSET;
     }
 

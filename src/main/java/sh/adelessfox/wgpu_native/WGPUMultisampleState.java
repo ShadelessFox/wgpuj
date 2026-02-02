@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUMultisampleState {
+public final class WGPUMultisampleState {
 
     WGPUMultisampleState() {
         // Should not be called directly
@@ -35,7 +35,7 @@ public class WGPUMultisampleState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -47,7 +47,7 @@ public class WGPUMultisampleState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -59,7 +59,7 @@ public class WGPUMultisampleState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -91,7 +91,7 @@ public class WGPUMultisampleState {
      * uint32_t count
      * }
      */
-    public static final OfInt count$layout() {
+    public static OfInt count$layout() {
         return count$LAYOUT;
     }
 
@@ -103,7 +103,7 @@ public class WGPUMultisampleState {
      * uint32_t count
      * }
      */
-    public static final long count$offset() {
+    public static long count$offset() {
         return count$OFFSET;
     }
 
@@ -135,7 +135,7 @@ public class WGPUMultisampleState {
      * uint32_t mask
      * }
      */
-    public static final OfInt mask$layout() {
+    public static OfInt mask$layout() {
         return mask$LAYOUT;
     }
 
@@ -147,7 +147,7 @@ public class WGPUMultisampleState {
      * uint32_t mask
      * }
      */
-    public static final long mask$offset() {
+    public static long mask$offset() {
         return mask$OFFSET;
     }
 
@@ -179,7 +179,7 @@ public class WGPUMultisampleState {
      * WGPUBool alphaToCoverageEnabled
      * }
      */
-    public static final OfInt alphaToCoverageEnabled$layout() {
+    public static OfInt alphaToCoverageEnabled$layout() {
         return alphaToCoverageEnabled$LAYOUT;
     }
 
@@ -191,7 +191,7 @@ public class WGPUMultisampleState {
      * WGPUBool alphaToCoverageEnabled
      * }
      */
-    public static final long alphaToCoverageEnabled$offset() {
+    public static long alphaToCoverageEnabled$offset() {
         return alphaToCoverageEnabled$OFFSET;
     }
 

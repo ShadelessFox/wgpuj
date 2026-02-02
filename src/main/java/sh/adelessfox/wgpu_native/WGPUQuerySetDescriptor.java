@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUQuerySetDescriptor {
+public final class WGPUQuerySetDescriptor {
 
     WGPUQuerySetDescriptor() {
         // Should not be called directly
@@ -34,7 +34,7 @@ public class WGPUQuerySetDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -46,7 +46,7 @@ public class WGPUQuerySetDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -58,7 +58,7 @@ public class WGPUQuerySetDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -90,7 +90,7 @@ public class WGPUQuerySetDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class WGPUQuerySetDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -134,7 +134,7 @@ public class WGPUQuerySetDescriptor {
      * WGPUQueryType type
      * }
      */
-    public static final OfInt type$layout() {
+    public static OfInt type$layout() {
         return type$LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class WGPUQuerySetDescriptor {
      * WGPUQueryType type
      * }
      */
-    public static final long type$offset() {
+    public static long type$offset() {
         return type$OFFSET;
     }
 
@@ -178,7 +178,7 @@ public class WGPUQuerySetDescriptor {
      * uint32_t count
      * }
      */
-    public static final OfInt count$layout() {
+    public static OfInt count$layout() {
         return count$LAYOUT;
     }
 
@@ -190,7 +190,7 @@ public class WGPUQuerySetDescriptor {
      * uint32_t count
      * }
      */
-    public static final long count$offset() {
+    public static long count$offset() {
         return count$OFFSET;
     }
 

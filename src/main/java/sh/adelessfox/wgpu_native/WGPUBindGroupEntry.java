@@ -22,7 +22,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUBindGroupEntry {
+public final class WGPUBindGroupEntry {
 
     WGPUBindGroupEntry() {
         // Should not be called directly
@@ -42,7 +42,7 @@ public class WGPUBindGroupEntry {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUBindGroupEntry {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -66,7 +66,7 @@ public class WGPUBindGroupEntry {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -98,7 +98,7 @@ public class WGPUBindGroupEntry {
      * uint32_t binding
      * }
      */
-    public static final OfInt binding$layout() {
+    public static OfInt binding$layout() {
         return binding$LAYOUT;
     }
 
@@ -110,7 +110,7 @@ public class WGPUBindGroupEntry {
      * uint32_t binding
      * }
      */
-    public static final long binding$offset() {
+    public static long binding$offset() {
         return binding$OFFSET;
     }
 
@@ -142,7 +142,7 @@ public class WGPUBindGroupEntry {
      * WGPUBuffer buffer
      * }
      */
-    public static final AddressLayout buffer$layout() {
+    public static AddressLayout buffer$layout() {
         return buffer$LAYOUT;
     }
 
@@ -154,7 +154,7 @@ public class WGPUBindGroupEntry {
      * WGPUBuffer buffer
      * }
      */
-    public static final long buffer$offset() {
+    public static long buffer$offset() {
         return buffer$OFFSET;
     }
 
@@ -186,7 +186,7 @@ public class WGPUBindGroupEntry {
      * uint64_t offset
      * }
      */
-    public static final OfLong offset$layout() {
+    public static OfLong offset$layout() {
         return offset$LAYOUT;
     }
 
@@ -198,7 +198,7 @@ public class WGPUBindGroupEntry {
      * uint64_t offset
      * }
      */
-    public static final long offset$offset() {
+    public static long offset$offset() {
         return offset$OFFSET;
     }
 
@@ -230,7 +230,7 @@ public class WGPUBindGroupEntry {
      * uint64_t size
      * }
      */
-    public static final OfLong size$layout() {
+    public static OfLong size$layout() {
         return size$LAYOUT;
     }
 
@@ -242,7 +242,7 @@ public class WGPUBindGroupEntry {
      * uint64_t size
      * }
      */
-    public static final long size$offset() {
+    public static long size$offset() {
         return size$OFFSET;
     }
 
@@ -274,7 +274,7 @@ public class WGPUBindGroupEntry {
      * WGPUSampler sampler
      * }
      */
-    public static final AddressLayout sampler$layout() {
+    public static AddressLayout sampler$layout() {
         return sampler$LAYOUT;
     }
 
@@ -286,7 +286,7 @@ public class WGPUBindGroupEntry {
      * WGPUSampler sampler
      * }
      */
-    public static final long sampler$offset() {
+    public static long sampler$offset() {
         return sampler$OFFSET;
     }
 
@@ -318,7 +318,7 @@ public class WGPUBindGroupEntry {
      * WGPUTextureView textureView
      * }
      */
-    public static final AddressLayout textureView$layout() {
+    public static AddressLayout textureView$layout() {
         return textureView$LAYOUT;
     }
 
@@ -330,7 +330,7 @@ public class WGPUBindGroupEntry {
      * WGPUTextureView textureView
      * }
      */
-    public static final long textureView$offset() {
+    public static long textureView$offset() {
         return textureView$OFFSET;
     }
 

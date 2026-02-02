@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUNativeLimits {
+public final class WGPUNativeLimits {
 
     WGPUNativeLimits() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUNativeLimits {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUNativeLimits {
      * WGPUChainedStructOut chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUNativeLimits {
      * WGPUChainedStructOut chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUNativeLimits {
      * uint32_t maxPushConstantSize
      * }
      */
-    public static final OfInt maxPushConstantSize$layout() {
+    public static OfInt maxPushConstantSize$layout() {
         return maxPushConstantSize$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUNativeLimits {
      * uint32_t maxPushConstantSize
      * }
      */
-    public static final long maxPushConstantSize$offset() {
+    public static long maxPushConstantSize$offset() {
         return maxPushConstantSize$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUNativeLimits {
      * uint32_t maxNonSamplerBindings
      * }
      */
-    public static final OfInt maxNonSamplerBindings$layout() {
+    public static OfInt maxNonSamplerBindings$layout() {
         return maxNonSamplerBindings$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUNativeLimits {
      * uint32_t maxNonSamplerBindings
      * }
      */
-    public static final long maxNonSamplerBindings$offset() {
+    public static long maxNonSamplerBindings$offset() {
         return maxNonSamplerBindings$OFFSET;
     }
 

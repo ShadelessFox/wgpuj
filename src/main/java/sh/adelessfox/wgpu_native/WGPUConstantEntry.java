@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfDouble;
  * }
  * }
  */
-public class WGPUConstantEntry {
+public final class WGPUConstantEntry {
 
     WGPUConstantEntry() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUConstantEntry {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUConstantEntry {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUConstantEntry {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUConstantEntry {
      * WGPUStringView key
      * }
      */
-    public static final GroupLayout key$layout() {
+    public static GroupLayout key$layout() {
         return key$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUConstantEntry {
      * WGPUStringView key
      * }
      */
-    public static final long key$offset() {
+    public static long key$offset() {
         return key$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUConstantEntry {
      * double value
      * }
      */
-    public static final OfDouble value$layout() {
+    public static OfDouble value$layout() {
         return value$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUConstantEntry {
      * double value
      * }
      */
-    public static final long value$offset() {
+    public static long value$offset() {
         return value$OFFSET;
     }
 

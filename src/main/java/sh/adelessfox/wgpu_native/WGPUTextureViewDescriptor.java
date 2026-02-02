@@ -25,7 +25,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUTextureViewDescriptor {
+public final class WGPUTextureViewDescriptor {
 
     WGPUTextureViewDescriptor() {
         // Should not be called directly
@@ -48,7 +48,7 @@ public class WGPUTextureViewDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -60,7 +60,7 @@ public class WGPUTextureViewDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -72,7 +72,7 @@ public class WGPUTextureViewDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -104,7 +104,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -116,7 +116,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -148,7 +148,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureFormat format
      * }
      */
-    public static final OfInt format$layout() {
+    public static OfInt format$layout() {
         return format$LAYOUT;
     }
 
@@ -160,7 +160,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureFormat format
      * }
      */
-    public static final long format$offset() {
+    public static long format$offset() {
         return format$OFFSET;
     }
 
@@ -192,7 +192,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureViewDimension dimension
      * }
      */
-    public static final OfInt dimension$layout() {
+    public static OfInt dimension$layout() {
         return dimension$LAYOUT;
     }
 
@@ -204,7 +204,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureViewDimension dimension
      * }
      */
-    public static final long dimension$offset() {
+    public static long dimension$offset() {
         return dimension$OFFSET;
     }
 
@@ -236,7 +236,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t baseMipLevel
      * }
      */
-    public static final OfInt baseMipLevel$layout() {
+    public static OfInt baseMipLevel$layout() {
         return baseMipLevel$LAYOUT;
     }
 
@@ -248,7 +248,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t baseMipLevel
      * }
      */
-    public static final long baseMipLevel$offset() {
+    public static long baseMipLevel$offset() {
         return baseMipLevel$OFFSET;
     }
 
@@ -280,7 +280,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t mipLevelCount
      * }
      */
-    public static final OfInt mipLevelCount$layout() {
+    public static OfInt mipLevelCount$layout() {
         return mipLevelCount$LAYOUT;
     }
 
@@ -292,7 +292,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t mipLevelCount
      * }
      */
-    public static final long mipLevelCount$offset() {
+    public static long mipLevelCount$offset() {
         return mipLevelCount$OFFSET;
     }
 
@@ -324,7 +324,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t baseArrayLayer
      * }
      */
-    public static final OfInt baseArrayLayer$layout() {
+    public static OfInt baseArrayLayer$layout() {
         return baseArrayLayer$LAYOUT;
     }
 
@@ -336,7 +336,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t baseArrayLayer
      * }
      */
-    public static final long baseArrayLayer$offset() {
+    public static long baseArrayLayer$offset() {
         return baseArrayLayer$OFFSET;
     }
 
@@ -368,7 +368,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t arrayLayerCount
      * }
      */
-    public static final OfInt arrayLayerCount$layout() {
+    public static OfInt arrayLayerCount$layout() {
         return arrayLayerCount$LAYOUT;
     }
 
@@ -380,7 +380,7 @@ public class WGPUTextureViewDescriptor {
      * uint32_t arrayLayerCount
      * }
      */
-    public static final long arrayLayerCount$offset() {
+    public static long arrayLayerCount$offset() {
         return arrayLayerCount$OFFSET;
     }
 
@@ -412,7 +412,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureAspect aspect
      * }
      */
-    public static final OfInt aspect$layout() {
+    public static OfInt aspect$layout() {
         return aspect$LAYOUT;
     }
 
@@ -424,7 +424,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureAspect aspect
      * }
      */
-    public static final long aspect$offset() {
+    public static long aspect$offset() {
         return aspect$OFFSET;
     }
 
@@ -456,7 +456,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureUsage usage
      * }
      */
-    public static final OfLong usage$layout() {
+    public static OfLong usage$layout() {
         return usage$LAYOUT;
     }
 
@@ -468,7 +468,7 @@ public class WGPUTextureViewDescriptor {
      * WGPUTextureUsage usage
      * }
      */
-    public static final long usage$offset() {
+    public static long usage$offset() {
         return usage$OFFSET;
     }
 

@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUPrimitiveStateExtras {
+public final class WGPUPrimitiveStateExtras {
 
     WGPUPrimitiveStateExtras() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUPrimitiveStateExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUPrimitiveStateExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUPrimitiveStateExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUPrimitiveStateExtras {
      * WGPUPolygonMode polygonMode
      * }
      */
-    public static final OfInt polygonMode$layout() {
+    public static OfInt polygonMode$layout() {
         return polygonMode$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUPrimitiveStateExtras {
      * WGPUPolygonMode polygonMode
      * }
      */
-    public static final long polygonMode$offset() {
+    public static long polygonMode$offset() {
         return polygonMode$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUPrimitiveStateExtras {
      * WGPUBool conservative
      * }
      */
-    public static final OfInt conservative$layout() {
+    public static OfInt conservative$layout() {
         return conservative$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUPrimitiveStateExtras {
      * WGPUBool conservative
      * }
      */
-    public static final long conservative$offset() {
+    public static long conservative$offset() {
         return conservative$OFFSET;
     }
 

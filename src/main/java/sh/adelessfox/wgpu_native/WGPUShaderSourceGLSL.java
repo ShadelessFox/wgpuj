@@ -20,7 +20,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUShaderSourceGLSL {
+public final class WGPUShaderSourceGLSL {
 
     WGPUShaderSourceGLSL() {
         // Should not be called directly
@@ -38,7 +38,7 @@ public class WGPUShaderSourceGLSL {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -50,7 +50,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -62,7 +62,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -94,7 +94,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUShaderStage stage
      * }
      */
-    public static final OfLong stage$layout() {
+    public static OfLong stage$layout() {
         return stage$LAYOUT;
     }
 
@@ -106,7 +106,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUShaderStage stage
      * }
      */
-    public static final long stage$offset() {
+    public static long stage$offset() {
         return stage$OFFSET;
     }
 
@@ -138,7 +138,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUStringView code
      * }
      */
-    public static final GroupLayout code$layout() {
+    public static GroupLayout code$layout() {
         return code$LAYOUT;
     }
 
@@ -150,7 +150,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUStringView code
      * }
      */
-    public static final long code$offset() {
+    public static long code$offset() {
         return code$OFFSET;
     }
 
@@ -182,7 +182,7 @@ public class WGPUShaderSourceGLSL {
      * uint32_t defineCount
      * }
      */
-    public static final OfInt defineCount$layout() {
+    public static OfInt defineCount$layout() {
         return defineCount$LAYOUT;
     }
 
@@ -194,7 +194,7 @@ public class WGPUShaderSourceGLSL {
      * uint32_t defineCount
      * }
      */
-    public static final long defineCount$offset() {
+    public static long defineCount$offset() {
         return defineCount$OFFSET;
     }
 
@@ -226,7 +226,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUShaderDefine *defines
      * }
      */
-    public static final AddressLayout defines$layout() {
+    public static AddressLayout defines$layout() {
         return defines$LAYOUT;
     }
 
@@ -238,7 +238,7 @@ public class WGPUShaderSourceGLSL {
      * WGPUShaderDefine *defines
      * }
      */
-    public static final long defines$offset() {
+    public static long defines$offset() {
         return defines$OFFSET;
     }
 

@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUInstanceEnumerateAdapterOptions {
+public final class WGPUInstanceEnumerateAdapterOptions {
 
     WGPUInstanceEnumerateAdapterOptions() {
         // Should not be called directly
@@ -30,7 +30,7 @@ public class WGPUInstanceEnumerateAdapterOptions {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -42,7 +42,7 @@ public class WGPUInstanceEnumerateAdapterOptions {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUInstanceEnumerateAdapterOptions {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -86,7 +86,7 @@ public class WGPUInstanceEnumerateAdapterOptions {
      * WGPUInstanceBackend backends
      * }
      */
-    public static final OfLong backends$layout() {
+    public static OfLong backends$layout() {
         return backends$LAYOUT;
     }
 
@@ -98,7 +98,7 @@ public class WGPUInstanceEnumerateAdapterOptions {
      * WGPUInstanceBackend backends
      * }
      */
-    public static final long backends$offset() {
+    public static long backends$offset() {
         return backends$OFFSET;
     }
 

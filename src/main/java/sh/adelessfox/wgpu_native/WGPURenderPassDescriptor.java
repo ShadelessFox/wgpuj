@@ -21,7 +21,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPURenderPassDescriptor {
+public final class WGPURenderPassDescriptor {
 
     WGPURenderPassDescriptor() {
         // Should not be called directly
@@ -40,7 +40,7 @@ public class WGPURenderPassDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -52,7 +52,7 @@ public class WGPURenderPassDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -64,7 +64,7 @@ public class WGPURenderPassDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -96,7 +96,7 @@ public class WGPURenderPassDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -108,7 +108,7 @@ public class WGPURenderPassDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -140,7 +140,7 @@ public class WGPURenderPassDescriptor {
      * size_t colorAttachmentCount
      * }
      */
-    public static final OfLong colorAttachmentCount$layout() {
+    public static OfLong colorAttachmentCount$layout() {
         return colorAttachmentCount$LAYOUT;
     }
 
@@ -152,7 +152,7 @@ public class WGPURenderPassDescriptor {
      * size_t colorAttachmentCount
      * }
      */
-    public static final long colorAttachmentCount$offset() {
+    public static long colorAttachmentCount$offset() {
         return colorAttachmentCount$OFFSET;
     }
 
@@ -184,7 +184,7 @@ public class WGPURenderPassDescriptor {
      * const WGPURenderPassColorAttachment *colorAttachments
      * }
      */
-    public static final AddressLayout colorAttachments$layout() {
+    public static AddressLayout colorAttachments$layout() {
         return colorAttachments$LAYOUT;
     }
 
@@ -196,7 +196,7 @@ public class WGPURenderPassDescriptor {
      * const WGPURenderPassColorAttachment *colorAttachments
      * }
      */
-    public static final long colorAttachments$offset() {
+    public static long colorAttachments$offset() {
         return colorAttachments$OFFSET;
     }
 
@@ -228,7 +228,7 @@ public class WGPURenderPassDescriptor {
      * const WGPURenderPassDepthStencilAttachment *depthStencilAttachment
      * }
      */
-    public static final AddressLayout depthStencilAttachment$layout() {
+    public static AddressLayout depthStencilAttachment$layout() {
         return depthStencilAttachment$LAYOUT;
     }
 
@@ -240,7 +240,7 @@ public class WGPURenderPassDescriptor {
      * const WGPURenderPassDepthStencilAttachment *depthStencilAttachment
      * }
      */
-    public static final long depthStencilAttachment$offset() {
+    public static long depthStencilAttachment$offset() {
         return depthStencilAttachment$OFFSET;
     }
 
@@ -272,7 +272,7 @@ public class WGPURenderPassDescriptor {
      * WGPUQuerySet occlusionQuerySet
      * }
      */
-    public static final AddressLayout occlusionQuerySet$layout() {
+    public static AddressLayout occlusionQuerySet$layout() {
         return occlusionQuerySet$LAYOUT;
     }
 
@@ -284,7 +284,7 @@ public class WGPURenderPassDescriptor {
      * WGPUQuerySet occlusionQuerySet
      * }
      */
-    public static final long occlusionQuerySet$offset() {
+    public static long occlusionQuerySet$offset() {
         return occlusionQuerySet$OFFSET;
     }
 
@@ -316,7 +316,7 @@ public class WGPURenderPassDescriptor {
      * const WGPURenderPassTimestampWrites *timestampWrites
      * }
      */
-    public static final AddressLayout timestampWrites$layout() {
+    public static AddressLayout timestampWrites$layout() {
         return timestampWrites$LAYOUT;
     }
 
@@ -328,7 +328,7 @@ public class WGPURenderPassDescriptor {
      * const WGPURenderPassTimestampWrites *timestampWrites
      * }
      */
-    public static final long timestampWrites$offset() {
+    public static long timestampWrites$offset() {
         return timestampWrites$OFFSET;
     }
 

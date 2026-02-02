@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUSurfaceConfigurationExtras {
+public final class WGPUSurfaceConfigurationExtras {
 
     WGPUSurfaceConfigurationExtras() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUSurfaceConfigurationExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUSurfaceConfigurationExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUSurfaceConfigurationExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUSurfaceConfigurationExtras {
      * uint32_t desiredMaximumFrameLatency
      * }
      */
-    public static final OfInt desiredMaximumFrameLatency$layout() {
+    public static OfInt desiredMaximumFrameLatency$layout() {
         return desiredMaximumFrameLatency$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUSurfaceConfigurationExtras {
      * uint32_t desiredMaximumFrameLatency
      * }
      */
-    public static final long desiredMaximumFrameLatency$offset() {
+    public static long desiredMaximumFrameLatency$offset() {
         return desiredMaximumFrameLatency$OFFSET;
     }
 

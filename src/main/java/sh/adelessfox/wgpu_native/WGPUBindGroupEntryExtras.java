@@ -21,7 +21,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUBindGroupEntryExtras {
+public final class WGPUBindGroupEntryExtras {
 
     WGPUBindGroupEntryExtras() {
         // Should not be called directly
@@ -40,7 +40,7 @@ public class WGPUBindGroupEntryExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -52,7 +52,7 @@ public class WGPUBindGroupEntryExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -64,7 +64,7 @@ public class WGPUBindGroupEntryExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -96,7 +96,7 @@ public class WGPUBindGroupEntryExtras {
      * const WGPUBuffer *buffers
      * }
      */
-    public static final AddressLayout buffers$layout() {
+    public static AddressLayout buffers$layout() {
         return buffers$LAYOUT;
     }
 
@@ -108,7 +108,7 @@ public class WGPUBindGroupEntryExtras {
      * const WGPUBuffer *buffers
      * }
      */
-    public static final long buffers$offset() {
+    public static long buffers$offset() {
         return buffers$OFFSET;
     }
 
@@ -140,7 +140,7 @@ public class WGPUBindGroupEntryExtras {
      * size_t bufferCount
      * }
      */
-    public static final OfLong bufferCount$layout() {
+    public static OfLong bufferCount$layout() {
         return bufferCount$LAYOUT;
     }
 
@@ -152,7 +152,7 @@ public class WGPUBindGroupEntryExtras {
      * size_t bufferCount
      * }
      */
-    public static final long bufferCount$offset() {
+    public static long bufferCount$offset() {
         return bufferCount$OFFSET;
     }
 
@@ -184,7 +184,7 @@ public class WGPUBindGroupEntryExtras {
      * const WGPUSampler *samplers
      * }
      */
-    public static final AddressLayout samplers$layout() {
+    public static AddressLayout samplers$layout() {
         return samplers$LAYOUT;
     }
 
@@ -196,7 +196,7 @@ public class WGPUBindGroupEntryExtras {
      * const WGPUSampler *samplers
      * }
      */
-    public static final long samplers$offset() {
+    public static long samplers$offset() {
         return samplers$OFFSET;
     }
 
@@ -228,7 +228,7 @@ public class WGPUBindGroupEntryExtras {
      * size_t samplerCount
      * }
      */
-    public static final OfLong samplerCount$layout() {
+    public static OfLong samplerCount$layout() {
         return samplerCount$LAYOUT;
     }
 
@@ -240,7 +240,7 @@ public class WGPUBindGroupEntryExtras {
      * size_t samplerCount
      * }
      */
-    public static final long samplerCount$offset() {
+    public static long samplerCount$offset() {
         return samplerCount$OFFSET;
     }
 
@@ -272,7 +272,7 @@ public class WGPUBindGroupEntryExtras {
      * const WGPUTextureView *textureViews
      * }
      */
-    public static final AddressLayout textureViews$layout() {
+    public static AddressLayout textureViews$layout() {
         return textureViews$LAYOUT;
     }
 
@@ -284,7 +284,7 @@ public class WGPUBindGroupEntryExtras {
      * const WGPUTextureView *textureViews
      * }
      */
-    public static final long textureViews$offset() {
+    public static long textureViews$offset() {
         return textureViews$OFFSET;
     }
 
@@ -316,7 +316,7 @@ public class WGPUBindGroupEntryExtras {
      * size_t textureViewCount
      * }
      */
-    public static final OfLong textureViewCount$layout() {
+    public static OfLong textureViewCount$layout() {
         return textureViewCount$LAYOUT;
     }
 
@@ -328,7 +328,7 @@ public class WGPUBindGroupEntryExtras {
      * size_t textureViewCount
      * }
      */
-    public static final long textureViewCount$offset() {
+    public static long textureViewCount$offset() {
         return textureViewCount$OFFSET;
     }
 

@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUStencilFaceState {
+public final class WGPUStencilFaceState {
 
     WGPUStencilFaceState() {
         // Should not be called directly
@@ -34,7 +34,7 @@ public class WGPUStencilFaceState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -46,7 +46,7 @@ public class WGPUStencilFaceState {
      * WGPUCompareFunction compare
      * }
      */
-    public static final OfInt compare$layout() {
+    public static OfInt compare$layout() {
         return compare$LAYOUT;
     }
 
@@ -58,7 +58,7 @@ public class WGPUStencilFaceState {
      * WGPUCompareFunction compare
      * }
      */
-    public static final long compare$offset() {
+    public static long compare$offset() {
         return compare$OFFSET;
     }
 
@@ -90,7 +90,7 @@ public class WGPUStencilFaceState {
      * WGPUStencilOperation failOp
      * }
      */
-    public static final OfInt failOp$layout() {
+    public static OfInt failOp$layout() {
         return failOp$LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class WGPUStencilFaceState {
      * WGPUStencilOperation failOp
      * }
      */
-    public static final long failOp$offset() {
+    public static long failOp$offset() {
         return failOp$OFFSET;
     }
 
@@ -134,7 +134,7 @@ public class WGPUStencilFaceState {
      * WGPUStencilOperation depthFailOp
      * }
      */
-    public static final OfInt depthFailOp$layout() {
+    public static OfInt depthFailOp$layout() {
         return depthFailOp$LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class WGPUStencilFaceState {
      * WGPUStencilOperation depthFailOp
      * }
      */
-    public static final long depthFailOp$offset() {
+    public static long depthFailOp$offset() {
         return depthFailOp$OFFSET;
     }
 
@@ -178,7 +178,7 @@ public class WGPUStencilFaceState {
      * WGPUStencilOperation passOp
      * }
      */
-    public static final OfInt passOp$layout() {
+    public static OfInt passOp$layout() {
         return passOp$LAYOUT;
     }
 
@@ -190,7 +190,7 @@ public class WGPUStencilFaceState {
      * WGPUStencilOperation passOp
      * }
      */
-    public static final long passOp$offset() {
+    public static long passOp$offset() {
         return passOp$OFFSET;
     }
 

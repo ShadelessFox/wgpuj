@@ -22,7 +22,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUBindGroupLayoutEntry {
+public final class WGPUBindGroupLayoutEntry {
 
     WGPUBindGroupLayoutEntry() {
         // Should not be called directly
@@ -42,7 +42,7 @@ public class WGPUBindGroupLayoutEntry {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUBindGroupLayoutEntry {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -66,7 +66,7 @@ public class WGPUBindGroupLayoutEntry {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -98,7 +98,7 @@ public class WGPUBindGroupLayoutEntry {
      * uint32_t binding
      * }
      */
-    public static final OfInt binding$layout() {
+    public static OfInt binding$layout() {
         return binding$LAYOUT;
     }
 
@@ -110,7 +110,7 @@ public class WGPUBindGroupLayoutEntry {
      * uint32_t binding
      * }
      */
-    public static final long binding$offset() {
+    public static long binding$offset() {
         return binding$OFFSET;
     }
 
@@ -142,7 +142,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUShaderStage visibility
      * }
      */
-    public static final OfLong visibility$layout() {
+    public static OfLong visibility$layout() {
         return visibility$LAYOUT;
     }
 
@@ -154,7 +154,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUShaderStage visibility
      * }
      */
-    public static final long visibility$offset() {
+    public static long visibility$offset() {
         return visibility$OFFSET;
     }
 
@@ -186,7 +186,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUBufferBindingLayout buffer
      * }
      */
-    public static final GroupLayout buffer$layout() {
+    public static GroupLayout buffer$layout() {
         return buffer$LAYOUT;
     }
 
@@ -198,7 +198,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUBufferBindingLayout buffer
      * }
      */
-    public static final long buffer$offset() {
+    public static long buffer$offset() {
         return buffer$OFFSET;
     }
 
@@ -230,7 +230,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUSamplerBindingLayout sampler
      * }
      */
-    public static final GroupLayout sampler$layout() {
+    public static GroupLayout sampler$layout() {
         return sampler$LAYOUT;
     }
 
@@ -242,7 +242,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUSamplerBindingLayout sampler
      * }
      */
-    public static final long sampler$offset() {
+    public static long sampler$offset() {
         return sampler$OFFSET;
     }
 
@@ -274,7 +274,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUTextureBindingLayout texture
      * }
      */
-    public static final GroupLayout texture$layout() {
+    public static GroupLayout texture$layout() {
         return texture$LAYOUT;
     }
 
@@ -286,7 +286,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUTextureBindingLayout texture
      * }
      */
-    public static final long texture$offset() {
+    public static long texture$offset() {
         return texture$OFFSET;
     }
 
@@ -318,7 +318,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUStorageTextureBindingLayout storageTexture
      * }
      */
-    public static final GroupLayout storageTexture$layout() {
+    public static GroupLayout storageTexture$layout() {
         return storageTexture$LAYOUT;
     }
 
@@ -330,7 +330,7 @@ public class WGPUBindGroupLayoutEntry {
      * WGPUStorageTextureBindingLayout storageTexture
      * }
      */
-    public static final long storageTexture$offset() {
+    public static long storageTexture$offset() {
         return storageTexture$OFFSET;
     }
 

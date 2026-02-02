@@ -20,7 +20,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUPrimitiveState {
+public final class WGPUPrimitiveState {
 
     WGPUPrimitiveState() {
         // Should not be called directly
@@ -39,7 +39,7 @@ public class WGPUPrimitiveState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -51,7 +51,7 @@ public class WGPUPrimitiveState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -63,7 +63,7 @@ public class WGPUPrimitiveState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -95,7 +95,7 @@ public class WGPUPrimitiveState {
      * WGPUPrimitiveTopology topology
      * }
      */
-    public static final OfInt topology$layout() {
+    public static OfInt topology$layout() {
         return topology$LAYOUT;
     }
 
@@ -107,7 +107,7 @@ public class WGPUPrimitiveState {
      * WGPUPrimitiveTopology topology
      * }
      */
-    public static final long topology$offset() {
+    public static long topology$offset() {
         return topology$OFFSET;
     }
 
@@ -139,7 +139,7 @@ public class WGPUPrimitiveState {
      * WGPUIndexFormat stripIndexFormat
      * }
      */
-    public static final OfInt stripIndexFormat$layout() {
+    public static OfInt stripIndexFormat$layout() {
         return stripIndexFormat$LAYOUT;
     }
 
@@ -151,7 +151,7 @@ public class WGPUPrimitiveState {
      * WGPUIndexFormat stripIndexFormat
      * }
      */
-    public static final long stripIndexFormat$offset() {
+    public static long stripIndexFormat$offset() {
         return stripIndexFormat$OFFSET;
     }
 
@@ -183,7 +183,7 @@ public class WGPUPrimitiveState {
      * WGPUFrontFace frontFace
      * }
      */
-    public static final OfInt frontFace$layout() {
+    public static OfInt frontFace$layout() {
         return frontFace$LAYOUT;
     }
 
@@ -195,7 +195,7 @@ public class WGPUPrimitiveState {
      * WGPUFrontFace frontFace
      * }
      */
-    public static final long frontFace$offset() {
+    public static long frontFace$offset() {
         return frontFace$OFFSET;
     }
 
@@ -227,7 +227,7 @@ public class WGPUPrimitiveState {
      * WGPUCullMode cullMode
      * }
      */
-    public static final OfInt cullMode$layout() {
+    public static OfInt cullMode$layout() {
         return cullMode$LAYOUT;
     }
 
@@ -239,7 +239,7 @@ public class WGPUPrimitiveState {
      * WGPUCullMode cullMode
      * }
      */
-    public static final long cullMode$offset() {
+    public static long cullMode$offset() {
         return cullMode$OFFSET;
     }
 
@@ -271,7 +271,7 @@ public class WGPUPrimitiveState {
      * WGPUBool unclippedDepth
      * }
      */
-    public static final OfInt unclippedDepth$layout() {
+    public static OfInt unclippedDepth$layout() {
         return unclippedDepth$LAYOUT;
     }
 
@@ -283,7 +283,7 @@ public class WGPUPrimitiveState {
      * WGPUBool unclippedDepth
      * }
      */
-    public static final long unclippedDepth$offset() {
+    public static long unclippedDepth$offset() {
         return unclippedDepth$OFFSET;
     }
 

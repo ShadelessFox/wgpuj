@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPURegistryReport {
+public final class WGPURegistryReport {
 
     WGPURegistryReport() {
         // Should not be called directly
@@ -34,7 +34,7 @@ public class WGPURegistryReport {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -46,7 +46,7 @@ public class WGPURegistryReport {
      * size_t numAllocated
      * }
      */
-    public static final OfLong numAllocated$layout() {
+    public static OfLong numAllocated$layout() {
         return numAllocated$LAYOUT;
     }
 
@@ -58,7 +58,7 @@ public class WGPURegistryReport {
      * size_t numAllocated
      * }
      */
-    public static final long numAllocated$offset() {
+    public static long numAllocated$offset() {
         return numAllocated$OFFSET;
     }
 
@@ -90,7 +90,7 @@ public class WGPURegistryReport {
      * size_t numKeptFromUser
      * }
      */
-    public static final OfLong numKeptFromUser$layout() {
+    public static OfLong numKeptFromUser$layout() {
         return numKeptFromUser$LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class WGPURegistryReport {
      * size_t numKeptFromUser
      * }
      */
-    public static final long numKeptFromUser$offset() {
+    public static long numKeptFromUser$offset() {
         return numKeptFromUser$OFFSET;
     }
 
@@ -134,7 +134,7 @@ public class WGPURegistryReport {
      * size_t numReleasedFromUser
      * }
      */
-    public static final OfLong numReleasedFromUser$layout() {
+    public static OfLong numReleasedFromUser$layout() {
         return numReleasedFromUser$LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class WGPURegistryReport {
      * size_t numReleasedFromUser
      * }
      */
-    public static final long numReleasedFromUser$offset() {
+    public static long numReleasedFromUser$offset() {
         return numReleasedFromUser$OFFSET;
     }
 
@@ -178,7 +178,7 @@ public class WGPURegistryReport {
      * size_t elementSize
      * }
      */
-    public static final OfLong elementSize$layout() {
+    public static OfLong elementSize$layout() {
         return elementSize$LAYOUT;
     }
 
@@ -190,7 +190,7 @@ public class WGPURegistryReport {
      * size_t elementSize
      * }
      */
-    public static final long elementSize$offset() {
+    public static long elementSize$offset() {
         return elementSize$OFFSET;
     }
 

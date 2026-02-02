@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUTexelCopyBufferInfo {
+public final class WGPUTexelCopyBufferInfo {
 
     WGPUTexelCopyBufferInfo() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUTexelCopyBufferInfo {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUTexelCopyBufferInfo {
      * WGPUTexelCopyBufferLayout layout
      * }
      */
-    public static final GroupLayout layout$layout() {
+    public static GroupLayout layout$layout() {
         return layout$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUTexelCopyBufferInfo {
      * WGPUTexelCopyBufferLayout layout
      * }
      */
-    public static final long layout$offset() {
+    public static long layout$offset() {
         return layout$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUTexelCopyBufferInfo {
      * WGPUBuffer buffer
      * }
      */
-    public static final AddressLayout buffer$layout() {
+    public static AddressLayout buffer$layout() {
         return buffer$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUTexelCopyBufferInfo {
      * WGPUBuffer buffer
      * }
      */
-    public static final long buffer$offset() {
+    public static long buffer$offset() {
         return buffer$OFFSET;
     }
 

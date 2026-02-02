@@ -20,7 +20,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPURequestAdapterOptions {
+public final class WGPURequestAdapterOptions {
 
     WGPURequestAdapterOptions() {
         // Should not be called directly
@@ -38,7 +38,7 @@ public class WGPURequestAdapterOptions {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -50,7 +50,7 @@ public class WGPURequestAdapterOptions {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -62,7 +62,7 @@ public class WGPURequestAdapterOptions {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -94,7 +94,7 @@ public class WGPURequestAdapterOptions {
      * WGPUFeatureLevel featureLevel
      * }
      */
-    public static final OfInt featureLevel$layout() {
+    public static OfInt featureLevel$layout() {
         return featureLevel$LAYOUT;
     }
 
@@ -106,7 +106,7 @@ public class WGPURequestAdapterOptions {
      * WGPUFeatureLevel featureLevel
      * }
      */
-    public static final long featureLevel$offset() {
+    public static long featureLevel$offset() {
         return featureLevel$OFFSET;
     }
 
@@ -138,7 +138,7 @@ public class WGPURequestAdapterOptions {
      * WGPUPowerPreference powerPreference
      * }
      */
-    public static final OfInt powerPreference$layout() {
+    public static OfInt powerPreference$layout() {
         return powerPreference$LAYOUT;
     }
 
@@ -150,7 +150,7 @@ public class WGPURequestAdapterOptions {
      * WGPUPowerPreference powerPreference
      * }
      */
-    public static final long powerPreference$offset() {
+    public static long powerPreference$offset() {
         return powerPreference$OFFSET;
     }
 
@@ -182,7 +182,7 @@ public class WGPURequestAdapterOptions {
      * WGPUBool forceFallbackAdapter
      * }
      */
-    public static final OfInt forceFallbackAdapter$layout() {
+    public static OfInt forceFallbackAdapter$layout() {
         return forceFallbackAdapter$LAYOUT;
     }
 
@@ -194,7 +194,7 @@ public class WGPURequestAdapterOptions {
      * WGPUBool forceFallbackAdapter
      * }
      */
-    public static final long forceFallbackAdapter$offset() {
+    public static long forceFallbackAdapter$offset() {
         return forceFallbackAdapter$OFFSET;
     }
 
@@ -226,7 +226,7 @@ public class WGPURequestAdapterOptions {
      * WGPUBackendType backendType
      * }
      */
-    public static final OfInt backendType$layout() {
+    public static OfInt backendType$layout() {
         return backendType$LAYOUT;
     }
 
@@ -238,7 +238,7 @@ public class WGPURequestAdapterOptions {
      * WGPUBackendType backendType
      * }
      */
-    public static final long backendType$offset() {
+    public static long backendType$offset() {
         return backendType$OFFSET;
     }
 
@@ -270,7 +270,7 @@ public class WGPURequestAdapterOptions {
      * WGPUSurface compatibleSurface
      * }
      */
-    public static final AddressLayout compatibleSurface$layout() {
+    public static AddressLayout compatibleSurface$layout() {
         return compatibleSurface$LAYOUT;
     }
 
@@ -282,7 +282,7 @@ public class WGPURequestAdapterOptions {
      * WGPUSurface compatibleSurface
      * }
      */
-    public static final long compatibleSurface$offset() {
+    public static long compatibleSurface$offset() {
         return compatibleSurface$OFFSET;
     }
 

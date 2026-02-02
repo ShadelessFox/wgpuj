@@ -22,7 +22,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUCompilationMessage {
+public final class WGPUCompilationMessage {
 
     WGPUCompilationMessage() {
         // Should not be called directly
@@ -42,7 +42,7 @@ public class WGPUCompilationMessage {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUCompilationMessage {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -66,7 +66,7 @@ public class WGPUCompilationMessage {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -98,7 +98,7 @@ public class WGPUCompilationMessage {
      * WGPUStringView message
      * }
      */
-    public static final GroupLayout message$layout() {
+    public static GroupLayout message$layout() {
         return message$LAYOUT;
     }
 
@@ -110,7 +110,7 @@ public class WGPUCompilationMessage {
      * WGPUStringView message
      * }
      */
-    public static final long message$offset() {
+    public static long message$offset() {
         return message$OFFSET;
     }
 
@@ -142,7 +142,7 @@ public class WGPUCompilationMessage {
      * WGPUCompilationMessageType type
      * }
      */
-    public static final OfInt type$layout() {
+    public static OfInt type$layout() {
         return type$LAYOUT;
     }
 
@@ -154,7 +154,7 @@ public class WGPUCompilationMessage {
      * WGPUCompilationMessageType type
      * }
      */
-    public static final long type$offset() {
+    public static long type$offset() {
         return type$OFFSET;
     }
 
@@ -186,7 +186,7 @@ public class WGPUCompilationMessage {
      * uint64_t lineNum
      * }
      */
-    public static final OfLong lineNum$layout() {
+    public static OfLong lineNum$layout() {
         return lineNum$LAYOUT;
     }
 
@@ -198,7 +198,7 @@ public class WGPUCompilationMessage {
      * uint64_t lineNum
      * }
      */
-    public static final long lineNum$offset() {
+    public static long lineNum$offset() {
         return lineNum$OFFSET;
     }
 
@@ -230,7 +230,7 @@ public class WGPUCompilationMessage {
      * uint64_t linePos
      * }
      */
-    public static final OfLong linePos$layout() {
+    public static OfLong linePos$layout() {
         return linePos$LAYOUT;
     }
 
@@ -242,7 +242,7 @@ public class WGPUCompilationMessage {
      * uint64_t linePos
      * }
      */
-    public static final long linePos$offset() {
+    public static long linePos$offset() {
         return linePos$OFFSET;
     }
 
@@ -274,7 +274,7 @@ public class WGPUCompilationMessage {
      * uint64_t offset
      * }
      */
-    public static final OfLong offset$layout() {
+    public static OfLong offset$layout() {
         return offset$LAYOUT;
     }
 
@@ -286,7 +286,7 @@ public class WGPUCompilationMessage {
      * uint64_t offset
      * }
      */
-    public static final long offset$offset() {
+    public static long offset$offset() {
         return offset$OFFSET;
     }
 
@@ -318,7 +318,7 @@ public class WGPUCompilationMessage {
      * uint64_t length
      * }
      */
-    public static final OfLong length$layout() {
+    public static OfLong length$layout() {
         return length$LAYOUT;
     }
 
@@ -330,7 +330,7 @@ public class WGPUCompilationMessage {
      * uint64_t length
      * }
      */
-    public static final long length$offset() {
+    public static long length$offset() {
         return length$OFFSET;
     }
 

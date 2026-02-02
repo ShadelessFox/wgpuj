@@ -19,7 +19,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUColorTargetState {
+public final class WGPUColorTargetState {
 
     WGPUColorTargetState() {
         // Should not be called directly
@@ -36,7 +36,7 @@ public class WGPUColorTargetState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -48,7 +48,7 @@ public class WGPUColorTargetState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -60,7 +60,7 @@ public class WGPUColorTargetState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -92,7 +92,7 @@ public class WGPUColorTargetState {
      * WGPUTextureFormat format
      * }
      */
-    public static final OfInt format$layout() {
+    public static OfInt format$layout() {
         return format$LAYOUT;
     }
 
@@ -104,7 +104,7 @@ public class WGPUColorTargetState {
      * WGPUTextureFormat format
      * }
      */
-    public static final long format$offset() {
+    public static long format$offset() {
         return format$OFFSET;
     }
 
@@ -136,7 +136,7 @@ public class WGPUColorTargetState {
      * const WGPUBlendState *blend
      * }
      */
-    public static final AddressLayout blend$layout() {
+    public static AddressLayout blend$layout() {
         return blend$LAYOUT;
     }
 
@@ -148,7 +148,7 @@ public class WGPUColorTargetState {
      * const WGPUBlendState *blend
      * }
      */
-    public static final long blend$offset() {
+    public static long blend$offset() {
         return blend$OFFSET;
     }
 
@@ -180,7 +180,7 @@ public class WGPUColorTargetState {
      * WGPUColorWriteMask writeMask
      * }
      */
-    public static final OfLong writeMask$layout() {
+    public static OfLong writeMask$layout() {
         return writeMask$LAYOUT;
     }
 
@@ -192,7 +192,7 @@ public class WGPUColorTargetState {
      * WGPUColorWriteMask writeMask
      * }
      */
-    public static final long writeMask$offset() {
+    public static long writeMask$offset() {
         return writeMask$OFFSET;
     }
 

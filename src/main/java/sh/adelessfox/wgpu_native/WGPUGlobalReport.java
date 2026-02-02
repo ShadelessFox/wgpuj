@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUGlobalReport {
+public final class WGPUGlobalReport {
 
     WGPUGlobalReport() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUGlobalReport {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUGlobalReport {
      * WGPURegistryReport surfaces
      * }
      */
-    public static final GroupLayout surfaces$layout() {
+    public static GroupLayout surfaces$layout() {
         return surfaces$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUGlobalReport {
      * WGPURegistryReport surfaces
      * }
      */
-    public static final long surfaces$offset() {
+    public static long surfaces$offset() {
         return surfaces$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUGlobalReport {
      * WGPUHubReport hub
      * }
      */
-    public static final GroupLayout hub$layout() {
+    public static GroupLayout hub$layout() {
         return hub$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUGlobalReport {
      * WGPUHubReport hub
      * }
      */
-    public static final long hub$offset() {
+    public static long hub$offset() {
         return hub$OFFSET;
     }
 

@@ -8,7 +8,7 @@ import java.lang.invoke.MethodHandle;
 import static java.lang.foreign.ValueLayout.OfInt;
 import static java.lang.foreign.ValueLayout.OfLong;
 
-public class wgpu_h extends wgpu_h$shared {
+public final class wgpu_h extends wgpu_h$shared {
 
     wgpu_h() {
         // Should not be called directly

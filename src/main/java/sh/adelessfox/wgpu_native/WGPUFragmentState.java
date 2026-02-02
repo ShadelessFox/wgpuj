@@ -21,7 +21,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUFragmentState {
+public final class WGPUFragmentState {
 
     WGPUFragmentState() {
         // Should not be called directly
@@ -40,7 +40,7 @@ public class WGPUFragmentState {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -52,7 +52,7 @@ public class WGPUFragmentState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -64,7 +64,7 @@ public class WGPUFragmentState {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -96,7 +96,7 @@ public class WGPUFragmentState {
      * WGPUShaderModule module
      * }
      */
-    public static final AddressLayout module$layout() {
+    public static AddressLayout module$layout() {
         return module$LAYOUT;
     }
 
@@ -108,7 +108,7 @@ public class WGPUFragmentState {
      * WGPUShaderModule module
      * }
      */
-    public static final long module$offset() {
+    public static long module$offset() {
         return module$OFFSET;
     }
 
@@ -140,7 +140,7 @@ public class WGPUFragmentState {
      * WGPUStringView entryPoint
      * }
      */
-    public static final GroupLayout entryPoint$layout() {
+    public static GroupLayout entryPoint$layout() {
         return entryPoint$LAYOUT;
     }
 
@@ -152,7 +152,7 @@ public class WGPUFragmentState {
      * WGPUStringView entryPoint
      * }
      */
-    public static final long entryPoint$offset() {
+    public static long entryPoint$offset() {
         return entryPoint$OFFSET;
     }
 
@@ -184,7 +184,7 @@ public class WGPUFragmentState {
      * size_t constantCount
      * }
      */
-    public static final OfLong constantCount$layout() {
+    public static OfLong constantCount$layout() {
         return constantCount$LAYOUT;
     }
 
@@ -196,7 +196,7 @@ public class WGPUFragmentState {
      * size_t constantCount
      * }
      */
-    public static final long constantCount$offset() {
+    public static long constantCount$offset() {
         return constantCount$OFFSET;
     }
 
@@ -228,7 +228,7 @@ public class WGPUFragmentState {
      * const WGPUConstantEntry *constants
      * }
      */
-    public static final AddressLayout constants$layout() {
+    public static AddressLayout constants$layout() {
         return constants$LAYOUT;
     }
 
@@ -240,7 +240,7 @@ public class WGPUFragmentState {
      * const WGPUConstantEntry *constants
      * }
      */
-    public static final long constants$offset() {
+    public static long constants$offset() {
         return constants$OFFSET;
     }
 
@@ -272,7 +272,7 @@ public class WGPUFragmentState {
      * size_t targetCount
      * }
      */
-    public static final OfLong targetCount$layout() {
+    public static OfLong targetCount$layout() {
         return targetCount$LAYOUT;
     }
 
@@ -284,7 +284,7 @@ public class WGPUFragmentState {
      * size_t targetCount
      * }
      */
-    public static final long targetCount$offset() {
+    public static long targetCount$offset() {
         return targetCount$OFFSET;
     }
 
@@ -316,7 +316,7 @@ public class WGPUFragmentState {
      * const WGPUColorTargetState *targets
      * }
      */
-    public static final AddressLayout targets$layout() {
+    public static AddressLayout targets$layout() {
         return targets$LAYOUT;
     }
 
@@ -328,7 +328,7 @@ public class WGPUFragmentState {
      * const WGPUColorTargetState *targets
      * }
      */
-    public static final long targets$offset() {
+    public static long targets$offset() {
         return targets$OFFSET;
     }
 

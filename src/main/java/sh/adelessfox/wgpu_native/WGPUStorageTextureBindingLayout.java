@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUStorageTextureBindingLayout {
+public final class WGPUStorageTextureBindingLayout {
 
     WGPUStorageTextureBindingLayout() {
         // Should not be called directly
@@ -35,7 +35,7 @@ public class WGPUStorageTextureBindingLayout {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -47,7 +47,7 @@ public class WGPUStorageTextureBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -59,7 +59,7 @@ public class WGPUStorageTextureBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -91,7 +91,7 @@ public class WGPUStorageTextureBindingLayout {
      * WGPUStorageTextureAccess access
      * }
      */
-    public static final OfInt access$layout() {
+    public static OfInt access$layout() {
         return access$LAYOUT;
     }
 
@@ -103,7 +103,7 @@ public class WGPUStorageTextureBindingLayout {
      * WGPUStorageTextureAccess access
      * }
      */
-    public static final long access$offset() {
+    public static long access$offset() {
         return access$OFFSET;
     }
 
@@ -135,7 +135,7 @@ public class WGPUStorageTextureBindingLayout {
      * WGPUTextureFormat format
      * }
      */
-    public static final OfInt format$layout() {
+    public static OfInt format$layout() {
         return format$LAYOUT;
     }
 
@@ -147,7 +147,7 @@ public class WGPUStorageTextureBindingLayout {
      * WGPUTextureFormat format
      * }
      */
-    public static final long format$offset() {
+    public static long format$offset() {
         return format$OFFSET;
     }
 
@@ -179,7 +179,7 @@ public class WGPUStorageTextureBindingLayout {
      * WGPUTextureViewDimension viewDimension
      * }
      */
-    public static final OfInt viewDimension$layout() {
+    public static OfInt viewDimension$layout() {
         return viewDimension$LAYOUT;
     }
 
@@ -191,7 +191,7 @@ public class WGPUStorageTextureBindingLayout {
      * WGPUTextureViewDimension viewDimension
      * }
      */
-    public static final long viewDimension$offset() {
+    public static long viewDimension$offset() {
         return viewDimension$OFFSET;
     }
 

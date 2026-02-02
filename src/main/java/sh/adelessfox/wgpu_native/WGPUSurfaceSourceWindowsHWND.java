@@ -16,7 +16,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUSurfaceSourceWindowsHWND {
+public final class WGPUSurfaceSourceWindowsHWND {
 
     WGPUSurfaceSourceWindowsHWND() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUSurfaceSourceWindowsHWND {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUSurfaceSourceWindowsHWND {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUSurfaceSourceWindowsHWND {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUSurfaceSourceWindowsHWND {
      * void *hinstance
      * }
      */
-    public static final AddressLayout hinstance$layout() {
+    public static AddressLayout hinstance$layout() {
         return hinstance$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUSurfaceSourceWindowsHWND {
      * void *hinstance
      * }
      */
-    public static final long hinstance$offset() {
+    public static long hinstance$offset() {
         return hinstance$OFFSET;
     }
 
@@ -131,7 +131,7 @@ public class WGPUSurfaceSourceWindowsHWND {
      * void *hwnd
      * }
      */
-    public static final AddressLayout hwnd$layout() {
+    public static AddressLayout hwnd$layout() {
         return hwnd$LAYOUT;
     }
 
@@ -143,7 +143,7 @@ public class WGPUSurfaceSourceWindowsHWND {
      * void *hwnd
      * }
      */
-    public static final long hwnd$offset() {
+    public static long hwnd$offset() {
         return hwnd$OFFSET;
     }
 

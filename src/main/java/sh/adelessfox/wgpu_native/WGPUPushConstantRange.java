@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUPushConstantRange {
+public final class WGPUPushConstantRange {
 
     WGPUPushConstantRange() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUPushConstantRange {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUPushConstantRange {
      * WGPUShaderStage stages
      * }
      */
-    public static final OfLong stages$layout() {
+    public static OfLong stages$layout() {
         return stages$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUPushConstantRange {
      * WGPUShaderStage stages
      * }
      */
-    public static final long stages$offset() {
+    public static long stages$offset() {
         return stages$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUPushConstantRange {
      * uint32_t start
      * }
      */
-    public static final OfInt start$layout() {
+    public static OfInt start$layout() {
         return start$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUPushConstantRange {
      * uint32_t start
      * }
      */
-    public static final long start$offset() {
+    public static long start$offset() {
         return start$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUPushConstantRange {
      * uint32_t end
      * }
      */
-    public static final OfInt end$layout() {
+    public static OfInt end$layout() {
         return end$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUPushConstantRange {
      * uint32_t end
      * }
      */
-    public static final long end$offset() {
+    public static long end$offset() {
         return end$OFFSET;
     }
 

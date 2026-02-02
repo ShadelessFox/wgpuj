@@ -26,7 +26,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUInstanceExtras {
+public final class WGPUInstanceExtras {
 
     WGPUInstanceExtras() {
         // Should not be called directly
@@ -50,7 +50,7 @@ public class WGPUInstanceExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -62,7 +62,7 @@ public class WGPUInstanceExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -74,7 +74,7 @@ public class WGPUInstanceExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -106,7 +106,7 @@ public class WGPUInstanceExtras {
      * WGPUInstanceBackend backends
      * }
      */
-    public static final OfLong backends$layout() {
+    public static OfLong backends$layout() {
         return backends$LAYOUT;
     }
 
@@ -118,7 +118,7 @@ public class WGPUInstanceExtras {
      * WGPUInstanceBackend backends
      * }
      */
-    public static final long backends$offset() {
+    public static long backends$offset() {
         return backends$OFFSET;
     }
 
@@ -150,7 +150,7 @@ public class WGPUInstanceExtras {
      * WGPUInstanceFlag flags
      * }
      */
-    public static final OfLong flags$layout() {
+    public static OfLong flags$layout() {
         return flags$LAYOUT;
     }
 
@@ -162,7 +162,7 @@ public class WGPUInstanceExtras {
      * WGPUInstanceFlag flags
      * }
      */
-    public static final long flags$offset() {
+    public static long flags$offset() {
         return flags$OFFSET;
     }
 
@@ -194,7 +194,7 @@ public class WGPUInstanceExtras {
      * WGPUDx12Compiler dx12ShaderCompiler
      * }
      */
-    public static final OfInt dx12ShaderCompiler$layout() {
+    public static OfInt dx12ShaderCompiler$layout() {
         return dx12ShaderCompiler$LAYOUT;
     }
 
@@ -206,7 +206,7 @@ public class WGPUInstanceExtras {
      * WGPUDx12Compiler dx12ShaderCompiler
      * }
      */
-    public static final long dx12ShaderCompiler$offset() {
+    public static long dx12ShaderCompiler$offset() {
         return dx12ShaderCompiler$OFFSET;
     }
 
@@ -238,7 +238,7 @@ public class WGPUInstanceExtras {
      * WGPUGles3MinorVersion gles3MinorVersion
      * }
      */
-    public static final OfInt gles3MinorVersion$layout() {
+    public static OfInt gles3MinorVersion$layout() {
         return gles3MinorVersion$LAYOUT;
     }
 
@@ -250,7 +250,7 @@ public class WGPUInstanceExtras {
      * WGPUGles3MinorVersion gles3MinorVersion
      * }
      */
-    public static final long gles3MinorVersion$offset() {
+    public static long gles3MinorVersion$offset() {
         return gles3MinorVersion$OFFSET;
     }
 
@@ -282,7 +282,7 @@ public class WGPUInstanceExtras {
      * WGPUGLFenceBehaviour glFenceBehaviour
      * }
      */
-    public static final OfInt glFenceBehaviour$layout() {
+    public static OfInt glFenceBehaviour$layout() {
         return glFenceBehaviour$LAYOUT;
     }
 
@@ -294,7 +294,7 @@ public class WGPUInstanceExtras {
      * WGPUGLFenceBehaviour glFenceBehaviour
      * }
      */
-    public static final long glFenceBehaviour$offset() {
+    public static long glFenceBehaviour$offset() {
         return glFenceBehaviour$OFFSET;
     }
 
@@ -326,7 +326,7 @@ public class WGPUInstanceExtras {
      * WGPUStringView dxcPath
      * }
      */
-    public static final GroupLayout dxcPath$layout() {
+    public static GroupLayout dxcPath$layout() {
         return dxcPath$LAYOUT;
     }
 
@@ -338,7 +338,7 @@ public class WGPUInstanceExtras {
      * WGPUStringView dxcPath
      * }
      */
-    public static final long dxcPath$offset() {
+    public static long dxcPath$offset() {
         return dxcPath$OFFSET;
     }
 
@@ -370,7 +370,7 @@ public class WGPUInstanceExtras {
      * WGPUDxcMaxShaderModel dxcMaxShaderModel
      * }
      */
-    public static final OfInt dxcMaxShaderModel$layout() {
+    public static OfInt dxcMaxShaderModel$layout() {
         return dxcMaxShaderModel$LAYOUT;
     }
 
@@ -382,7 +382,7 @@ public class WGPUInstanceExtras {
      * WGPUDxcMaxShaderModel dxcMaxShaderModel
      * }
      */
-    public static final long dxcMaxShaderModel$offset() {
+    public static long dxcMaxShaderModel$offset() {
         return dxcMaxShaderModel$OFFSET;
     }
 
@@ -414,7 +414,7 @@ public class WGPUInstanceExtras {
      * WGPUDx12SwapchainKind dx12PresentationSystem
      * }
      */
-    public static final OfInt dx12PresentationSystem$layout() {
+    public static OfInt dx12PresentationSystem$layout() {
         return dx12PresentationSystem$LAYOUT;
     }
 
@@ -426,7 +426,7 @@ public class WGPUInstanceExtras {
      * WGPUDx12SwapchainKind dx12PresentationSystem
      * }
      */
-    public static final long dx12PresentationSystem$offset() {
+    public static long dx12PresentationSystem$offset() {
         return dx12PresentationSystem$OFFSET;
     }
 
@@ -458,7 +458,7 @@ public class WGPUInstanceExtras {
      * const uint8_t *budgetForDeviceCreation
      * }
      */
-    public static final AddressLayout budgetForDeviceCreation$layout() {
+    public static AddressLayout budgetForDeviceCreation$layout() {
         return budgetForDeviceCreation$LAYOUT;
     }
 
@@ -470,7 +470,7 @@ public class WGPUInstanceExtras {
      * const uint8_t *budgetForDeviceCreation
      * }
      */
-    public static final long budgetForDeviceCreation$offset() {
+    public static long budgetForDeviceCreation$offset() {
         return budgetForDeviceCreation$OFFSET;
     }
 
@@ -502,7 +502,7 @@ public class WGPUInstanceExtras {
      * const uint8_t *budgetForDeviceLoss
      * }
      */
-    public static final AddressLayout budgetForDeviceLoss$layout() {
+    public static AddressLayout budgetForDeviceLoss$layout() {
         return budgetForDeviceLoss$LAYOUT;
     }
 
@@ -514,7 +514,7 @@ public class WGPUInstanceExtras {
      * const uint8_t *budgetForDeviceLoss
      * }
      */
-    public static final long budgetForDeviceLoss$offset() {
+    public static long budgetForDeviceLoss$offset() {
         return budgetForDeviceLoss$OFFSET;
     }
 

@@ -22,7 +22,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUDeviceDescriptor {
+public final class WGPUDeviceDescriptor {
 
     WGPUDeviceDescriptor() {
         // Should not be called directly
@@ -42,7 +42,7 @@ public class WGPUDeviceDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUDeviceDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -66,7 +66,7 @@ public class WGPUDeviceDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -98,7 +98,7 @@ public class WGPUDeviceDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -110,7 +110,7 @@ public class WGPUDeviceDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -142,7 +142,7 @@ public class WGPUDeviceDescriptor {
      * size_t requiredFeatureCount
      * }
      */
-    public static final OfLong requiredFeatureCount$layout() {
+    public static OfLong requiredFeatureCount$layout() {
         return requiredFeatureCount$LAYOUT;
     }
 
@@ -154,7 +154,7 @@ public class WGPUDeviceDescriptor {
      * size_t requiredFeatureCount
      * }
      */
-    public static final long requiredFeatureCount$offset() {
+    public static long requiredFeatureCount$offset() {
         return requiredFeatureCount$OFFSET;
     }
 
@@ -186,7 +186,7 @@ public class WGPUDeviceDescriptor {
      * const WGPUFeatureName *requiredFeatures
      * }
      */
-    public static final AddressLayout requiredFeatures$layout() {
+    public static AddressLayout requiredFeatures$layout() {
         return requiredFeatures$LAYOUT;
     }
 
@@ -198,7 +198,7 @@ public class WGPUDeviceDescriptor {
      * const WGPUFeatureName *requiredFeatures
      * }
      */
-    public static final long requiredFeatures$offset() {
+    public static long requiredFeatures$offset() {
         return requiredFeatures$OFFSET;
     }
 
@@ -230,7 +230,7 @@ public class WGPUDeviceDescriptor {
      * const WGPULimits *requiredLimits
      * }
      */
-    public static final AddressLayout requiredLimits$layout() {
+    public static AddressLayout requiredLimits$layout() {
         return requiredLimits$LAYOUT;
     }
 
@@ -242,7 +242,7 @@ public class WGPUDeviceDescriptor {
      * const WGPULimits *requiredLimits
      * }
      */
-    public static final long requiredLimits$offset() {
+    public static long requiredLimits$offset() {
         return requiredLimits$OFFSET;
     }
 
@@ -274,7 +274,7 @@ public class WGPUDeviceDescriptor {
      * WGPUQueueDescriptor defaultQueue
      * }
      */
-    public static final GroupLayout defaultQueue$layout() {
+    public static GroupLayout defaultQueue$layout() {
         return defaultQueue$LAYOUT;
     }
 
@@ -286,7 +286,7 @@ public class WGPUDeviceDescriptor {
      * WGPUQueueDescriptor defaultQueue
      * }
      */
-    public static final long defaultQueue$offset() {
+    public static long defaultQueue$offset() {
         return defaultQueue$OFFSET;
     }
 
@@ -318,7 +318,7 @@ public class WGPUDeviceDescriptor {
      * WGPUDeviceLostCallbackInfo deviceLostCallbackInfo
      * }
      */
-    public static final GroupLayout deviceLostCallbackInfo$layout() {
+    public static GroupLayout deviceLostCallbackInfo$layout() {
         return deviceLostCallbackInfo$LAYOUT;
     }
 
@@ -330,7 +330,7 @@ public class WGPUDeviceDescriptor {
      * WGPUDeviceLostCallbackInfo deviceLostCallbackInfo
      * }
      */
-    public static final long deviceLostCallbackInfo$offset() {
+    public static long deviceLostCallbackInfo$offset() {
         return deviceLostCallbackInfo$OFFSET;
     }
 
@@ -362,7 +362,7 @@ public class WGPUDeviceDescriptor {
      * WGPUUncapturedErrorCallbackInfo uncapturedErrorCallbackInfo
      * }
      */
-    public static final GroupLayout uncapturedErrorCallbackInfo$layout() {
+    public static GroupLayout uncapturedErrorCallbackInfo$layout() {
         return uncapturedErrorCallbackInfo$LAYOUT;
     }
 
@@ -374,7 +374,7 @@ public class WGPUDeviceDescriptor {
      * WGPUUncapturedErrorCallbackInfo uncapturedErrorCallbackInfo
      * }
      */
-    public static final long uncapturedErrorCallbackInfo$offset() {
+    public static long uncapturedErrorCallbackInfo$offset() {
         return uncapturedErrorCallbackInfo$OFFSET;
     }
 

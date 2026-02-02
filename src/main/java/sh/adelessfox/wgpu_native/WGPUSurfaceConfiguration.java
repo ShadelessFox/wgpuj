@@ -25,7 +25,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUSurfaceConfiguration {
+public final class WGPUSurfaceConfiguration {
 
     WGPUSurfaceConfiguration() {
         // Should not be called directly
@@ -48,7 +48,7 @@ public class WGPUSurfaceConfiguration {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -60,7 +60,7 @@ public class WGPUSurfaceConfiguration {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -72,7 +72,7 @@ public class WGPUSurfaceConfiguration {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -104,7 +104,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUDevice device
      * }
      */
-    public static final AddressLayout device$layout() {
+    public static AddressLayout device$layout() {
         return device$LAYOUT;
     }
 
@@ -116,7 +116,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUDevice device
      * }
      */
-    public static final long device$offset() {
+    public static long device$offset() {
         return device$OFFSET;
     }
 
@@ -148,7 +148,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUTextureFormat format
      * }
      */
-    public static final OfInt format$layout() {
+    public static OfInt format$layout() {
         return format$LAYOUT;
     }
 
@@ -160,7 +160,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUTextureFormat format
      * }
      */
-    public static final long format$offset() {
+    public static long format$offset() {
         return format$OFFSET;
     }
 
@@ -192,7 +192,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUTextureUsage usage
      * }
      */
-    public static final OfLong usage$layout() {
+    public static OfLong usage$layout() {
         return usage$LAYOUT;
     }
 
@@ -204,7 +204,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUTextureUsage usage
      * }
      */
-    public static final long usage$offset() {
+    public static long usage$offset() {
         return usage$OFFSET;
     }
 
@@ -236,7 +236,7 @@ public class WGPUSurfaceConfiguration {
      * uint32_t width
      * }
      */
-    public static final OfInt width$layout() {
+    public static OfInt width$layout() {
         return width$LAYOUT;
     }
 
@@ -248,7 +248,7 @@ public class WGPUSurfaceConfiguration {
      * uint32_t width
      * }
      */
-    public static final long width$offset() {
+    public static long width$offset() {
         return width$OFFSET;
     }
 
@@ -280,7 +280,7 @@ public class WGPUSurfaceConfiguration {
      * uint32_t height
      * }
      */
-    public static final OfInt height$layout() {
+    public static OfInt height$layout() {
         return height$LAYOUT;
     }
 
@@ -292,7 +292,7 @@ public class WGPUSurfaceConfiguration {
      * uint32_t height
      * }
      */
-    public static final long height$offset() {
+    public static long height$offset() {
         return height$OFFSET;
     }
 
@@ -324,7 +324,7 @@ public class WGPUSurfaceConfiguration {
      * size_t viewFormatCount
      * }
      */
-    public static final OfLong viewFormatCount$layout() {
+    public static OfLong viewFormatCount$layout() {
         return viewFormatCount$LAYOUT;
     }
 
@@ -336,7 +336,7 @@ public class WGPUSurfaceConfiguration {
      * size_t viewFormatCount
      * }
      */
-    public static final long viewFormatCount$offset() {
+    public static long viewFormatCount$offset() {
         return viewFormatCount$OFFSET;
     }
 
@@ -368,7 +368,7 @@ public class WGPUSurfaceConfiguration {
      * const WGPUTextureFormat *viewFormats
      * }
      */
-    public static final AddressLayout viewFormats$layout() {
+    public static AddressLayout viewFormats$layout() {
         return viewFormats$LAYOUT;
     }
 
@@ -380,7 +380,7 @@ public class WGPUSurfaceConfiguration {
      * const WGPUTextureFormat *viewFormats
      * }
      */
-    public static final long viewFormats$offset() {
+    public static long viewFormats$offset() {
         return viewFormats$OFFSET;
     }
 
@@ -412,7 +412,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUCompositeAlphaMode alphaMode
      * }
      */
-    public static final OfInt alphaMode$layout() {
+    public static OfInt alphaMode$layout() {
         return alphaMode$LAYOUT;
     }
 
@@ -424,7 +424,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUCompositeAlphaMode alphaMode
      * }
      */
-    public static final long alphaMode$offset() {
+    public static long alphaMode$offset() {
         return alphaMode$OFFSET;
     }
 
@@ -456,7 +456,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUPresentMode presentMode
      * }
      */
-    public static final OfInt presentMode$layout() {
+    public static OfInt presentMode$layout() {
         return presentMode$LAYOUT;
     }
 
@@ -468,7 +468,7 @@ public class WGPUSurfaceConfiguration {
      * WGPUPresentMode presentMode
      * }
      */
-    public static final long presentMode$offset() {
+    public static long presentMode$offset() {
         return presentMode$OFFSET;
     }
 

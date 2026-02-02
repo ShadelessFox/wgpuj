@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUQuerySetDescriptorExtras {
+public final class WGPUQuerySetDescriptorExtras {
 
     WGPUQuerySetDescriptorExtras() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUQuerySetDescriptorExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUQuerySetDescriptorExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUQuerySetDescriptorExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUQuerySetDescriptorExtras {
      * const WGPUPipelineStatisticName *pipelineStatistics
      * }
      */
-    public static final AddressLayout pipelineStatistics$layout() {
+    public static AddressLayout pipelineStatistics$layout() {
         return pipelineStatistics$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUQuerySetDescriptorExtras {
      * const WGPUPipelineStatisticName *pipelineStatistics
      * }
      */
-    public static final long pipelineStatistics$offset() {
+    public static long pipelineStatistics$offset() {
         return pipelineStatistics$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUQuerySetDescriptorExtras {
      * size_t pipelineStatisticCount
      * }
      */
-    public static final OfLong pipelineStatisticCount$layout() {
+    public static OfLong pipelineStatisticCount$layout() {
         return pipelineStatisticCount$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUQuerySetDescriptorExtras {
      * size_t pipelineStatisticCount
      * }
      */
-    public static final long pipelineStatisticCount$offset() {
+    public static long pipelineStatisticCount$offset() {
         return pipelineStatisticCount$OFFSET;
     }
 

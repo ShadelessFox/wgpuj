@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUShaderSourceWGSL {
+public final class WGPUShaderSourceWGSL {
 
     WGPUShaderSourceWGSL() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUShaderSourceWGSL {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUShaderSourceWGSL {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUShaderSourceWGSL {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUShaderSourceWGSL {
      * WGPUStringView code
      * }
      */
-    public static final GroupLayout code$layout() {
+    public static GroupLayout code$layout() {
         return code$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUShaderSourceWGSL {
      * WGPUStringView code
      * }
      */
-    public static final long code$offset() {
+    public static long code$offset() {
         return code$OFFSET;
     }
 

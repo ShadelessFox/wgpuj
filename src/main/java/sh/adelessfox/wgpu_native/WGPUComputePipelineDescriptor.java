@@ -17,7 +17,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUComputePipelineDescriptor {
+public final class WGPUComputePipelineDescriptor {
 
     WGPUComputePipelineDescriptor() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUComputePipelineDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUComputePipelineDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUComputePipelineDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUComputePipelineDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUComputePipelineDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUComputePipelineDescriptor {
      * WGPUPipelineLayout layout
      * }
      */
-    public static final AddressLayout layout$layout() {
+    public static AddressLayout layout$layout() {
         return layout$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUComputePipelineDescriptor {
      * WGPUPipelineLayout layout
      * }
      */
-    public static final long layout$offset() {
+    public static long layout$offset() {
         return layout$OFFSET;
     }
 
@@ -177,7 +177,7 @@ public class WGPUComputePipelineDescriptor {
      * WGPUProgrammableStageDescriptor compute
      * }
      */
-    public static final GroupLayout compute$layout() {
+    public static GroupLayout compute$layout() {
         return compute$LAYOUT;
     }
 
@@ -189,7 +189,7 @@ public class WGPUComputePipelineDescriptor {
      * WGPUProgrammableStageDescriptor compute
      * }
      */
-    public static final long compute$offset() {
+    public static long compute$offset() {
         return compute$OFFSET;
     }
 

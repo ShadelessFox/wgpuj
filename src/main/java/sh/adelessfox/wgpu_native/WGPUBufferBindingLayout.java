@@ -19,7 +19,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUBufferBindingLayout {
+public final class WGPUBufferBindingLayout {
 
     WGPUBufferBindingLayout() {
         // Should not be called directly
@@ -35,7 +35,7 @@ public class WGPUBufferBindingLayout {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -47,7 +47,7 @@ public class WGPUBufferBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -59,7 +59,7 @@ public class WGPUBufferBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -91,7 +91,7 @@ public class WGPUBufferBindingLayout {
      * WGPUBufferBindingType type
      * }
      */
-    public static final OfInt type$layout() {
+    public static OfInt type$layout() {
         return type$LAYOUT;
     }
 
@@ -103,7 +103,7 @@ public class WGPUBufferBindingLayout {
      * WGPUBufferBindingType type
      * }
      */
-    public static final long type$offset() {
+    public static long type$offset() {
         return type$OFFSET;
     }
 
@@ -135,7 +135,7 @@ public class WGPUBufferBindingLayout {
      * WGPUBool hasDynamicOffset
      * }
      */
-    public static final OfInt hasDynamicOffset$layout() {
+    public static OfInt hasDynamicOffset$layout() {
         return hasDynamicOffset$LAYOUT;
     }
 
@@ -147,7 +147,7 @@ public class WGPUBufferBindingLayout {
      * WGPUBool hasDynamicOffset
      * }
      */
-    public static final long hasDynamicOffset$offset() {
+    public static long hasDynamicOffset$offset() {
         return hasDynamicOffset$OFFSET;
     }
 
@@ -179,7 +179,7 @@ public class WGPUBufferBindingLayout {
      * uint64_t minBindingSize
      * }
      */
-    public static final OfLong minBindingSize$layout() {
+    public static OfLong minBindingSize$layout() {
         return minBindingSize$LAYOUT;
     }
 
@@ -191,7 +191,7 @@ public class WGPUBufferBindingLayout {
      * uint64_t minBindingSize
      * }
      */
-    public static final long minBindingSize$offset() {
+    public static long minBindingSize$offset() {
         return minBindingSize$OFFSET;
     }
 

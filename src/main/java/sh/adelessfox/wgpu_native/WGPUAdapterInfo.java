@@ -23,7 +23,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUAdapterInfo {
+public final class WGPUAdapterInfo {
 
     WGPUAdapterInfo() {
         // Should not be called directly
@@ -44,7 +44,7 @@ public class WGPUAdapterInfo {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUAdapterInfo {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -68,7 +68,7 @@ public class WGPUAdapterInfo {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -100,7 +100,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView vendor
      * }
      */
-    public static final GroupLayout vendor$layout() {
+    public static GroupLayout vendor$layout() {
         return vendor$LAYOUT;
     }
 
@@ -112,7 +112,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView vendor
      * }
      */
-    public static final long vendor$offset() {
+    public static long vendor$offset() {
         return vendor$OFFSET;
     }
 
@@ -144,7 +144,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView architecture
      * }
      */
-    public static final GroupLayout architecture$layout() {
+    public static GroupLayout architecture$layout() {
         return architecture$LAYOUT;
     }
 
@@ -156,7 +156,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView architecture
      * }
      */
-    public static final long architecture$offset() {
+    public static long architecture$offset() {
         return architecture$OFFSET;
     }
 
@@ -188,7 +188,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView device
      * }
      */
-    public static final GroupLayout device$layout() {
+    public static GroupLayout device$layout() {
         return device$LAYOUT;
     }
 
@@ -200,7 +200,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView device
      * }
      */
-    public static final long device$offset() {
+    public static long device$offset() {
         return device$OFFSET;
     }
 
@@ -232,7 +232,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView description
      * }
      */
-    public static final GroupLayout description$layout() {
+    public static GroupLayout description$layout() {
         return description$LAYOUT;
     }
 
@@ -244,7 +244,7 @@ public class WGPUAdapterInfo {
      * WGPUStringView description
      * }
      */
-    public static final long description$offset() {
+    public static long description$offset() {
         return description$OFFSET;
     }
 
@@ -276,7 +276,7 @@ public class WGPUAdapterInfo {
      * WGPUBackendType backendType
      * }
      */
-    public static final OfInt backendType$layout() {
+    public static OfInt backendType$layout() {
         return backendType$LAYOUT;
     }
 
@@ -288,7 +288,7 @@ public class WGPUAdapterInfo {
      * WGPUBackendType backendType
      * }
      */
-    public static final long backendType$offset() {
+    public static long backendType$offset() {
         return backendType$OFFSET;
     }
 
@@ -320,7 +320,7 @@ public class WGPUAdapterInfo {
      * WGPUAdapterType adapterType
      * }
      */
-    public static final OfInt adapterType$layout() {
+    public static OfInt adapterType$layout() {
         return adapterType$LAYOUT;
     }
 
@@ -332,7 +332,7 @@ public class WGPUAdapterInfo {
      * WGPUAdapterType adapterType
      * }
      */
-    public static final long adapterType$offset() {
+    public static long adapterType$offset() {
         return adapterType$OFFSET;
     }
 
@@ -364,7 +364,7 @@ public class WGPUAdapterInfo {
      * uint32_t vendorID
      * }
      */
-    public static final OfInt vendorID$layout() {
+    public static OfInt vendorID$layout() {
         return vendorID$LAYOUT;
     }
 
@@ -376,7 +376,7 @@ public class WGPUAdapterInfo {
      * uint32_t vendorID
      * }
      */
-    public static final long vendorID$offset() {
+    public static long vendorID$offset() {
         return vendorID$OFFSET;
     }
 
@@ -408,7 +408,7 @@ public class WGPUAdapterInfo {
      * uint32_t deviceID
      * }
      */
-    public static final OfInt deviceID$layout() {
+    public static OfInt deviceID$layout() {
         return deviceID$LAYOUT;
     }
 
@@ -420,7 +420,7 @@ public class WGPUAdapterInfo {
      * uint32_t deviceID
      * }
      */
-    public static final long deviceID$offset() {
+    public static long deviceID$offset() {
         return deviceID$OFFSET;
     }
 

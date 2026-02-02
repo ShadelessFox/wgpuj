@@ -22,7 +22,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUSurfaceCapabilities {
+public final class WGPUSurfaceCapabilities {
 
     WGPUSurfaceCapabilities() {
         // Should not be called directly
@@ -42,7 +42,7 @@ public class WGPUSurfaceCapabilities {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -54,7 +54,7 @@ public class WGPUSurfaceCapabilities {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -66,7 +66,7 @@ public class WGPUSurfaceCapabilities {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -98,7 +98,7 @@ public class WGPUSurfaceCapabilities {
      * WGPUTextureUsage usages
      * }
      */
-    public static final OfLong usages$layout() {
+    public static OfLong usages$layout() {
         return usages$LAYOUT;
     }
 
@@ -110,7 +110,7 @@ public class WGPUSurfaceCapabilities {
      * WGPUTextureUsage usages
      * }
      */
-    public static final long usages$offset() {
+    public static long usages$offset() {
         return usages$OFFSET;
     }
 
@@ -142,7 +142,7 @@ public class WGPUSurfaceCapabilities {
      * size_t formatCount
      * }
      */
-    public static final OfLong formatCount$layout() {
+    public static OfLong formatCount$layout() {
         return formatCount$LAYOUT;
     }
 
@@ -154,7 +154,7 @@ public class WGPUSurfaceCapabilities {
      * size_t formatCount
      * }
      */
-    public static final long formatCount$offset() {
+    public static long formatCount$offset() {
         return formatCount$OFFSET;
     }
 
@@ -186,7 +186,7 @@ public class WGPUSurfaceCapabilities {
      * const WGPUTextureFormat *formats
      * }
      */
-    public static final AddressLayout formats$layout() {
+    public static AddressLayout formats$layout() {
         return formats$LAYOUT;
     }
 
@@ -198,7 +198,7 @@ public class WGPUSurfaceCapabilities {
      * const WGPUTextureFormat *formats
      * }
      */
-    public static final long formats$offset() {
+    public static long formats$offset() {
         return formats$OFFSET;
     }
 
@@ -230,7 +230,7 @@ public class WGPUSurfaceCapabilities {
      * size_t presentModeCount
      * }
      */
-    public static final OfLong presentModeCount$layout() {
+    public static OfLong presentModeCount$layout() {
         return presentModeCount$LAYOUT;
     }
 
@@ -242,7 +242,7 @@ public class WGPUSurfaceCapabilities {
      * size_t presentModeCount
      * }
      */
-    public static final long presentModeCount$offset() {
+    public static long presentModeCount$offset() {
         return presentModeCount$OFFSET;
     }
 
@@ -274,7 +274,7 @@ public class WGPUSurfaceCapabilities {
      * const WGPUPresentMode *presentModes
      * }
      */
-    public static final AddressLayout presentModes$layout() {
+    public static AddressLayout presentModes$layout() {
         return presentModes$LAYOUT;
     }
 
@@ -286,7 +286,7 @@ public class WGPUSurfaceCapabilities {
      * const WGPUPresentMode *presentModes
      * }
      */
-    public static final long presentModes$offset() {
+    public static long presentModes$offset() {
         return presentModes$OFFSET;
     }
 
@@ -318,7 +318,7 @@ public class WGPUSurfaceCapabilities {
      * size_t alphaModeCount
      * }
      */
-    public static final OfLong alphaModeCount$layout() {
+    public static OfLong alphaModeCount$layout() {
         return alphaModeCount$LAYOUT;
     }
 
@@ -330,7 +330,7 @@ public class WGPUSurfaceCapabilities {
      * size_t alphaModeCount
      * }
      */
-    public static final long alphaModeCount$offset() {
+    public static long alphaModeCount$offset() {
         return alphaModeCount$OFFSET;
     }
 
@@ -362,7 +362,7 @@ public class WGPUSurfaceCapabilities {
      * const WGPUCompositeAlphaMode *alphaModes
      * }
      */
-    public static final AddressLayout alphaModes$layout() {
+    public static AddressLayout alphaModes$layout() {
         return alphaModes$LAYOUT;
     }
 
@@ -374,7 +374,7 @@ public class WGPUSurfaceCapabilities {
      * const WGPUCompositeAlphaMode *alphaModes
      * }
      */
-    public static final long alphaModes$offset() {
+    public static long alphaModes$offset() {
         return alphaModes$OFFSET;
     }
 

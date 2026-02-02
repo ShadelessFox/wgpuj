@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPURenderPassTimestampWrites {
+public final class WGPURenderPassTimestampWrites {
 
     WGPURenderPassTimestampWrites() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPURenderPassTimestampWrites {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPURenderPassTimestampWrites {
      * WGPUQuerySet querySet
      * }
      */
-    public static final AddressLayout querySet$layout() {
+    public static AddressLayout querySet$layout() {
         return querySet$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPURenderPassTimestampWrites {
      * WGPUQuerySet querySet
      * }
      */
-    public static final long querySet$offset() {
+    public static long querySet$offset() {
         return querySet$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPURenderPassTimestampWrites {
      * uint32_t beginningOfPassWriteIndex
      * }
      */
-    public static final OfInt beginningOfPassWriteIndex$layout() {
+    public static OfInt beginningOfPassWriteIndex$layout() {
         return beginningOfPassWriteIndex$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPURenderPassTimestampWrites {
      * uint32_t beginningOfPassWriteIndex
      * }
      */
-    public static final long beginningOfPassWriteIndex$offset() {
+    public static long beginningOfPassWriteIndex$offset() {
         return beginningOfPassWriteIndex$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPURenderPassTimestampWrites {
      * uint32_t endOfPassWriteIndex
      * }
      */
-    public static final OfInt endOfPassWriteIndex$layout() {
+    public static OfInt endOfPassWriteIndex$layout() {
         return endOfPassWriteIndex$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPURenderPassTimestampWrites {
      * uint32_t endOfPassWriteIndex
      * }
      */
-    public static final long endOfPassWriteIndex$offset() {
+    public static long endOfPassWriteIndex$offset() {
         return endOfPassWriteIndex$OFFSET;
     }
 

@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUTexelCopyBufferLayout {
+public final class WGPUTexelCopyBufferLayout {
 
     WGPUTexelCopyBufferLayout() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUTexelCopyBufferLayout {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUTexelCopyBufferLayout {
      * uint64_t offset
      * }
      */
-    public static final OfLong offset$layout() {
+    public static OfLong offset$layout() {
         return offset$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUTexelCopyBufferLayout {
      * uint64_t offset
      * }
      */
-    public static final long offset$offset() {
+    public static long offset$offset() {
         return offset$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUTexelCopyBufferLayout {
      * uint32_t bytesPerRow
      * }
      */
-    public static final OfInt bytesPerRow$layout() {
+    public static OfInt bytesPerRow$layout() {
         return bytesPerRow$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUTexelCopyBufferLayout {
      * uint32_t bytesPerRow
      * }
      */
-    public static final long bytesPerRow$offset() {
+    public static long bytesPerRow$offset() {
         return bytesPerRow$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUTexelCopyBufferLayout {
      * uint32_t rowsPerImage
      * }
      */
-    public static final OfInt rowsPerImage$layout() {
+    public static OfInt rowsPerImage$layout() {
         return rowsPerImage$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUTexelCopyBufferLayout {
      * uint32_t rowsPerImage
      * }
      */
-    public static final long rowsPerImage$offset() {
+    public static long rowsPerImage$offset() {
         return rowsPerImage$OFFSET;
     }
 

@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUSurfaceSourceSwapChainPanel {
+public final class WGPUSurfaceSourceSwapChainPanel {
 
     WGPUSurfaceSourceSwapChainPanel() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUSurfaceSourceSwapChainPanel {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUSurfaceSourceSwapChainPanel {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUSurfaceSourceSwapChainPanel {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUSurfaceSourceSwapChainPanel {
      * void *panelNative
      * }
      */
-    public static final AddressLayout panelNative$layout() {
+    public static AddressLayout panelNative$layout() {
         return panelNative$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUSurfaceSourceSwapChainPanel {
      * void *panelNative
      * }
      */
-    public static final long panelNative$offset() {
+    public static long panelNative$offset() {
         return panelNative$OFFSET;
     }
 

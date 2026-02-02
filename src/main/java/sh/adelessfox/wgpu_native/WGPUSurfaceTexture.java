@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUSurfaceTexture {
+public final class WGPUSurfaceTexture {
 
     WGPUSurfaceTexture() {
         // Should not be called directly
@@ -33,7 +33,7 @@ public class WGPUSurfaceTexture {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -45,7 +45,7 @@ public class WGPUSurfaceTexture {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPUSurfaceTexture {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -89,7 +89,7 @@ public class WGPUSurfaceTexture {
      * WGPUTexture texture
      * }
      */
-    public static final AddressLayout texture$layout() {
+    public static AddressLayout texture$layout() {
         return texture$LAYOUT;
     }
 
@@ -101,7 +101,7 @@ public class WGPUSurfaceTexture {
      * WGPUTexture texture
      * }
      */
-    public static final long texture$offset() {
+    public static long texture$offset() {
         return texture$OFFSET;
     }
 
@@ -133,7 +133,7 @@ public class WGPUSurfaceTexture {
      * WGPUSurfaceGetCurrentTextureStatus status
      * }
      */
-    public static final OfInt status$layout() {
+    public static OfInt status$layout() {
         return status$LAYOUT;
     }
 
@@ -145,7 +145,7 @@ public class WGPUSurfaceTexture {
      * WGPUSurfaceGetCurrentTextureStatus status
      * }
      */
-    public static final long status$offset() {
+    public static long status$offset() {
         return status$OFFSET;
     }
 

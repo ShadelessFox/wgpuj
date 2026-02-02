@@ -24,7 +24,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPURenderPassDepthStencilAttachment {
+public final class WGPURenderPassDepthStencilAttachment {
 
     WGPURenderPassDepthStencilAttachment() {
         // Should not be called directly
@@ -45,7 +45,7 @@ public class WGPURenderPassDepthStencilAttachment {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -57,7 +57,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUTextureView view
      * }
      */
-    public static final AddressLayout view$layout() {
+    public static AddressLayout view$layout() {
         return view$LAYOUT;
     }
 
@@ -69,7 +69,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUTextureView view
      * }
      */
-    public static final long view$offset() {
+    public static long view$offset() {
         return view$OFFSET;
     }
 
@@ -101,7 +101,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPULoadOp depthLoadOp
      * }
      */
-    public static final OfInt depthLoadOp$layout() {
+    public static OfInt depthLoadOp$layout() {
         return depthLoadOp$LAYOUT;
     }
 
@@ -113,7 +113,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPULoadOp depthLoadOp
      * }
      */
-    public static final long depthLoadOp$offset() {
+    public static long depthLoadOp$offset() {
         return depthLoadOp$OFFSET;
     }
 
@@ -145,7 +145,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUStoreOp depthStoreOp
      * }
      */
-    public static final OfInt depthStoreOp$layout() {
+    public static OfInt depthStoreOp$layout() {
         return depthStoreOp$LAYOUT;
     }
 
@@ -157,7 +157,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUStoreOp depthStoreOp
      * }
      */
-    public static final long depthStoreOp$offset() {
+    public static long depthStoreOp$offset() {
         return depthStoreOp$OFFSET;
     }
 
@@ -189,7 +189,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * float depthClearValue
      * }
      */
-    public static final OfFloat depthClearValue$layout() {
+    public static OfFloat depthClearValue$layout() {
         return depthClearValue$LAYOUT;
     }
 
@@ -201,7 +201,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * float depthClearValue
      * }
      */
-    public static final long depthClearValue$offset() {
+    public static long depthClearValue$offset() {
         return depthClearValue$OFFSET;
     }
 
@@ -233,7 +233,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUBool depthReadOnly
      * }
      */
-    public static final OfInt depthReadOnly$layout() {
+    public static OfInt depthReadOnly$layout() {
         return depthReadOnly$LAYOUT;
     }
 
@@ -245,7 +245,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUBool depthReadOnly
      * }
      */
-    public static final long depthReadOnly$offset() {
+    public static long depthReadOnly$offset() {
         return depthReadOnly$OFFSET;
     }
 
@@ -277,7 +277,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPULoadOp stencilLoadOp
      * }
      */
-    public static final OfInt stencilLoadOp$layout() {
+    public static OfInt stencilLoadOp$layout() {
         return stencilLoadOp$LAYOUT;
     }
 
@@ -289,7 +289,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPULoadOp stencilLoadOp
      * }
      */
-    public static final long stencilLoadOp$offset() {
+    public static long stencilLoadOp$offset() {
         return stencilLoadOp$OFFSET;
     }
 
@@ -321,7 +321,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUStoreOp stencilStoreOp
      * }
      */
-    public static final OfInt stencilStoreOp$layout() {
+    public static OfInt stencilStoreOp$layout() {
         return stencilStoreOp$LAYOUT;
     }
 
@@ -333,7 +333,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUStoreOp stencilStoreOp
      * }
      */
-    public static final long stencilStoreOp$offset() {
+    public static long stencilStoreOp$offset() {
         return stencilStoreOp$OFFSET;
     }
 
@@ -365,7 +365,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * uint32_t stencilClearValue
      * }
      */
-    public static final OfInt stencilClearValue$layout() {
+    public static OfInt stencilClearValue$layout() {
         return stencilClearValue$LAYOUT;
     }
 
@@ -377,7 +377,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * uint32_t stencilClearValue
      * }
      */
-    public static final long stencilClearValue$offset() {
+    public static long stencilClearValue$offset() {
         return stencilClearValue$OFFSET;
     }
 
@@ -409,7 +409,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUBool stencilReadOnly
      * }
      */
-    public static final OfInt stencilReadOnly$layout() {
+    public static OfInt stencilReadOnly$layout() {
         return stencilReadOnly$LAYOUT;
     }
 
@@ -421,7 +421,7 @@ public class WGPURenderPassDepthStencilAttachment {
      * WGPUBool stencilReadOnly
      * }
      */
-    public static final long stencilReadOnly$offset() {
+    public static long stencilReadOnly$offset() {
         return stencilReadOnly$OFFSET;
     }
 

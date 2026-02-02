@@ -19,7 +19,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUVertexBufferLayout {
+public final class WGPUVertexBufferLayout {
 
     WGPUVertexBufferLayout() {
         // Should not be called directly
@@ -36,7 +36,7 @@ public class WGPUVertexBufferLayout {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -48,7 +48,7 @@ public class WGPUVertexBufferLayout {
      * WGPUVertexStepMode stepMode
      * }
      */
-    public static final OfInt stepMode$layout() {
+    public static OfInt stepMode$layout() {
         return stepMode$LAYOUT;
     }
 
@@ -60,7 +60,7 @@ public class WGPUVertexBufferLayout {
      * WGPUVertexStepMode stepMode
      * }
      */
-    public static final long stepMode$offset() {
+    public static long stepMode$offset() {
         return stepMode$OFFSET;
     }
 
@@ -92,7 +92,7 @@ public class WGPUVertexBufferLayout {
      * uint64_t arrayStride
      * }
      */
-    public static final OfLong arrayStride$layout() {
+    public static OfLong arrayStride$layout() {
         return arrayStride$LAYOUT;
     }
 
@@ -104,7 +104,7 @@ public class WGPUVertexBufferLayout {
      * uint64_t arrayStride
      * }
      */
-    public static final long arrayStride$offset() {
+    public static long arrayStride$offset() {
         return arrayStride$OFFSET;
     }
 
@@ -136,7 +136,7 @@ public class WGPUVertexBufferLayout {
      * size_t attributeCount
      * }
      */
-    public static final OfLong attributeCount$layout() {
+    public static OfLong attributeCount$layout() {
         return attributeCount$LAYOUT;
     }
 
@@ -148,7 +148,7 @@ public class WGPUVertexBufferLayout {
      * size_t attributeCount
      * }
      */
-    public static final long attributeCount$offset() {
+    public static long attributeCount$offset() {
         return attributeCount$OFFSET;
     }
 
@@ -180,7 +180,7 @@ public class WGPUVertexBufferLayout {
      * const WGPUVertexAttribute *attributes
      * }
      */
-    public static final AddressLayout attributes$layout() {
+    public static AddressLayout attributes$layout() {
         return attributes$LAYOUT;
     }
 
@@ -192,7 +192,7 @@ public class WGPUVertexBufferLayout {
      * const WGPUVertexAttribute *attributes
      * }
      */
-    public static final long attributes$offset() {
+    public static long attributes$offset() {
         return attributes$OFFSET;
     }
 

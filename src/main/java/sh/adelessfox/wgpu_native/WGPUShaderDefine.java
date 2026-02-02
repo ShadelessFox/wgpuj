@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUShaderDefine {
+public final class WGPUShaderDefine {
 
     WGPUShaderDefine() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUShaderDefine {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUShaderDefine {
      * WGPUStringView name
      * }
      */
-    public static final GroupLayout name$layout() {
+    public static GroupLayout name$layout() {
         return name$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUShaderDefine {
      * WGPUStringView name
      * }
      */
-    public static final long name$offset() {
+    public static long name$offset() {
         return name$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUShaderDefine {
      * WGPUStringView value
      * }
      */
-    public static final GroupLayout value$layout() {
+    public static GroupLayout value$layout() {
         return value$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUShaderDefine {
      * WGPUStringView value
      * }
      */
-    public static final long value$offset() {
+    public static long value$offset() {
         return value$OFFSET;
     }
 

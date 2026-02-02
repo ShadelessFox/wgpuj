@@ -26,7 +26,7 @@ import static java.lang.foreign.ValueLayout.*;
  * }
  * }
  */
-public class WGPUSamplerDescriptor {
+public final class WGPUSamplerDescriptor {
 
     WGPUSamplerDescriptor() {
         // Should not be called directly
@@ -51,7 +51,7 @@ public class WGPUSamplerDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -63,7 +63,7 @@ public class WGPUSamplerDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -75,7 +75,7 @@ public class WGPUSamplerDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -107,7 +107,7 @@ public class WGPUSamplerDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -119,7 +119,7 @@ public class WGPUSamplerDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -151,7 +151,7 @@ public class WGPUSamplerDescriptor {
      * WGPUAddressMode addressModeU
      * }
      */
-    public static final OfInt addressModeU$layout() {
+    public static OfInt addressModeU$layout() {
         return addressModeU$LAYOUT;
     }
 
@@ -163,7 +163,7 @@ public class WGPUSamplerDescriptor {
      * WGPUAddressMode addressModeU
      * }
      */
-    public static final long addressModeU$offset() {
+    public static long addressModeU$offset() {
         return addressModeU$OFFSET;
     }
 
@@ -195,7 +195,7 @@ public class WGPUSamplerDescriptor {
      * WGPUAddressMode addressModeV
      * }
      */
-    public static final OfInt addressModeV$layout() {
+    public static OfInt addressModeV$layout() {
         return addressModeV$LAYOUT;
     }
 
@@ -207,7 +207,7 @@ public class WGPUSamplerDescriptor {
      * WGPUAddressMode addressModeV
      * }
      */
-    public static final long addressModeV$offset() {
+    public static long addressModeV$offset() {
         return addressModeV$OFFSET;
     }
 
@@ -239,7 +239,7 @@ public class WGPUSamplerDescriptor {
      * WGPUAddressMode addressModeW
      * }
      */
-    public static final OfInt addressModeW$layout() {
+    public static OfInt addressModeW$layout() {
         return addressModeW$LAYOUT;
     }
 
@@ -251,7 +251,7 @@ public class WGPUSamplerDescriptor {
      * WGPUAddressMode addressModeW
      * }
      */
-    public static final long addressModeW$offset() {
+    public static long addressModeW$offset() {
         return addressModeW$OFFSET;
     }
 
@@ -283,7 +283,7 @@ public class WGPUSamplerDescriptor {
      * WGPUFilterMode magFilter
      * }
      */
-    public static final OfInt magFilter$layout() {
+    public static OfInt magFilter$layout() {
         return magFilter$LAYOUT;
     }
 
@@ -295,7 +295,7 @@ public class WGPUSamplerDescriptor {
      * WGPUFilterMode magFilter
      * }
      */
-    public static final long magFilter$offset() {
+    public static long magFilter$offset() {
         return magFilter$OFFSET;
     }
 
@@ -327,7 +327,7 @@ public class WGPUSamplerDescriptor {
      * WGPUFilterMode minFilter
      * }
      */
-    public static final OfInt minFilter$layout() {
+    public static OfInt minFilter$layout() {
         return minFilter$LAYOUT;
     }
 
@@ -339,7 +339,7 @@ public class WGPUSamplerDescriptor {
      * WGPUFilterMode minFilter
      * }
      */
-    public static final long minFilter$offset() {
+    public static long minFilter$offset() {
         return minFilter$OFFSET;
     }
 
@@ -371,7 +371,7 @@ public class WGPUSamplerDescriptor {
      * WGPUMipmapFilterMode mipmapFilter
      * }
      */
-    public static final OfInt mipmapFilter$layout() {
+    public static OfInt mipmapFilter$layout() {
         return mipmapFilter$LAYOUT;
     }
 
@@ -383,7 +383,7 @@ public class WGPUSamplerDescriptor {
      * WGPUMipmapFilterMode mipmapFilter
      * }
      */
-    public static final long mipmapFilter$offset() {
+    public static long mipmapFilter$offset() {
         return mipmapFilter$OFFSET;
     }
 
@@ -415,7 +415,7 @@ public class WGPUSamplerDescriptor {
      * float lodMinClamp
      * }
      */
-    public static final OfFloat lodMinClamp$layout() {
+    public static OfFloat lodMinClamp$layout() {
         return lodMinClamp$LAYOUT;
     }
 
@@ -427,7 +427,7 @@ public class WGPUSamplerDescriptor {
      * float lodMinClamp
      * }
      */
-    public static final long lodMinClamp$offset() {
+    public static long lodMinClamp$offset() {
         return lodMinClamp$OFFSET;
     }
 
@@ -459,7 +459,7 @@ public class WGPUSamplerDescriptor {
      * float lodMaxClamp
      * }
      */
-    public static final OfFloat lodMaxClamp$layout() {
+    public static OfFloat lodMaxClamp$layout() {
         return lodMaxClamp$LAYOUT;
     }
 
@@ -471,7 +471,7 @@ public class WGPUSamplerDescriptor {
      * float lodMaxClamp
      * }
      */
-    public static final long lodMaxClamp$offset() {
+    public static long lodMaxClamp$offset() {
         return lodMaxClamp$OFFSET;
     }
 
@@ -503,7 +503,7 @@ public class WGPUSamplerDescriptor {
      * WGPUCompareFunction compare
      * }
      */
-    public static final OfInt compare$layout() {
+    public static OfInt compare$layout() {
         return compare$LAYOUT;
     }
 
@@ -515,7 +515,7 @@ public class WGPUSamplerDescriptor {
      * WGPUCompareFunction compare
      * }
      */
-    public static final long compare$offset() {
+    public static long compare$offset() {
         return compare$OFFSET;
     }
 
@@ -547,7 +547,7 @@ public class WGPUSamplerDescriptor {
      * uint16_t maxAnisotropy
      * }
      */
-    public static final OfShort maxAnisotropy$layout() {
+    public static OfShort maxAnisotropy$layout() {
         return maxAnisotropy$LAYOUT;
     }
 
@@ -559,7 +559,7 @@ public class WGPUSamplerDescriptor {
      * uint16_t maxAnisotropy
      * }
      */
-    public static final long maxAnisotropy$offset() {
+    public static long maxAnisotropy$offset() {
         return maxAnisotropy$OFFSET;
     }
 

@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUSurfaceSourceMetalLayer {
+public final class WGPUSurfaceSourceMetalLayer {
 
     WGPUSurfaceSourceMetalLayer() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUSurfaceSourceMetalLayer {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUSurfaceSourceMetalLayer {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUSurfaceSourceMetalLayer {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUSurfaceSourceMetalLayer {
      * void *layer
      * }
      */
-    public static final AddressLayout layer$layout() {
+    public static AddressLayout layer$layout() {
         return layer$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUSurfaceSourceMetalLayer {
      * void *layer
      * }
      */
-    public static final long layer$offset() {
+    public static long layer$offset() {
         return layer$OFFSET;
     }
 

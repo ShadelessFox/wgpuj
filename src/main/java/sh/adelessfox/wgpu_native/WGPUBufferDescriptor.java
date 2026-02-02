@@ -20,7 +20,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUBufferDescriptor {
+public final class WGPUBufferDescriptor {
 
     WGPUBufferDescriptor() {
         // Should not be called directly
@@ -38,7 +38,7 @@ public class WGPUBufferDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -50,7 +50,7 @@ public class WGPUBufferDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -62,7 +62,7 @@ public class WGPUBufferDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -94,7 +94,7 @@ public class WGPUBufferDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -106,7 +106,7 @@ public class WGPUBufferDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -138,7 +138,7 @@ public class WGPUBufferDescriptor {
      * WGPUBufferUsage usage
      * }
      */
-    public static final OfLong usage$layout() {
+    public static OfLong usage$layout() {
         return usage$LAYOUT;
     }
 
@@ -150,7 +150,7 @@ public class WGPUBufferDescriptor {
      * WGPUBufferUsage usage
      * }
      */
-    public static final long usage$offset() {
+    public static long usage$offset() {
         return usage$OFFSET;
     }
 
@@ -182,7 +182,7 @@ public class WGPUBufferDescriptor {
      * uint64_t size
      * }
      */
-    public static final OfLong size$layout() {
+    public static OfLong size$layout() {
         return size$LAYOUT;
     }
 
@@ -194,7 +194,7 @@ public class WGPUBufferDescriptor {
      * uint64_t size
      * }
      */
-    public static final long size$offset() {
+    public static long size$offset() {
         return size$OFFSET;
     }
 
@@ -226,7 +226,7 @@ public class WGPUBufferDescriptor {
      * WGPUBool mappedAtCreation
      * }
      */
-    public static final OfInt mappedAtCreation$layout() {
+    public static OfInt mappedAtCreation$layout() {
         return mappedAtCreation$LAYOUT;
     }
 
@@ -238,7 +238,7 @@ public class WGPUBufferDescriptor {
      * WGPUBool mappedAtCreation
      * }
      */
-    public static final long mappedAtCreation$offset() {
+    public static long mappedAtCreation$offset() {
         return mappedAtCreation$OFFSET;
     }
 

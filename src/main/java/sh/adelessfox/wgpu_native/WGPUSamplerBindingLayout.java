@@ -16,7 +16,7 @@ import static java.lang.foreign.ValueLayout.OfInt;
  * }
  * }
  */
-public class WGPUSamplerBindingLayout {
+public final class WGPUSamplerBindingLayout {
 
     WGPUSamplerBindingLayout() {
         // Should not be called directly
@@ -31,7 +31,7 @@ public class WGPUSamplerBindingLayout {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -43,7 +43,7 @@ public class WGPUSamplerBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -55,7 +55,7 @@ public class WGPUSamplerBindingLayout {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -87,7 +87,7 @@ public class WGPUSamplerBindingLayout {
      * WGPUSamplerBindingType type
      * }
      */
-    public static final OfInt type$layout() {
+    public static OfInt type$layout() {
         return type$LAYOUT;
     }
 
@@ -99,7 +99,7 @@ public class WGPUSamplerBindingLayout {
      * WGPUSamplerBindingType type
      * }
      */
-    public static final long type$offset() {
+    public static long type$offset() {
         return type$OFFSET;
     }
 

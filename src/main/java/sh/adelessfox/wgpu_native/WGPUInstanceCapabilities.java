@@ -18,7 +18,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUInstanceCapabilities {
+public final class WGPUInstanceCapabilities {
 
     WGPUInstanceCapabilities() {
         // Should not be called directly
@@ -34,7 +34,7 @@ public class WGPUInstanceCapabilities {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -46,7 +46,7 @@ public class WGPUInstanceCapabilities {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -58,7 +58,7 @@ public class WGPUInstanceCapabilities {
      * WGPUChainedStructOut *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -90,7 +90,7 @@ public class WGPUInstanceCapabilities {
      * WGPUBool timedWaitAnyEnable
      * }
      */
-    public static final OfInt timedWaitAnyEnable$layout() {
+    public static OfInt timedWaitAnyEnable$layout() {
         return timedWaitAnyEnable$LAYOUT;
     }
 
@@ -102,7 +102,7 @@ public class WGPUInstanceCapabilities {
      * WGPUBool timedWaitAnyEnable
      * }
      */
-    public static final long timedWaitAnyEnable$offset() {
+    public static long timedWaitAnyEnable$offset() {
         return timedWaitAnyEnable$OFFSET;
     }
 
@@ -134,7 +134,7 @@ public class WGPUInstanceCapabilities {
      * size_t timedWaitAnyMaxCount
      * }
      */
-    public static final OfLong timedWaitAnyMaxCount$layout() {
+    public static OfLong timedWaitAnyMaxCount$layout() {
         return timedWaitAnyMaxCount$LAYOUT;
     }
 
@@ -146,7 +146,7 @@ public class WGPUInstanceCapabilities {
      * size_t timedWaitAnyMaxCount
      * }
      */
-    public static final long timedWaitAnyMaxCount$offset() {
+    public static long timedWaitAnyMaxCount$offset() {
         return timedWaitAnyMaxCount$OFFSET;
     }
 

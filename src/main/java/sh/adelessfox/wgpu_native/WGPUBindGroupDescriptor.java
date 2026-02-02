@@ -19,7 +19,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUBindGroupDescriptor {
+public final class WGPUBindGroupDescriptor {
 
     WGPUBindGroupDescriptor() {
         // Should not be called directly
@@ -36,7 +36,7 @@ public class WGPUBindGroupDescriptor {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -48,7 +48,7 @@ public class WGPUBindGroupDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final AddressLayout nextInChain$layout() {
+    public static AddressLayout nextInChain$layout() {
         return nextInChain$LAYOUT;
     }
 
@@ -60,7 +60,7 @@ public class WGPUBindGroupDescriptor {
      * const WGPUChainedStruct *nextInChain
      * }
      */
-    public static final long nextInChain$offset() {
+    public static long nextInChain$offset() {
         return nextInChain$OFFSET;
     }
 
@@ -92,7 +92,7 @@ public class WGPUBindGroupDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final GroupLayout label$layout() {
+    public static GroupLayout label$layout() {
         return label$LAYOUT;
     }
 
@@ -104,7 +104,7 @@ public class WGPUBindGroupDescriptor {
      * WGPUStringView label
      * }
      */
-    public static final long label$offset() {
+    public static long label$offset() {
         return label$OFFSET;
     }
 
@@ -136,7 +136,7 @@ public class WGPUBindGroupDescriptor {
      * WGPUBindGroupLayout layout
      * }
      */
-    public static final AddressLayout layout$layout() {
+    public static AddressLayout layout$layout() {
         return layout$LAYOUT;
     }
 
@@ -148,7 +148,7 @@ public class WGPUBindGroupDescriptor {
      * WGPUBindGroupLayout layout
      * }
      */
-    public static final long layout$offset() {
+    public static long layout$offset() {
         return layout$OFFSET;
     }
 
@@ -180,7 +180,7 @@ public class WGPUBindGroupDescriptor {
      * size_t entryCount
      * }
      */
-    public static final OfLong entryCount$layout() {
+    public static OfLong entryCount$layout() {
         return entryCount$LAYOUT;
     }
 
@@ -192,7 +192,7 @@ public class WGPUBindGroupDescriptor {
      * size_t entryCount
      * }
      */
-    public static final long entryCount$offset() {
+    public static long entryCount$offset() {
         return entryCount$OFFSET;
     }
 
@@ -224,7 +224,7 @@ public class WGPUBindGroupDescriptor {
      * const WGPUBindGroupEntry *entries
      * }
      */
-    public static final AddressLayout entries$layout() {
+    public static AddressLayout entries$layout() {
         return entries$LAYOUT;
     }
 
@@ -236,7 +236,7 @@ public class WGPUBindGroupDescriptor {
      * const WGPUBindGroupEntry *entries
      * }
      */
-    public static final long entries$offset() {
+    public static long entries$offset() {
         return entries$OFFSET;
     }
 

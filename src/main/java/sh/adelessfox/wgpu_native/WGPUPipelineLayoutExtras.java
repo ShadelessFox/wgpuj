@@ -17,7 +17,7 @@ import static java.lang.foreign.ValueLayout.OfLong;
  * }
  * }
  */
-public class WGPUPipelineLayoutExtras {
+public final class WGPUPipelineLayoutExtras {
 
     WGPUPipelineLayoutExtras() {
         // Should not be called directly
@@ -32,7 +32,7 @@ public class WGPUPipelineLayoutExtras {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -44,7 +44,7 @@ public class WGPUPipelineLayoutExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -56,7 +56,7 @@ public class WGPUPipelineLayoutExtras {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -88,7 +88,7 @@ public class WGPUPipelineLayoutExtras {
      * size_t pushConstantRangeCount
      * }
      */
-    public static final OfLong pushConstantRangeCount$layout() {
+    public static OfLong pushConstantRangeCount$layout() {
         return pushConstantRangeCount$LAYOUT;
     }
 
@@ -100,7 +100,7 @@ public class WGPUPipelineLayoutExtras {
      * size_t pushConstantRangeCount
      * }
      */
-    public static final long pushConstantRangeCount$offset() {
+    public static long pushConstantRangeCount$offset() {
         return pushConstantRangeCount$OFFSET;
     }
 
@@ -132,7 +132,7 @@ public class WGPUPipelineLayoutExtras {
      * const WGPUPushConstantRange *pushConstantRanges
      * }
      */
-    public static final AddressLayout pushConstantRanges$layout() {
+    public static AddressLayout pushConstantRanges$layout() {
         return pushConstantRanges$LAYOUT;
     }
 
@@ -144,7 +144,7 @@ public class WGPUPipelineLayoutExtras {
      * const WGPUPushConstantRange *pushConstantRanges
      * }
      */
-    public static final long pushConstantRanges$offset() {
+    public static long pushConstantRanges$offset() {
         return pushConstantRanges$OFFSET;
     }
 

@@ -15,7 +15,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.groupElement;
  * }
  * }
  */
-public class WGPUSurfaceSourceAndroidNativeWindow {
+public final class WGPUSurfaceSourceAndroidNativeWindow {
 
     WGPUSurfaceSourceAndroidNativeWindow() {
         // Should not be called directly
@@ -29,7 +29,7 @@ public class WGPUSurfaceSourceAndroidNativeWindow {
     /**
      * The layout of this struct
      */
-    public static final GroupLayout layout() {
+    public static GroupLayout layout() {
         return $LAYOUT;
     }
 
@@ -41,7 +41,7 @@ public class WGPUSurfaceSourceAndroidNativeWindow {
      * WGPUChainedStruct chain
      * }
      */
-    public static final GroupLayout chain$layout() {
+    public static GroupLayout chain$layout() {
         return chain$LAYOUT;
     }
 
@@ -53,7 +53,7 @@ public class WGPUSurfaceSourceAndroidNativeWindow {
      * WGPUChainedStruct chain
      * }
      */
-    public static final long chain$offset() {
+    public static long chain$offset() {
         return chain$OFFSET;
     }
 
@@ -85,7 +85,7 @@ public class WGPUSurfaceSourceAndroidNativeWindow {
      * void *window
      * }
      */
-    public static final AddressLayout window$layout() {
+    public static AddressLayout window$layout() {
         return window$LAYOUT;
     }
 
@@ -97,7 +97,7 @@ public class WGPUSurfaceSourceAndroidNativeWindow {
      * void *window
      * }
      */
-    public static final long window$offset() {
+    public static long window$offset() {
         return window$OFFSET;
     }
 
