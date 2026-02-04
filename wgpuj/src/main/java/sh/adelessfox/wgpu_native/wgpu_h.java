@@ -2,6 +2,8 @@
 
 package sh.adelessfox.wgpu_native;
 
+import sh.adelessfox.wgpuj.util.WgpuLibrary;
+
 import java.lang.foreign.*;
 import java.lang.invoke.MethodHandle;
 
@@ -14,8 +16,7 @@ public final class wgpu_h extends wgpu_h$shared {
         // Should not be called directly
     }
 
-    static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.loaderLookup()
-            .or(Linker.nativeLinker().defaultLookup());
+    static final SymbolLookup SYMBOL_LOOKUP = WgpuLibrary.load();
 
     /**
      * {@snippet lang=c :

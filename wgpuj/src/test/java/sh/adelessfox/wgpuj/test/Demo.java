@@ -1,9 +1,10 @@
-package sh.adelessfox.wgpuj;
+package sh.adelessfox.wgpuj.test;
+
+import sh.adelessfox.wgpuj.*;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.util.List;
 import java.util.Optional;
 
 public class Demo {
@@ -22,8 +23,6 @@ public class Demo {
         """;
 
     static void main() {
-        System.loadLibrary("lib/wgpu_native");
-
         var instance = Instance.create(InstanceDescriptor.builder()
             .addFlags(InstanceFlag.DEBUG, InstanceFlag.VALIDATION)
             .build());
@@ -99,7 +98,7 @@ public class Demo {
 
             try (var encoded = encoder.finish(Optional.empty())) {
                 try (var queue = device.getQueue()) {
-                    queue.submit(List.of(encoded));
+                    queue.submit(encoded);
                 }
             }
 

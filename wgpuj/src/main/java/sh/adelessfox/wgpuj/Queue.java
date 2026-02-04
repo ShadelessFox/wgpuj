@@ -19,6 +19,14 @@ public record Queue(MemorySegment segment) implements WgpuObject {
         }
     }
 
+    public void submit(CommandBuffer command) {
+        submit(List.of(command));
+    }
+
+    public void submit(CommandBuffer... commands) {
+        submit(List.of(commands));
+    }
+
     public void submit(List<CommandBuffer> commands) {
         try (Arena arena = Arena.ofConfined()) {
             wgpuQueueSubmit(
