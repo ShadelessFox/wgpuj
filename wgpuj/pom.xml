@@ -13,6 +13,7 @@
 
     <properties>
         <immutables.version>2.12.1</immutables.version>
+        <wgpu.native.tag>v27.0.4.0</wgpu.native.tag>
     </properties>
 
     <dependencies>
@@ -31,16 +32,29 @@
                 <artifactId>wgpuj-build-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>windows</id>
+                        <id>windows-amd64</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>prepare-native-module</goal>
                         </goals>
                         <configuration>
-                            <version>v27.0.4.0</version>
-                            <classifier>wgpu-windows-x86_64-msvc-release</classifier>
-                            <outputName>windows-amd64</outputName>
+                            <tag>${wgpu.native.tag}</tag>
+                            <os>windows</os>
+                            <arch>amd64</arch>
                             <outputDirectory>${project.build.directory}/wgpu-natives-windows-amd64</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>linux-amd64</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>prepare-native-module</goal>
+                        </goals>
+                        <configuration>
+                            <tag>${wgpu.native.tag}</tag>
+                            <os>linux</os>
+                            <arch>amd64</arch>
+                            <outputDirectory>${project.build.directory}/wgpu-natives-linux-amd64</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -59,6 +73,17 @@
                         <configuration>
                             <classifier>natives-windows-amd64</classifier>
                             <classesDirectory>${project.build.directory}/wgpu-natives-windows-amd64</classesDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>linux-amd64-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>natives-linux-amd64</classifier>
+                            <classesDirectory>${project.build.directory}/wgpu-natives-linux-amd64</classesDirectory>
                         </configuration>
                     </execution>
                 </executions>
