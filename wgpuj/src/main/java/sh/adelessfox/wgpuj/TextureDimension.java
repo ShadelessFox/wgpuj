@@ -3,7 +3,6 @@ package sh.adelessfox.wgpuj;
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 
 public enum TextureDimension implements WgpuEnum<TextureDimension> {
-    UNDEFINED(0x00000000),
     D1(0x00000001),
     D2(0x00000002),
     D3(0x00000003);

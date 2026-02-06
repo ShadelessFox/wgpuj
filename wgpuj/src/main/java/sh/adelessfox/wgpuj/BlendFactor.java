@@ -3,7 +3,6 @@ package sh.adelessfox.wgpuj;
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 
 public enum BlendFactor implements WgpuEnum<BlendFactor> {
-    UNDEFINED(0x00000000),
     ZERO(0x00000001),
     ONE(0x00000002),
     SRC(0x00000003),

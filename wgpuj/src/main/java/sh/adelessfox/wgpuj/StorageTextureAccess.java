@@ -2,13 +2,14 @@ package sh.adelessfox.wgpuj;
 
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 
-public enum StoreOp implements WgpuEnum<StoreOp> {
-    STORE(0x00000001),
-    DISCARD(0x00000002);
+public enum StorageTextureAccess implements WgpuEnum<StorageTextureAccess> {
+    WRITE_ONLY(0x00000002),
+    READ_ONLY(0x00000003),
+    READ_WRITE(0x00000004);
 
     private final int value;
 
-    StoreOp(int value) {
+    StorageTextureAccess(int value) {
         this.value = value;
     }
 

@@ -8,21 +8,21 @@ import java.lang.foreign.MemorySegment;
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
 public record Device(MemorySegment segment) implements WgpuObject {
+    public BindGroup createBindGroup(BindGroupDescriptor descriptor) {
+        try (Arena arena = Arena.ofConfined()) {
+            return new BindGroup(wgpuDeviceCreateBindGroup(segment, descriptor.toNative(arena)));
+        }
+    }
+
+    public BindGroupLayout createBindGroupLayout(BindGroupLayoutDescriptor descriptor) {
+        try (Arena arena = Arena.ofConfined()) {
+            return new BindGroupLayout(wgpuDeviceCreateBindGroupLayout(segment, descriptor.toNative(arena)));
+        }
+    }
+
     public Buffer createBuffer(BufferDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new Buffer(wgpuDeviceCreateBuffer(segment, descriptor.toNative(arena)));
-        }
-    }
-
-    public Texture createTexture(TextureDescriptor descriptor) {
-        try (Arena arena = Arena.ofConfined()) {
-            return new Texture(wgpuDeviceCreateTexture(segment, descriptor.toNative(arena)));
-        }
-    }
-
-    public ShaderModule createShaderModule(ShaderModuleDescriptor descriptor) {
-        try (Arena arena = Arena.ofConfined()) {
-            return new ShaderModule(wgpuDeviceCreateShaderModule(segment, descriptor.toNative(arena)));
         }
     }
 
@@ -32,11 +32,43 @@ public record Device(MemorySegment segment) implements WgpuObject {
         }
     }
 
+    // ComputePipeline wgpuDeviceCreateComputePipeline(ComputePipelineDescriptor descriptor);
+
+    public PipelineLayout createPipelineLayout(PipelineLayoutDescriptor descriptor) {
+        try (Arena arena = Arena.ofConfined()) {
+            return new PipelineLayout(wgpuDeviceCreatePipelineLayout(segment, descriptor.toNative(arena)));
+        }
+    }
+
+    public QuerySet createQuerySet(QuerySetDescriptor descriptor) {
+        try (Arena arena = Arena.ofConfined()) {
+            return new QuerySet(wgpuDeviceCreateQuerySet(segment, descriptor.toNative(arena)));
+        }
+    }
+
+    // RenderBundleEncoder wgpuDeviceCreateRenderBundleEncoder(RenderBundleEncoderDescriptor descriptor);
+
     public RenderPipeline createRenderPipeline(RenderPipelineDescriptor renderPipelineDescriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new RenderPipeline(wgpuDeviceCreateRenderPipeline(segment, renderPipelineDescriptor.toNative(arena)));
         }
     }
+
+    // Sampler wgpuDeviceCreateSampler(Optional<SamplerDescriptor> descriptor);
+
+    public ShaderModule createShaderModule(ShaderModuleDescriptor descriptor) {
+        try (Arena arena = Arena.ofConfined()) {
+            return new ShaderModule(wgpuDeviceCreateShaderModule(segment, descriptor.toNative(arena)));
+        }
+    }
+
+    public Texture createTexture(TextureDescriptor descriptor) {
+        try (Arena arena = Arena.ofConfined()) {
+            return new Texture(wgpuDeviceCreateTexture(segment, descriptor.toNative(arena)));
+        }
+    }
+
+    // AdapterInfo wgpuDeviceGetAdapterInfo();
 
     public Queue getQueue() {
         return new Queue(wgpuDeviceGetQueue(segment));

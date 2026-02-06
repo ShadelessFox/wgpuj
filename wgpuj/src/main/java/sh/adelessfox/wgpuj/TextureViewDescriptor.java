@@ -13,8 +13,7 @@ import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.Set;
 
-import static sh.adelessfox.wgpu_native.wgpu_h.WGPU_ARRAY_LAYER_COUNT_UNDEFINED;
-import static sh.adelessfox.wgpu_native.wgpu_h.WGPU_MIP_LEVEL_COUNT_UNDEFINED;
+import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
 @Value.Builder
 public record TextureViewDescriptor(
@@ -44,10 +43,10 @@ public record TextureViewDescriptor(
     @Override
     public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         label.ifPresent(l -> WgpuUtils.setString(allocator, WGPUTextureViewDescriptor.label(segment), l));
-        WGPUTextureViewDescriptor.format(segment, format.orElse(TextureFormat.UNDEFINED).value());
-        WGPUTextureViewDescriptor.dimension(segment, dimension.orElse(TextureViewDimension.UNDEFINED).value());
+        WGPUTextureViewDescriptor.format(segment, format.map(TextureFormat::value).orElse(WGPUTextureFormat_Undefined()));
+        WGPUTextureViewDescriptor.dimension(segment, dimension.map(TextureViewDimension::value).orElse(WGPUTextureViewDimension_Undefined()));
         WGPUTextureViewDescriptor.usage(segment, WgpuFlags.toNative(usage));
-        WGPUTextureViewDescriptor.aspect(segment, aspect.orElse(TextureAspect.UNDEFINED).value());
+        WGPUTextureViewDescriptor.aspect(segment, aspect.map(TextureAspect::value).orElse(WGPUTextureAspect_Undefined()));
         WGPUTextureViewDescriptor.baseMipLevel(segment, baseMipLevel);
         WGPUTextureViewDescriptor.mipLevelCount(segment, mipLevelCount.orElse(WGPU_MIP_LEVEL_COUNT_UNDEFINED()));
         WGPUTextureViewDescriptor.baseArrayLayer(segment, baseArrayLayer);

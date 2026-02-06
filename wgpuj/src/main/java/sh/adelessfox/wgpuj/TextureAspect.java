@@ -3,7 +3,6 @@ package sh.adelessfox.wgpuj;
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 
 public enum TextureAspect implements WgpuEnum<TextureAspect> {
-    UNDEFINED(0x00000000),
     ALL(0x00000001),
     STENCIL_ONLY(0x00000002),
     DEPTH_ONLY(0x00000003);

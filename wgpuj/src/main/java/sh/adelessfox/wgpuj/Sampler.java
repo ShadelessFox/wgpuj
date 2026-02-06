@@ -6,18 +6,18 @@ import sh.adelessfox.wgpuj.util.WgpuUtils;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
-import static sh.adelessfox.wgpu_native.wgpu_h.wgpuQuerySetRelease;
-import static sh.adelessfox.wgpu_native.wgpu_h.wgpuQuerySetSetLabel;
+import static sh.adelessfox.wgpu_native.wgpu_h.wgpuSamplerRelease;
+import static sh.adelessfox.wgpu_native.wgpu_h.wgpuSamplerSetLabel;
 
-public record QuerySet(MemorySegment segment) implements WgpuObject {
+public record Sampler(MemorySegment segment) implements WgpuObject {
     public void setLabel(String label) {
         try (Arena arena = Arena.ofConfined()) {
-            wgpuQuerySetSetLabel(segment, WgpuUtils.toNative(arena, label));
+            wgpuSamplerSetLabel(segment, WgpuUtils.toNative(arena, label));
         }
     }
 
     @Override
     public void close() {
-        wgpuQuerySetRelease(segment);
+        wgpuSamplerRelease(segment);
     }
 }

@@ -2,7 +2,6 @@ package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUPrimitiveState;
-import sh.adelessfox.wgpu_native.wgpu_h;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 
@@ -11,6 +10,7 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
 
+import static sh.adelessfox.wgpu_native.wgpu_h.WGPUCullMode_None;
 import static sh.adelessfox.wgpu_native.wgpu_h.WGPUIndexFormat_Undefined;
 
 @Value.Builder
@@ -36,7 +36,7 @@ public record PrimitiveState(
         WGPUPrimitiveState.topology(segment, topology.value());
         WGPUPrimitiveState.stripIndexFormat(segment, stripIndexFormat.map(IndexFormat::value).orElse(WGPUIndexFormat_Undefined()));
         WGPUPrimitiveState.frontFace(segment, frontFace.value());
-        WGPUPrimitiveState.cullMode(segment, cullMode.map(Face::value).orElse(wgpu_h.WGPUCullMode_None()));
+        WGPUPrimitiveState.cullMode(segment, cullMode.map(Face::value).orElse(WGPUCullMode_None()));
         WGPUPrimitiveState.unclippedDepth(segment, WgpuUtils.toNative(unclippedDepth));
     }
 }

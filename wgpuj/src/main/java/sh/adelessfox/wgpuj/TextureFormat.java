@@ -3,7 +3,6 @@ package sh.adelessfox.wgpuj;
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 
 public enum TextureFormat implements WgpuEnum<TextureFormat> {
-    UNDEFINED(0x00000000),
     R8_UNORM(0x00000001),
     R8_SNORM(0x00000002),
     R8_UINT(0x00000003),
