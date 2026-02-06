@@ -72,8 +72,11 @@ public final class WgpuUtils {
 
     public static MemorySegment toNative(SegmentAllocator allocator, ByteBuffer buffer) {
         var src = MemorySegment.ofBuffer(buffer);
-        var dst = allocator.allocate(src.byteSize());
-        return dst.copyFrom(src);
+        if (buffer.isDirect()) {
+            return src;
+        } else {
+            return allocator.allocate(src.byteSize()).copyFrom(src);
+        }
     }
 
     public static MemorySegment toNative(SegmentAllocator allocator, String text) {
