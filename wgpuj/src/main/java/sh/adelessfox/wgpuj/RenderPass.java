@@ -66,6 +66,18 @@ public record RenderPass(MemorySegment segment) implements WgpuObject {
         }
     }
 
+    public void setBindGroup(int groupIndex, Optional<BindGroup> group) {
+        try (Arena arena = Arena.ofConfined()) {
+            wgpuRenderPassEncoderSetBindGroup(
+                segment,
+                groupIndex,
+                group.map(BindGroup::segment).orElse(MemorySegment.NULL),
+                0,
+                MemorySegment.NULL
+            );
+        }
+    }
+
     public void setBindGroup(int groupIndex, Optional<BindGroup> group, int[] dynamicOffsets) {
         try (Arena arena = Arena.ofConfined()) {
             wgpuRenderPassEncoderSetBindGroup(

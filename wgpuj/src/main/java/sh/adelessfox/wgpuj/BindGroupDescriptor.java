@@ -3,6 +3,7 @@ package sh.adelessfox.wgpuj;
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUBindGroupDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
@@ -31,6 +32,8 @@ public record BindGroupDescriptor(
 
     @Override
     public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        throw new UnsupportedOperationException();
+        WgpuUtils.setString(allocator, WGPUBindGroupDescriptor.label(segment), label);
+        WGPUBindGroupDescriptor.layout(segment, layout.segment());
+        WgpuUtils.setArray(allocator, segment, WGPUBindGroupDescriptor.entryCount$offset(), entries);
     }
 }

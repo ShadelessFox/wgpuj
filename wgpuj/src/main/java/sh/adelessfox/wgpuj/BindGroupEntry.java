@@ -8,6 +8,8 @@ import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
+import static sh.adelessfox.wgpu_native.wgpu_h.WGPU_WHOLE_SIZE;
+
 @Value.Builder
 public record BindGroupEntry(
     int binding,
@@ -24,6 +26,19 @@ public record BindGroupEntry(
 
     @Override
     public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        throw new UnsupportedOperationException();
+        WGPUBindGroupEntry.binding(segment, binding);
+        switch (resource) {
+            case BindingResource.Buffer(var b) -> {
+                WGPUBindGroupEntry.buffer(segment, b.buffer().segment());
+                WGPUBindGroupEntry.offset(segment, b.offset());
+                WGPUBindGroupEntry.size(segment, b.size().orElse(WGPU_WHOLE_SIZE()));
+            }
+            case BindingResource.Sampler(var sampler) -> {
+                WGPUBindGroupEntry.sampler(segment, sampler.segment());
+            }
+            case BindingResource.TextureView(var view) -> {
+                WGPUBindGroupEntry.textureView(segment, view.segment());
+            }
+        }
     }
 }

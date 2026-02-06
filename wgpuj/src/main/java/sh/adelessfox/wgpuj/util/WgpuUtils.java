@@ -40,15 +40,18 @@ public final class WgpuUtils {
         }
     }
 
-    public static <T extends WgpuObject> MemorySegment toNative(
+    public static <T extends WgpuStruct> MemorySegment toNative(
         SegmentAllocator allocator,
         List<? extends T> list
     ) {
+        if (list.isEmpty()) {
+            return MemorySegment.NULL;
+        }
         return toNative(
             allocator,
-            ValueLayout.ADDRESS,
+            list.getFirst().nativeLayout(),
             list,
-            (t, a) -> a.allocateFrom(ValueLayout.ADDRESS, t.segment())
+            T::toNative
         );
     }
 

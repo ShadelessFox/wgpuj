@@ -2,6 +2,7 @@ package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUBindGroupLayoutEntry;
+import sh.adelessfox.wgpuj.util.WgpuFlags;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 
 import java.lang.foreign.MemoryLayout;
@@ -26,6 +27,11 @@ public record BindGroupLayoutEntry(
 
     @Override
     public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        throw new UnsupportedOperationException();
+        WGPUBindGroupLayoutEntry.binding(segment, binding);
+        WGPUBindGroupLayoutEntry.visibility(segment, WgpuFlags.toNative(visibility));
+        type.toNativeBuffer(WGPUBindGroupLayoutEntry.buffer(segment));
+        type.toNativeSampler(WGPUBindGroupLayoutEntry.sampler(segment));
+        type.toNativeTexture(WGPUBindGroupLayoutEntry.texture(segment));
+        type.toNativeStorageTexture(WGPUBindGroupLayoutEntry.storageTexture(segment));
     }
 }
