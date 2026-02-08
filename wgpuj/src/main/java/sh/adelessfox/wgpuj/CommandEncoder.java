@@ -41,6 +41,7 @@ public record CommandEncoder(MemorySegment segment) implements WgpuObject {
     }
 
     public void copyBufferToTexture(TexelCopyBufferInfo source, TexelCopyTextureInfo destination, Extent3D copySize) {
+        validateBufferAlignment(source.layout());
         try (Arena arena = Arena.ofConfined()) {
             wgpuCommandEncoderCopyBufferToTexture(
                 segment,
@@ -52,6 +53,7 @@ public record CommandEncoder(MemorySegment segment) implements WgpuObject {
     }
 
     public void copyTextureToBuffer(TexelCopyTextureInfo source, TexelCopyBufferInfo destination, Extent3D copySize) {
+        validateBufferAlignment(destination.layout());
         try (Arena arena = Arena.ofConfined()) {
             wgpuCommandEncoderCopyTextureToBuffer(
                 segment,
@@ -73,12 +75,13 @@ public record CommandEncoder(MemorySegment segment) implements WgpuObject {
         }
     }
 
-    public CommandBuffer finish(Optional<CommandBufferDescriptor> descriptor) {
+    public CommandBuffer finish() {
+        return new CommandBuffer(wgpuCommandEncoderFinish(segment, MemorySegment.NULL));
+    }
+
+    public CommandBuffer finish(CommandBufferDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
-            return new CommandBuffer(wgpuCommandEncoderFinish(
-                segment,
-                descriptor.map(d -> d.toNative(arena)).orElse(MemorySegment.NULL)
-            ));
+            return new CommandBuffer(wgpuCommandEncoderFinish(segment, descriptor.toNative(arena)));
         }
     }
 
@@ -122,5 +125,12 @@ public record CommandEncoder(MemorySegment segment) implements WgpuObject {
     @Override
     public void close() {
         wgpuCommandEncoderRelease(segment);
+    }
+
+    private static void validateBufferAlignment(TexelCopyBufferLayout layout) {
+        // https://github.com/gfx-rs/wgpu/blob/84af1a4beb1895433400e5fae9b4b996fc06d2f6/wgpu-types/src/lib.rs#L158-L167
+        if (layout.bytesPerRow() % 256 != 0) {
+            throw new IllegalArgumentException("bytesPerRow must be a multiple of 256");
+        }
     }
 }

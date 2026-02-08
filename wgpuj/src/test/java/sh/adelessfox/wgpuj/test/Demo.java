@@ -5,7 +5,6 @@ import sh.adelessfox.wgpuj.*;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.util.Optional;
 
 public class Demo {
     private static final String SHADER = """
@@ -67,8 +66,10 @@ public class Demo {
             var descriptor = RenderPassDescriptor.builder()
                 .addColorAttachments(RenderPassColorAttachment.builder()
                     .view(view)
-                    .load(new LoadOp.Clear<>(new Color(0.2, 0.1, 0.7, 1.0)))
-                    .store(StoreOp.STORE)
+                    .ops(new Operations<>(
+                        new LoadOp.Clear<>(new Color(0.2, 0.1, 0.7, 1.0)),
+                        StoreOp.STORE
+                    ))
                     .build())
                 .build();
 
@@ -96,17 +97,17 @@ public class Demo {
                 new Extent3D(width, height, 1)
             );
 
-            try (var encoded = encoder.finish(Optional.empty())) {
+            try (var encoded = encoder.finish()) {
                 try (var queue = device.getQueue()) {
                     queue.submit(encoded);
                 }
             }
 
-            try (var mapped = buffer.map(instance, 0, width * height * 4, MapMode.READ)) {
+            try (var mapped = buffer.map(0, width * height * 4, MapMode.READ)) {
                 var image = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
                 var imageBuffer = (DataBufferByte) image.getRaster().getDataBuffer();
 
-                var data = mapped.getMappedRange(0, width * height * 4);
+                var data = mapped.asBuffer(0, width * height * 4);
                 for (int i = 0; i < width * height * 4; i += 4) {
                     imageBuffer.getData()[i/**/] = data.get(i + 3); // A
                     imageBuffer.getData()[i + 1] = data.get(i + 2); // B

@@ -13,33 +13,41 @@ import java.util.Set;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Buffer(MemorySegment segment) implements WgpuObject {
+public record Buffer(Device device, MemorySegment segment) implements WgpuObject {
     public interface Mapped extends AutoCloseable {
-        ByteBuffer getMappedRange(long offset, long size);
+        ByteBuffer asBuffer(long offset, long size);
+
+        void get(ByteBuffer dst, long offset);
+
+        void put(ByteBuffer src, long offset);
 
         @Override
         void close();
     }
 
-    public Mapped map(Instance instance, long offset, long size, MapMode... modes) {
+    public Mapped map(long offset, long size, MapMode... modes) {
+        if (modes.length == 0) {
+            throw new IllegalArgumentException("At least one map mode must be specified");
+        }
         var mode = Set.of(modes);
         try (Arena arena = Arena.ofConfined()) {
             var complete = new boolean[1];
             var callback = WGPUBufferMapCallbackInfo.allocate(arena);
-            WGPUBufferMapCallbackInfo.callback(callback, WGPUBufferMapCallback.allocate((status, _, _, _) -> {
+            WGPUBufferMapCallbackInfo.callback(callback, WGPUBufferMapCallback.allocate((status, message, _, _) -> {
                 if (status != WGPUMapAsyncStatus_Success()) {
-                    throw new IllegalStateException("Failed to map async");
+                    throw new IllegalStateException("Failed to map buffer: " + WgpuUtils.getString(message));
                 }
                 complete[0] = true;
             }, arena));
             wgpuBufferMapAsync(arena, segment, WgpuFlags.toNative(mode), offset, size, callback);
+            var instance = device.adapter().instance();
             while (!complete[0]) {
                 wgpuInstanceProcessEvents(instance.segment());
             }
         }
         return new Mapped() {
             @Override
-            public ByteBuffer getMappedRange(long offset, long size) {
+            public ByteBuffer asBuffer(long offset, long size) {
                 if (mode.contains(MapMode.WRITE)) {
                     return wgpuBufferGetMappedRange(segment, offset, size)
                         .reinterpret(size)
@@ -50,6 +58,22 @@ public record Buffer(MemorySegment segment) implements WgpuObject {
                         .asByteBuffer()
                         .asReadOnlyBuffer();
                 }
+            }
+
+            @Override
+            public void get(ByteBuffer dst, long offset) {
+                if (!mode.contains(MapMode.READ)) {
+                    throw new IllegalStateException("Buffer not mapped for reading");
+                }
+                dst.put(asBuffer(offset, dst.remaining()));
+            }
+
+            @Override
+            public void put(ByteBuffer src, long offset) {
+                if (!mode.contains(MapMode.WRITE)) {
+                    throw new IllegalStateException("Buffer not mapped for writing");
+                }
+                asBuffer(offset, src.remaining()).put(src);
             }
 
             @Override

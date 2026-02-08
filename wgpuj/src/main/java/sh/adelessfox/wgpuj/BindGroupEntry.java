@@ -28,10 +28,10 @@ public record BindGroupEntry(
     public void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUBindGroupEntry.binding(segment, binding);
         switch (resource) {
-            case BindingResource.Buffer(var b) -> {
-                WGPUBindGroupEntry.buffer(segment, b.buffer().segment());
-                WGPUBindGroupEntry.offset(segment, b.offset());
-                WGPUBindGroupEntry.size(segment, b.size().orElse(WGPU_WHOLE_SIZE()));
+            case BindingResource.Buffer(var buffer, var offset, var size) -> {
+                WGPUBindGroupEntry.buffer(segment, buffer.segment());
+                WGPUBindGroupEntry.offset(segment, offset);
+                WGPUBindGroupEntry.size(segment, size.orElse(WGPU_WHOLE_SIZE()));
             }
             case BindingResource.Sampler(var sampler) -> {
                 WGPUBindGroupEntry.sampler(segment, sampler.segment());

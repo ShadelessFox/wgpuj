@@ -10,15 +10,14 @@ import java.lang.foreign.SegmentAllocator;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-import static sh.adelessfox.wgpu_native.wgpu_h.*;
+import static sh.adelessfox.wgpu_native.wgpu_h.WGPU_DEPTH_SLICE_UNDEFINED;
 
 @Value.Builder
 public record RenderPassColorAttachment(
     TextureView view,
     OptionalInt depthSlice,
     Optional<TextureView> resolveTarget,
-    LoadOp<Color> load,
-    StoreOp store
+    Operations<Color> ops
 ) implements WgpuStruct {
     public static RenderPassColorAttachmentBuilder builder() {
         return new RenderPassColorAttachmentBuilder();
@@ -34,14 +33,11 @@ public record RenderPassColorAttachment(
         WGPURenderPassColorAttachment.view(segment, view.segment());
         WGPURenderPassColorAttachment.depthSlice(segment, depthSlice.orElse(WGPU_DEPTH_SLICE_UNDEFINED()));
         WGPURenderPassColorAttachment.resolveTarget(segment, resolveTarget.map(TextureView::segment).orElse(MemorySegment.NULL));
-        WGPURenderPassColorAttachment.loadOp(segment, switch (load) {
-            case LoadOp.Clear<Color>(var color) -> {
-                color.toNative(allocator, WGPURenderPassColorAttachment.clearValue(segment));
-                yield WGPULoadOp_Clear();
-            }
-            case LoadOp.Load<Color> _ -> WGPULoadOp_Load();
-            case LoadOp.DontCare<Color> _ -> WGPULoadOp_Undefined();
-        });
-        WGPURenderPassColorAttachment.storeOp(segment, store.value());
+        ops.toNative(
+            segment,
+            WGPURenderPassColorAttachment::loadOp,
+            WGPURenderPassColorAttachment::storeOp,
+            (s, c) -> c.toNative(allocator, WGPURenderPassColorAttachment.clearValue(s))
+        );
     }
 }

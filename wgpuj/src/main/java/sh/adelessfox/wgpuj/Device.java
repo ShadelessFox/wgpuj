@@ -7,7 +7,7 @@ import java.lang.foreign.MemorySegment;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Device(MemorySegment segment) implements WgpuObject {
+public record Device(Adapter adapter, MemorySegment segment) implements WgpuObject {
     public BindGroup createBindGroup(BindGroupDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new BindGroup(wgpuDeviceCreateBindGroup(segment, descriptor.toNative(arena)));
@@ -22,7 +22,7 @@ public record Device(MemorySegment segment) implements WgpuObject {
 
     public Buffer createBuffer(BufferDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
-            return new Buffer(wgpuDeviceCreateBuffer(segment, descriptor.toNative(arena)));
+            return new Buffer(this, wgpuDeviceCreateBuffer(segment, descriptor.toNative(arena)));
         }
     }
 

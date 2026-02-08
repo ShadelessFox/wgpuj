@@ -36,7 +36,7 @@ public record Instance(MemorySegment segment) implements WgpuObject {
             var options = WGPURequestAdapterOptions.allocate(arena);
             wgpuInstanceRequestAdapter(arena, segment, options, callbackInfo);
 
-            return new Adapter(result.get(ValueLayout.ADDRESS, 0));
+            return new Adapter(this, result.get(ValueLayout.ADDRESS, 0));
         }
     }
 

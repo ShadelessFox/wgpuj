@@ -7,6 +7,7 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiFunction;
@@ -22,6 +23,12 @@ public final class WgpuUtils {
 
     public static void setString(SegmentAllocator allocator, MemorySegment segment, Optional<String> text) {
         text.ifPresent(t -> setString(allocator, segment, t));
+    }
+
+    public static String getString(MemorySegment segment) {
+        var length = WGPUStringView.length(segment);
+        var data = WGPUStringView.data(segment).reinterpret(length);
+        return StandardCharsets.UTF_8.decode(data.asByteBuffer()).toString();
     }
 
     public static <T extends WgpuStruct> void setArray(
