@@ -102,21 +102,21 @@ public class Demo {
                     queue.submit(encoded);
                 }
             }
+        }
 
-            try (var mapped = buffer.map(0, width * height * 4, MapMode.READ)) {
-                var image = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
-                var imageBuffer = (DataBufferByte) image.getRaster().getDataBuffer();
+        try (var mapped = buffer.map(0, width * height * 4, MapMode.READ)) {
+            var image = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
+            var imageBuffer = (DataBufferByte) image.getRaster().getDataBuffer();
 
-                var data = mapped.asBuffer(0, width * height * 4);
-                for (int i = 0; i < width * height * 4; i += 4) {
-                    imageBuffer.getData()[i/**/] = data.get(i + 3); // A
-                    imageBuffer.getData()[i + 1] = data.get(i + 2); // B
-                    imageBuffer.getData()[i + 2] = data.get(i + 1); // G
-                    imageBuffer.getData()[i + 3] = data.get(i/**/); // R
-                }
-
-                JOptionPane.showMessageDialog(null, new ImageIcon(image));
+            var data = mapped.asBuffer(0, width * height * 4);
+            for (int i = 0; i < width * height * 4; i += 4) {
+                imageBuffer.getData()[i/**/] = data.get(i + 3); // A
+                imageBuffer.getData()[i + 1] = data.get(i + 2); // B
+                imageBuffer.getData()[i + 2] = data.get(i + 1); // G
+                imageBuffer.getData()[i + 3] = data.get(i/**/); // R
             }
+
+            JOptionPane.showMessageDialog(null, new ImageIcon(image));
         }
 
         renderPipeline.close();

@@ -42,7 +42,7 @@ public record Buffer(Device device, MemorySegment segment) implements WgpuObject
             wgpuBufferMapAsync(arena, segment, WgpuFlags.toNative(mode), offset, size, callback);
             var instance = device.adapter().instance();
             while (!complete[0]) {
-                wgpuInstanceProcessEvents(instance.segment());
+                instance.processEvents();
             }
         }
         return new Mapped() {

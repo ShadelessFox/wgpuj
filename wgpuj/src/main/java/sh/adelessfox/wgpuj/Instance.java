@@ -40,6 +40,10 @@ public record Instance(MemorySegment segment) implements WgpuObject {
         }
     }
 
+    public void processEvents() {
+        wgpuInstanceProcessEvents(segment);
+    }
+
     @Override
     public void close() {
         wgpuInstanceRelease(segment);
