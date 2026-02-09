@@ -5,7 +5,6 @@ import sh.adelessfox.wgpu_native.WGPUStringView;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
-import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -26,22 +25,6 @@ public final class WgpuUtils {
     public static void setString(SegmentAllocator allocator, MemorySegment segment, String text) {
         WGPUStringView.data(segment, allocator.allocateFrom(text));
         WGPUStringView.length(segment, text.length());
-    }
-
-    public static <T extends WgpuStruct> void setArray(
-        SegmentAllocator allocator,
-        MemorySegment segment,
-        long offset,
-        List<? extends T> list
-    ) {
-        if (list.isEmpty()) {
-            segment.set(ValueLayout.JAVA_LONG, offset, 0L);
-            segment.set(ValueLayout.ADDRESS, offset + 8, MemorySegment.NULL);
-        } else {
-            var layout = list.getFirst().nativeLayout();
-            segment.set(ValueLayout.JAVA_LONG, offset, list.size());
-            segment.set(ValueLayout.ADDRESS, offset + 8, toNative(allocator, layout, list, T::toNative));
-        }
     }
 
     public static <T extends WgpuStruct> void setArray(
