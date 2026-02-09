@@ -32,8 +32,8 @@ public interface RenderPassDescriptor extends ObjectDescriptorBase, WgpuStruct {
 
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WgpuUtils.setString(allocator, WGPURenderPassDescriptor.label(segment), label());
-        WgpuUtils.setArray(allocator, segment, WGPURenderPassDescriptor.colorAttachmentCount$offset(), colorAttachments());
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPURenderPassDescriptor.label(segment), x));
+        WgpuUtils.setArray(allocator, segment, colorAttachments(), WGPURenderPassDescriptor::colorAttachmentCount, WGPURenderPassDescriptor::colorAttachments);
         WGPURenderPassDescriptor.depthStencilAttachment(segment, depthStencilAttachment().map(dsa -> dsa.toNative(allocator)).orElse(MemorySegment.NULL));
         WGPURenderPassDescriptor.occlusionQuerySet(segment, occlusionQuerySet().map(QuerySet::segment).orElse(MemorySegment.NULL));
         WGPURenderPassDescriptor.timestampWrites(segment, timestampWrites().map(tw -> tw.toNative(allocator)).orElse(MemorySegment.NULL));

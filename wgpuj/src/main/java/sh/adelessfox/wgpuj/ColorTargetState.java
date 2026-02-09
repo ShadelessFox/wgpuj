@@ -32,7 +32,7 @@ public interface ColorTargetState extends WgpuStruct {
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUColorTargetState.format(segment, format().value());
-        blend().ifPresent(blend -> WGPUColorTargetState.blend(segment, blend.toNative(allocator)));
+        blend().ifPresent(x -> WGPUColorTargetState.blend(segment, x.toNative(allocator)));
         WGPUColorTargetState.writeMask(segment, WgpuFlags.toNative(writeMask()));
     }
 }

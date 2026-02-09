@@ -1,0 +1,33 @@
+package sh.adelessfox.wgpuj;
+
+import sh.adelessfox.wgpuj.util.WgpuEnum;
+
+public enum FeatureName implements WgpuEnum<FeatureName> {
+    DEPTH_CLIP_CONTROL(0x00000001),
+    DEPTH32FLOAT_STENCIL8(0x00000002),
+    TIMESTAMP_QUERY(0x00000003),
+    TEXTURE_COMPRESSION_BC(0x00000004),
+    TEXTURE_COMPRESSION_BC_SLICED_3D(0x00000005),
+    TEXTURE_COMPRESSION_ETC2(0x00000006),
+    TEXTURE_COMPRESSION_ASTC(0x00000007),
+    TEXTURE_COMPRESSION_ASTC_SLICED_3D(0x00000008),
+    INDIRECT_FIRST_INSTANCE(0x00000009),
+    SHADER_F16(0x0000000A),
+    RG11B10UFLOAT_RENDERABLE(0x0000000B),
+    BGRA8UNORM_STORAGE(0x0000000C),
+    FLOAT32_FILTERABLE(0x0000000D),
+    FLOAT32_BLENDABLE(0x0000000E),
+    CLIP_DISTANCES(0x0000000F),
+    DUAL_SOURCE_BLENDING(0x00000010);
+
+    private final int value;
+
+    FeatureName(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public int value() {
+        return value;
+    }
+}

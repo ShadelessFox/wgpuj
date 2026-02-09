@@ -25,8 +25,8 @@ public interface FragmentState extends ProgrammableStage, WgpuStruct {
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUFragmentState.module(segment, module().segment());
-        entryPoint().ifPresent(ep -> WgpuUtils.setString(allocator, WGPUFragmentState.entryPoint(segment), ep));
-        WgpuUtils.setArray(allocator, segment, WGPUFragmentState.constantCount$offset(), constants());
-        WgpuUtils.setArray(allocator, segment, WGPUFragmentState.targetCount$offset(), targets());
+        entryPoint().ifPresent(x -> WgpuUtils.setString(allocator, WGPUFragmentState.entryPoint(segment), x));
+        WgpuUtils.setArray(allocator, segment, constants(), WGPUFragmentState::constantCount, WGPUFragmentState::constants);
+        WgpuUtils.setArray(allocator, segment, targets(), WGPUFragmentState::targetCount, WGPUFragmentState::targets);
     }
 }

@@ -37,7 +37,7 @@ public interface RenderPipelineDescriptor extends PipelineDescriptorBase, WgpuSt
 
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WgpuUtils.setString(allocator, WGPURenderPipelineDescriptor.label(segment), label());
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPURenderPipelineDescriptor.label(segment), x));
         WGPURenderPipelineDescriptor.layout(segment, layout().map(PipelineLayout::segment).orElse(MemorySegment.NULL));
         vertex().toNative(allocator, WGPURenderPipelineDescriptor.vertex(segment));
         primitive().toNative(allocator, WGPURenderPipelineDescriptor.primitive(segment));

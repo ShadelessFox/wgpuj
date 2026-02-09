@@ -25,8 +25,8 @@ public interface VertexState extends ProgrammableStage, WgpuStruct {
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPUVertexState.module(segment, module().segment());
-        entryPoint().ifPresent(ep -> WgpuUtils.setString(allocator, WGPUVertexState.entryPoint(segment), ep));
-        WgpuUtils.setArray(allocator, segment, WGPUVertexState.constantCount$offset(), constants());
-        WgpuUtils.setArray(allocator, segment, WGPUVertexState.bufferCount$offset(), buffers());
+        entryPoint().ifPresent(x -> WgpuUtils.setString(allocator, WGPUVertexState.entryPoint(segment), x));
+        WgpuUtils.setArray(allocator, segment, constants(), WGPUVertexState::constantCount, WGPUVertexState::constants);
+        WgpuUtils.setArray(allocator, segment, buffers(), WGPUVertexState::bufferCount, WGPUVertexState::buffers);
     }
 }

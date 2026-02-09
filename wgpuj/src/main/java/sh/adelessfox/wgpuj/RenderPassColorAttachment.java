@@ -35,7 +35,7 @@ public interface RenderPassColorAttachment extends WgpuStruct {
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
         WGPURenderPassColorAttachment.view(segment, view().segment());
         WGPURenderPassColorAttachment.depthSlice(segment, depthSlice().orElse(WGPU_DEPTH_SLICE_UNDEFINED()));
-        WGPURenderPassColorAttachment.resolveTarget(segment, resolveTarget().map(TextureView::segment).orElse(MemorySegment.NULL));
+        resolveTarget().ifPresent(x -> WGPURenderPassColorAttachment.resolveTarget(segment, x.segment()));
         ops().toNative(
             segment,
             WGPURenderPassColorAttachment::loadOp,

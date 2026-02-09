@@ -2,13 +2,13 @@ package sh.adelessfox.wgpuj;
 
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 
-public enum StoreOp implements WgpuEnum<StoreOp> {
-    STORE(0x00000001),
-    DISCARD(0x00000002);
+public enum QueryType implements WgpuEnum<QueryType> {
+    OCCLUSION(0x00000001),
+    TIMESTAMP(0x00000002);
 
     private final int value;
 
-    StoreOp(int value) {
+    QueryType(int value) {
         this.value = value;
     }
 

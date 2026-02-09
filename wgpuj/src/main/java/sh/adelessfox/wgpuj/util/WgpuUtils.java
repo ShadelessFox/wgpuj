@@ -9,26 +9,23 @@ import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.Optional;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.ObjIntConsumer;
 
 public final class WgpuUtils {
     private WgpuUtils() {
-    }
-
-    public static void setString(SegmentAllocator allocator, MemorySegment segment, String text) {
-        WGPUStringView.data(segment, allocator.allocateFrom(text));
-        WGPUStringView.length(segment, text.length());
-    }
-
-    public static void setString(SegmentAllocator allocator, MemorySegment segment, Optional<String> text) {
-        text.ifPresent(t -> setString(allocator, segment, t));
     }
 
     public static String getString(MemorySegment segment) {
         var length = WGPUStringView.length(segment);
         var data = WGPUStringView.data(segment).reinterpret(length);
         return StandardCharsets.UTF_8.decode(data.asByteBuffer()).toString();
+    }
+
+    public static void setString(SegmentAllocator allocator, MemorySegment segment, String text) {
+        WGPUStringView.data(segment, allocator.allocateFrom(text));
+        WGPUStringView.length(segment, text.length());
     }
 
     public static <T extends WgpuStruct> void setArray(
@@ -44,6 +41,20 @@ public final class WgpuUtils {
             var layout = list.getFirst().nativeLayout();
             segment.set(ValueLayout.JAVA_LONG, offset, list.size());
             segment.set(ValueLayout.ADDRESS, offset + 8, toNative(allocator, layout, list, T::toNative));
+        }
+    }
+
+    public static <T extends WgpuStruct> void setArray(
+        SegmentAllocator allocator,
+        MemorySegment segment,
+        List<? extends T> list,
+        ObjIntConsumer<MemorySegment> countConsumer,
+        BiConsumer<MemorySegment, MemorySegment> entriesConsumer
+    ) {
+        if (!list.isEmpty()) {
+            var layout = list.getFirst().nativeLayout();
+            countConsumer.accept(segment, list.size());
+            entriesConsumer.accept(segment, toNative(allocator, layout, list, T::toNative));
         }
     }
 

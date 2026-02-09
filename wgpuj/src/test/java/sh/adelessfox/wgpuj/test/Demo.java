@@ -26,13 +26,13 @@ public class Demo {
         """;
 
     static void main() {
-        var instance = Instance.create(InstanceDescriptor.builder()
+        var instance = Instance.create(ImmutableInstanceDescriptor.builder()
             .addFlags(InstanceFlag.DEBUG, InstanceFlag.VALIDATION)
             .build());
 
         var adapter = instance.requestAdapter();
 
-        var device = adapter.requestDevice(DeviceDescriptor.builder()
+        var device = adapter.requestDevice(ImmutableDeviceDescriptor.builder()
             .label("default device")
             .build());
 
@@ -57,21 +57,20 @@ public class Demo {
 
         var view = texture.createView();
 
-        var module = device.createShaderModule(ShaderModuleDescriptor.builder()
+        var module = device.createShaderModule(ImmutableShaderModuleDescriptor.builder()
             .label("shader")
-            .source(new ShaderSource.Wgsl(SHADER))
+            .source(ImmutableShaderSource.Wgsl.of(SHADER))
             .build());
 
         var renderPipeline = createRenderPipeline(device, module, format);
 
-        try (var encoder = device.createCommandEncoder(CommandEncoderDescriptor.builder().build())) {
+        try (var encoder = device.createCommandEncoder(ImmutableCommandEncoderDescriptor.of())) {
             var descriptor = ImmutableRenderPassDescriptor.builder()
                 .addColorAttachments(ImmutableRenderPassColorAttachment.builder()
                     .view(view)
-                    .ops(new Operations<>(
-                        new LoadOp.Clear<>(new Color(0.2, 0.1, 0.7, 1.0)),
-                        StoreOp.STORE
-                    ))
+                    .ops(ImmutableOperations.of(
+                        ImmutableOperations.Clear.of(ImmutableColor.of(0.2, 0.1, 0.7, 1.0)),
+                        Operations.StoreOp.STORE))
                     .build())
                 .build();
 

@@ -33,12 +33,8 @@ public interface BindGroupEntry extends WgpuStruct {
                 WGPUBindGroupEntry.offset(segment, buffer.offset());
                 WGPUBindGroupEntry.size(segment, buffer.size().orElse(WGPU_WHOLE_SIZE()));
             }
-            case BindingResource.Sampler sampler -> {
-                WGPUBindGroupEntry.sampler(segment, sampler.sampler().segment());
-            }
-            case BindingResource.TextureView view -> {
-                WGPUBindGroupEntry.textureView(segment, view.view().segment());
-            }
+            case BindingResource.Sampler sampler -> WGPUBindGroupEntry.sampler(segment, sampler.sampler().segment());
+            case BindingResource.TextureView view -> WGPUBindGroupEntry.textureView(segment, view.view().segment());
         }
     }
 }

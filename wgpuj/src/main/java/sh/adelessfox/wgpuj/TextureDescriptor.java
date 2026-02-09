@@ -45,7 +45,7 @@ public interface TextureDescriptor extends ObjectDescriptorBase, WgpuStruct {
 
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        label().ifPresent(l -> WgpuUtils.setString(allocator, WGPUTextureDescriptor.label(segment), l));
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUTextureDescriptor.label(segment), x));
         size().toNative(allocator, WGPUTextureDescriptor.size(segment));
         WGPUTextureDescriptor.mipLevelCount(segment, mipLevelCount());
         WGPUTextureDescriptor.sampleCount(segment, sampleCount());

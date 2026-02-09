@@ -3,28 +3,24 @@ package sh.adelessfox.wgpuj;
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUCommandEncoderDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
-import java.util.Optional;
 
-@Value.Builder
-public record CommandEncoderDescriptor(
-    Optional<String> label
-) implements WgpuStruct {
-    public static CommandEncoderDescriptorBuilder builder() {
-        return new CommandEncoderDescriptorBuilder();
-    }
-
+@WgpuStyle
+@Value.Immutable(singleton = true)
+public interface CommandEncoderDescriptor extends ObjectDescriptorBase, WgpuStruct {
+    @Value.NonAttribute
     @Override
-    public MemoryLayout nativeLayout() {
+    default MemoryLayout nativeLayout() {
         return WGPUCommandEncoderDescriptor.layout();
     }
 
     @Override
-    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WgpuUtils.setString(allocator, WGPUCommandEncoderDescriptor.label(segment), label);
+    default void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUCommandEncoderDescriptor.label(segment), x));
     }
 }

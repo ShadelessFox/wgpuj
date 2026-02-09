@@ -24,7 +24,7 @@ public interface BindGroupLayoutDescriptor extends ObjectDescriptorBase, WgpuStr
 
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WgpuUtils.setString(allocator, WGPUBindGroupLayoutDescriptor.label(segment), label());
-        WgpuUtils.setArray(allocator, segment, WGPUBindGroupLayoutDescriptor.entryCount$offset(), entries());
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUBindGroupLayoutDescriptor.label(segment), x));
+        WgpuUtils.setArray(allocator, segment, entries(), WGPUBindGroupLayoutDescriptor::entryCount, WGPUBindGroupLayoutDescriptor::entries);
     }
 }

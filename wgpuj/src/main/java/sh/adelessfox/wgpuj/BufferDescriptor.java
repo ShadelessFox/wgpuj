@@ -31,7 +31,7 @@ public interface BufferDescriptor extends ObjectDescriptorBase, WgpuStruct {
 
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WgpuUtils.setString(allocator, WGPUBufferDescriptor.label(segment), label());
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUBufferDescriptor.label(segment), x));
         WGPUBufferDescriptor.usage(segment, WgpuFlags.toNative(usages()));
         WGPUBufferDescriptor.size(segment, size());
         WGPUBufferDescriptor.mappedAtCreation(segment, WgpuUtils.toNative(mappedAtCreation()));
