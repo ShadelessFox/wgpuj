@@ -5,90 +5,103 @@ import sh.adelessfox.wgpu_native.WGPUBufferBindingLayout;
 import sh.adelessfox.wgpu_native.WGPUSamplerBindingLayout;
 import sh.adelessfox.wgpu_native.WGPUStorageTextureBindingLayout;
 import sh.adelessfox.wgpu_native.WGPUTextureBindingLayout;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.MemorySegment;
-import java.util.OptionalLong;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
+@WgpuStyle
 @Value.Enclosing
 public sealed interface BindingType {
-    @Value.Builder
-    record Buffer(
-        BufferBindingType type,
-        boolean hasDynamicOffset,
-        OptionalLong minBindingSize
-    ) implements BindingType {
-        public static ImmutableBindingType.BufferBuilder builder() {
-            return ImmutableBindingType.bufferBuilder();
+    @WgpuStyle
+    @Value.Immutable(singleton = true)
+    non-sealed interface Buffer extends BindingType {
+        default BufferBindingType type() {
+            return new BufferBindingType.Uniform();
+        }
+
+        default boolean hasDynamicOffset() {
+            return false;
+        }
+
+        default long minBindingSize() {
+            return 0;
         }
     }
 
-    @Value.Builder
-    record Sampler(
-        SamplerBindingType type
-    ) implements BindingType {
-        public static ImmutableBindingType.SamplerBuilder builder() {
-            return ImmutableBindingType.samplerBuilder();
+    @WgpuStyle
+    @Value.Immutable(singleton = true)
+    non-sealed interface Sampler extends BindingType {
+        default SamplerBindingType type() {
+            return SamplerBindingType.FILTERING;
         }
     }
 
-    @Value.Builder
-    record Texture(
-        TextureSampleType sampleType,
-        TextureViewDimension viewDimension,
-        boolean multisampled
-    ) implements BindingType {
-        public static ImmutableBindingType.TextureBuilder builder() {
-            return ImmutableBindingType.textureBuilder();
+    @WgpuStyle
+    @Value.Immutable(singleton = true)
+    non-sealed interface Texture extends BindingType {
+        default TextureSampleType sampleType() {
+            return new TextureSampleType.Float(true);
+        }
+
+        default TextureViewDimension viewDimension() {
+            return TextureViewDimension.D2;
+        }
+
+        default boolean multisampled() {
+            return false;
         }
     }
 
-    @Value.Builder
-    record StorageTexture(
-        StorageTextureAccess access,
-        TextureFormat format,
-        TextureViewDimension viewDimension
-    ) implements BindingType {
-        public static ImmutableBindingType.StorageTextureBuilder builder() {
-            return ImmutableBindingType.storageTextureBuilder();
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface StorageTexture extends BindingType {
+        default StorageTextureAccess access() {
+            return StorageTextureAccess.WRITE_ONLY;
+        }
+
+        TextureFormat format();
+
+        default TextureViewDimension viewDimension() {
+            return TextureViewDimension.D2;
         }
     }
 
     default void toNativeBuffer(MemorySegment segment) {
-        if (this instanceof Buffer(var type, var hasDynamicOffset, var minBindingSize)) {
-            WGPUBufferBindingLayout.type(segment, type.toNative());
-            WGPUBufferBindingLayout.hasDynamicOffset(segment, WgpuUtils.toNative(hasDynamicOffset));
-            WGPUBufferBindingLayout.minBindingSize(segment, minBindingSize.orElse(0));
+        if (this instanceof Buffer buffer) {
+            WGPUBufferBindingLayout.type(segment, buffer.type().toNative());
+            WGPUBufferBindingLayout.hasDynamicOffset(segment, WgpuUtils.toNative(buffer.hasDynamicOffset()));
+            WGPUBufferBindingLayout.minBindingSize(segment, buffer.minBindingSize());
         } else {
             WGPUBufferBindingLayout.type(segment, WGPUBufferBindingType_BindingNotUsed());
         }
     }
 
     default void toNativeSampler(MemorySegment segment) {
-        if (this instanceof Sampler(var type)) {
-            WGPUSamplerBindingLayout.type(segment, type.value());
+        if (this instanceof Sampler sampler) {
+            WGPUSamplerBindingLayout.type(segment, sampler.type().value());
         } else {
             WGPUSamplerBindingLayout.type(segment, WGPUSamplerBindingType_BindingNotUsed());
         }
     }
 
     default void toNativeTexture(MemorySegment segment) {
-        if (this instanceof Texture(var sampleType, var viewDimension, var multisampled)) {
-            WGPUTextureBindingLayout.sampleType(segment, sampleType.toNative());
-            WGPUTextureBindingLayout.viewDimension(segment, viewDimension.value());
-            WGPUTextureBindingLayout.multisampled(segment, WgpuUtils.toNative(multisampled));
+        if (this instanceof Texture texture) {
+            WGPUTextureBindingLayout.sampleType(segment, texture.sampleType().toNative());
+            WGPUTextureBindingLayout.viewDimension(segment, texture.viewDimension().value());
+            WGPUTextureBindingLayout.multisampled(segment, WgpuUtils.toNative(texture.multisampled()));
         } else {
             WGPUTextureBindingLayout.sampleType(segment, WGPUTextureSampleType_BindingNotUsed());
         }
     }
 
     default void toNativeStorageTexture(MemorySegment segment) {
-        if (this instanceof StorageTexture(var access, var format, var viewDimension)) {
-            WGPUStorageTextureBindingLayout.access(segment, access.value());
-            WGPUStorageTextureBindingLayout.format(segment, format.value());
-            WGPUStorageTextureBindingLayout.viewDimension(segment, viewDimension.value());
+        if (this instanceof StorageTexture texture) {
+            WGPUStorageTextureBindingLayout.access(segment, texture.access().value());
+            WGPUStorageTextureBindingLayout.format(segment, texture.format().value());
+            WGPUStorageTextureBindingLayout.viewDimension(segment, texture.viewDimension().value());
         } else {
             WGPUStorageTextureBindingLayout.access(segment, WGPUStorageTextureAccess_BindingNotUsed());
         }

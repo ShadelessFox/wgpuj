@@ -1,25 +1,34 @@
 package sh.adelessfox.wgpuj;
 
+import org.immutables.value.Value;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
+
 import java.util.OptionalLong;
 
+@WgpuStyle
+@Value.Enclosing
 public sealed interface BindingResource {
-    record Buffer(sh.adelessfox.wgpuj.Buffer buffer, long offset, OptionalLong size) implements BindingResource {
-        public Buffer(sh.adelessfox.wgpuj.Buffer buffer) {
-            this(buffer, 0L, OptionalLong.empty());
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface Buffer extends BindingResource {
+        sh.adelessfox.wgpuj.objects.Buffer buffer();
+
+        default long offset() {
+            return 0;
         }
 
-        public Buffer(sh.adelessfox.wgpuj.Buffer buffer, long offset) {
-            this(buffer, offset, OptionalLong.empty());
-        }
-
-        public Buffer(sh.adelessfox.wgpuj.Buffer buffer, long offset, long size) {
-            this(buffer, offset, OptionalLong.of(size));
-        }
+        OptionalLong size();
     }
 
-    record Sampler(sh.adelessfox.wgpuj.Sampler sampler) implements BindingResource {
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface Sampler extends BindingResource {
+        sh.adelessfox.wgpuj.objects.Sampler sampler();
     }
 
-    record TextureView(sh.adelessfox.wgpuj.TextureView view) implements BindingResource {
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface TextureView extends BindingResource {
+        sh.adelessfox.wgpuj.objects.TextureView view();
     }
 }

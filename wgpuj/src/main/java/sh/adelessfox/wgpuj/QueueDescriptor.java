@@ -1,7 +1,7 @@
 package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
-import sh.adelessfox.wgpu_native.WGPUQuerySetDescriptor;
+import sh.adelessfox.wgpu_native.WGPUQueueDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
@@ -11,22 +11,16 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
 @WgpuStyle
-@Value.Immutable
-public interface QuerySetDescriptor extends ObjectDescriptorBase, WgpuStruct {
-    QueryType type();
-
-    int count();
-
+@Value.Immutable(singleton = true)
+public interface QueueDescriptor extends ObjectDescriptorBase, WgpuStruct {
     @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
-        return WGPUQuerySetDescriptor.layout();
+        return WGPUQueueDescriptor.layout();
     }
 
     @Override
     default void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUQuerySetDescriptor.label(segment), x));
-        WGPUQuerySetDescriptor.type(segment, type().value());
-        WGPUQuerySetDescriptor.count(segment, count());
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUQueueDescriptor.label(segment), x));
     }
 }

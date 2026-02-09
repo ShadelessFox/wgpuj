@@ -1,5 +1,8 @@
-package sh.adelessfox.wgpuj;
+package sh.adelessfox.wgpuj.objects;
 
+import sh.adelessfox.wgpuj.Extent3D;
+import sh.adelessfox.wgpuj.TexelCopyBufferLayout;
+import sh.adelessfox.wgpuj.TexelCopyTextureInfo;
 import sh.adelessfox.wgpuj.util.WgpuObject;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 

@@ -1,5 +1,9 @@
-package sh.adelessfox.wgpuj;
+package sh.adelessfox.wgpuj.objects;
 
+import sh.adelessfox.wgpuj.TextureDimension;
+import sh.adelessfox.wgpuj.TextureFormat;
+import sh.adelessfox.wgpuj.TextureUsage;
+import sh.adelessfox.wgpuj.TextureViewDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuEnum;
 import sh.adelessfox.wgpuj.util.WgpuFlags;
 import sh.adelessfox.wgpuj.util.WgpuObject;

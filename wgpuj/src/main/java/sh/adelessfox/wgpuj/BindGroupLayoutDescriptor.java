@@ -3,35 +3,28 @@ package sh.adelessfox.wgpuj;
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUBindGroupLayoutDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.util.List;
-import java.util.Optional;
 
-@Value.Builder
-public record BindGroupLayoutDescriptor(
-    Optional<String> label,
-    List<BindGroupLayoutEntry> entries
-) implements WgpuStruct {
-    public BindGroupLayoutDescriptor {
-        entries = List.copyOf(entries);
-    }
+@WgpuStyle
+@Value.Immutable
+public interface BindGroupLayoutDescriptor extends ObjectDescriptorBase, WgpuStruct {
+    List<BindGroupLayoutEntry> entries();
 
-    public static BindGroupLayoutDescriptorBuilder builder() {
-        return new BindGroupLayoutDescriptorBuilder();
-    }
-
+    @Value.NonAttribute
     @Override
-    public MemoryLayout nativeLayout() {
+    default MemoryLayout nativeLayout() {
         return WGPUBindGroupLayoutDescriptor.layout();
     }
 
     @Override
-    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WgpuUtils.setString(allocator, WGPUBindGroupLayoutDescriptor.label(segment), label);
-        WgpuUtils.setArray(allocator, segment, WGPUBindGroupLayoutDescriptor.entryCount$offset(), entries);
+    default void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUBindGroupLayoutDescriptor.label(segment), x));
+        WgpuUtils.setArray(allocator, segment, entries(), WGPUBindGroupLayoutDescriptor::entryCount, WGPUBindGroupLayoutDescriptor::entries);
     }
 }

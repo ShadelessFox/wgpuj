@@ -1,26 +1,37 @@
 package sh.adelessfox.wgpuj;
 
+import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUExtent3D;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
-public record Extent3D(
-    int width,
-    int height,
-    int depthOrArrayLayers
-) implements WgpuStruct {
+@WgpuStyle
+@Value.Immutable
+public interface Extent3D extends WgpuStruct {
+    int width();
+
+    default int height() {
+        return 1;
+    }
+
+    default int depthOrArrayLayers() {
+        return 1;
+    }
+
+    @Value.NonAttribute
     @Override
-    public MemoryLayout nativeLayout() {
+    default MemoryLayout nativeLayout() {
         return WGPUExtent3D.layout();
     }
 
     @Override
-    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WGPUExtent3D.width(segment, width);
-        WGPUExtent3D.height(segment, height);
-        WGPUExtent3D.depthOrArrayLayers(segment, depthOrArrayLayers);
+    default void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        WGPUExtent3D.width(segment, width());
+        WGPUExtent3D.height(segment, height());
+        WGPUExtent3D.depthOrArrayLayers(segment, depthOrArrayLayers());
     }
 }

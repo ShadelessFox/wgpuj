@@ -1,6 +1,10 @@
 package sh.adelessfox.wgpuj.test;
 
 import sh.adelessfox.wgpuj.*;
+import sh.adelessfox.wgpuj.objects.Device;
+import sh.adelessfox.wgpuj.objects.Instance;
+import sh.adelessfox.wgpuj.objects.RenderPipeline;
+import sh.adelessfox.wgpuj.objects.ShaderModule;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -22,13 +26,13 @@ public class Demo {
         """;
 
     static void main() {
-        var instance = Instance.create(InstanceDescriptor.builder()
+        var instance = Instance.create(ImmutableInstanceDescriptor.builder()
             .addFlags(InstanceFlag.DEBUG, InstanceFlag.VALIDATION)
             .build());
 
         var adapter = instance.requestAdapter();
 
-        var device = adapter.requestDevice(DeviceDescriptor.builder()
+        var device = adapter.requestDevice(ImmutableDeviceDescriptor.builder()
             .label("default device")
             .build());
 
@@ -36,40 +40,37 @@ public class Demo {
         int height = 512;
         var format = TextureFormat.RGBA8_UNORM;
 
-        var buffer = device.createBuffer(BufferDescriptor.builder()
-            .label("buffer")
+        var buffer = device.createBuffer(ImmutableBufferDescriptor.builder()
             .size(width * height * 4)
             .addUsages(BufferUsage.COPY_DST, BufferUsage.MAP_READ)
             .mappedAtCreation(false)
             .build());
 
-        var texture = device.createTexture(TextureDescriptor.builder()
-            .label("texture")
-            .size(new Extent3D(width, height, 1))
-            .mipLevelCount(1)
-            .sampleCount(1)
-            .dimension(TextureDimension.D2)
+        var texture = device.createTexture(ImmutableTextureDescriptor.builder()
+            .size(ImmutableExtent3D.builder()
+                .width(width)
+                .height(height)
+                .build())
             .format(format)
             .addUsages(TextureUsage.COPY_SRC, TextureUsage.RENDER_ATTACHMENT)
             .build());
 
         var view = texture.createView();
 
-        var module = device.createShaderModule(ShaderModuleDescriptor.builder()
+        var module = device.createShaderModule(ImmutableShaderModuleDescriptor.builder()
             .label("shader")
-            .source(new ShaderSource.Wgsl(SHADER))
+            .source(ImmutableShaderSource.Wgsl.of(SHADER))
             .build());
 
         var renderPipeline = createRenderPipeline(device, module, format);
 
-        try (var encoder = device.createCommandEncoder(CommandEncoderDescriptor.builder().build())) {
-            var descriptor = RenderPassDescriptor.builder()
-                .addColorAttachments(RenderPassColorAttachment.builder()
+        try (var encoder = device.createCommandEncoder(ImmutableCommandEncoderDescriptor.of())) {
+            var descriptor = ImmutableRenderPassDescriptor.builder()
+                .addColorAttachments(ImmutableRenderPassColorAttachment.builder()
                     .view(view)
-                    .ops(new Operations<>(
-                        new LoadOp.Clear<>(new Color(0.2, 0.1, 0.7, 1.0)),
-                        StoreOp.STORE
-                    ))
+                    .ops(ImmutableOperations.of(
+                        ImmutableOperations.Clear.of(ImmutableColor.of(0.2, 0.1, 0.7, 1.0)),
+                        Operations.StoreOp.STORE))
                     .build())
                 .build();
 
@@ -80,21 +81,18 @@ public class Demo {
             }
 
             encoder.copyTextureToBuffer(
-                TexelCopyTextureInfo.builder()
-                    .texture(texture)
-                    .mipLevel(0)
-                    .origin(new Origin3D(0, 0, 0))
-                    .aspect(TextureAspect.ALL)
-                    .build(),
-                TexelCopyBufferInfo.builder()
-                    .buffer(buffer)
-                    .layout(TexelCopyBufferLayout.builder()
-                        .offset(0)
+                ImmutableTexelCopyTextureInfo.of(texture),
+                ImmutableTexelCopyBufferInfo.builder()
+                    .layout(ImmutableTexelCopyBufferLayout.builder()
                         .bytesPerRow(width * 4)
                         .rowsPerImage(height)
                         .build())
+                    .buffer(buffer)
                     .build(),
-                new Extent3D(width, height, 1)
+                ImmutableExtent3D.builder()
+                    .width(width)
+                    .height(height)
+                    .build()
             );
 
             try (var encoded = encoder.finish()) {
@@ -133,32 +131,29 @@ public class Demo {
     }
 
     private static RenderPipeline createRenderPipeline(Device device, ShaderModule module, TextureFormat format) {
-        var vertex = VertexState.builder()
+        var vertex = ImmutableVertexState.builder()
             .module(module)
             .entryPoint("vs_main")
             .build();
 
-        var primitive = PrimitiveState.builder()
+        var primitive = ImmutablePrimitiveState.builder()
             .topology(PrimitiveTopology.TRIANGLE_LIST)
             .frontFace(FrontFace.CCW)
             .build();
 
-        var multisample = MultisampleState.builder()
+        var multisample = ImmutableMultisampleState.builder()
             .count(1)
             .mask(0xFFFFFFFF)
             .alphaToCoverageEnabled(false)
             .build();
 
-        var fragment = FragmentState.builder()
+        var fragment = ImmutableFragmentState.builder()
             .module(module)
             .entryPoint("fs_main")
-            .addTargets(ColorTargetState.builder()
-                .format(format)
-                .addWriteMask(ColorWrites.ALL)
-                .build())
+            .addTargets(ImmutableColorTargetState.of(format))
             .build();
 
-        var renderPipelineDescriptor = RenderPipelineDescriptor.builder()
+        var renderPipelineDescriptor = ImmutableRenderPipelineDescriptor.builder()
             .vertex(vertex)
             .primitive(primitive)
             .multisample(multisample)

@@ -1,11 +1,14 @@
 package sh.adelessfox.wgpuj.util;
 
+import org.immutables.value.Value;
+
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 
 public interface WgpuObject extends WgpuStruct, AutoCloseable {
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return ValueLayout.ADDRESS;

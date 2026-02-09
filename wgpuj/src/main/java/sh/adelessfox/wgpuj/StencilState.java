@@ -1,17 +1,24 @@
 package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 
-import java.util.OptionalInt;
+@WgpuStyle
+@Value.Immutable(singleton = true)
+public interface StencilState {
+    default StencilFaceState front() {
+        return ImmutableStencilFaceState.of();
+    }
 
-@Value.Builder
-public record StencilState(
-    StencilFaceState front,
-    StencilFaceState back,
-    OptionalInt readMask,
-    OptionalInt writeMask
-) {
-    public static StencilStateBuilder builder() {
-        return new StencilStateBuilder();
+    default StencilFaceState back() {
+        return ImmutableStencilFaceState.of();
+    }
+
+    default int readMask() {
+        return 0xFFFFFFFF;
+    }
+
+    default int writeMask() {
+        return 0xFFFFFFFF;
     }
 }

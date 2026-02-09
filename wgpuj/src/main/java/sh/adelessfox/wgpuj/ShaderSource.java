@@ -1,11 +1,13 @@
 package sh.adelessfox.wgpuj;
 
+import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUChainedStruct;
 import sh.adelessfox.wgpu_native.WGPUShaderSourceGLSL;
 import sh.adelessfox.wgpu_native.WGPUShaderSourceSPIRV;
 import sh.adelessfox.wgpu_native.WGPUShaderSourceWGSL;
 import sh.adelessfox.wgpuj.util.WgpuFlags;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.MemoryLayout;
@@ -17,46 +19,67 @@ import java.util.Set;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
+@WgpuStyle
+@Value.Enclosing
 public sealed interface ShaderSource extends WgpuStruct {
-    record SpirV(int[] code) implements ShaderSource {
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface SpirV extends ShaderSource {
+        int[] code();
+
+        @Value.NonAttribute
         @Override
-        public MemoryLayout nativeLayout() {
+        default MemoryLayout nativeLayout() {
             return WGPUShaderSourceSPIRV.layout();
         }
 
         @Override
-        public void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        default void toNative(SegmentAllocator allocator, MemorySegment segment) {
             WGPUChainedStruct.sType(WGPUShaderSourceSPIRV.chain(segment), WGPUSType_ShaderSourceSPIRV());
-            WGPUShaderSourceSPIRV.codeSize(segment, code.length);
-            WGPUShaderSourceSPIRV.code(segment, allocator.allocateFrom(ValueLayout.JAVA_INT, code));
+            WGPUShaderSourceSPIRV.codeSize(segment, code().length);
+            WGPUShaderSourceSPIRV.code(segment, allocator.allocateFrom(ValueLayout.JAVA_INT, code()));
         }
     }
 
-    record Glsl(String code, Set<ShaderStage> stages, List<ShaderDefine> defines) implements ShaderSource {
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface Glsl extends ShaderSource {
+        String code();
+
+        Set<ShaderStage> stages();
+
+        List<ShaderDefine> defines();
+
+        @Value.NonAttribute
         @Override
-        public MemoryLayout nativeLayout() {
+        default MemoryLayout nativeLayout() {
             return WGPUShaderSourceGLSL.layout();
         }
 
         @Override
-        public void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        default void toNative(SegmentAllocator allocator, MemorySegment segment) {
             WGPUChainedStruct.sType(WGPUShaderSourceGLSL.chain(segment), WGPUSType_ShaderSourceGLSL());
-            WGPUShaderSourceGLSL.stage(segment, WgpuFlags.toNative(stages));
-            WgpuUtils.setString(allocator, WGPUShaderSourceGLSL.code(segment), code);
-            WgpuUtils.setArray(allocator, segment, WGPUShaderSourceGLSL.defineCount$offset(), defines);
+            WGPUShaderSourceGLSL.stage(segment, WgpuFlags.toNative(stages()));
+            WgpuUtils.setString(allocator, WGPUShaderSourceGLSL.code(segment), code());
+            WgpuUtils.setArray(allocator, segment, defines(), WGPUShaderSourceGLSL::defineCount, WGPUShaderSourceGLSL::defines);
         }
     }
 
-    record Wgsl(String code) implements ShaderSource {
+    @WgpuStyle
+    @Value.Immutable
+    non-sealed interface Wgsl extends ShaderSource {
+        String code();
+
+        @Value.NonAttribute
         @Override
-        public MemoryLayout nativeLayout() {
+        default MemoryLayout nativeLayout() {
             return WGPUShaderSourceWGSL.layout();
         }
 
         @Override
-        public void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        default void toNative(SegmentAllocator allocator, MemorySegment segment) {
             WGPUChainedStruct.sType(WGPUShaderSourceWGSL.chain(segment), WGPUSType_ShaderSourceWGSL());
-            WgpuUtils.setString(allocator, WGPUShaderSourceWGSL.code(segment), code);
+            WgpuUtils.setString(allocator, WGPUShaderSourceWGSL.code(segment), code());
         }
     }
 }

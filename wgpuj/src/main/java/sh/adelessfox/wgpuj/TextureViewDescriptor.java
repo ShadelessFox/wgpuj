@@ -4,6 +4,7 @@ import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUTextureViewDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuFlags;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.MemoryLayout;
@@ -15,41 +16,47 @@ import java.util.Set;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-@Value.Builder
-public record TextureViewDescriptor(
-    Optional<String> label,
-    Optional<TextureFormat> format,
-    Optional<TextureViewDimension> dimension,
-    Set<TextureUsage> usage,
-    Optional<TextureAspect> aspect,
-    int baseMipLevel,
-    OptionalInt mipLevelCount,
-    int baseArrayLayer,
-    OptionalInt arrayLayerCount
-) implements WgpuStruct {
-    public TextureViewDescriptor {
-        usage = Set.copyOf(usage);
+@WgpuStyle
+@Value.Immutable
+public interface TextureViewDescriptor extends ObjectDescriptorBase, WgpuStruct {
+    Optional<TextureFormat> format();
+
+    Optional<TextureViewDimension> dimension();
+
+    Set<TextureUsage> usage();
+
+    default TextureAspect aspect() {
+        return TextureAspect.ALL;
     }
 
-    public static TextureViewDescriptorBuilder builder() {
-        return new TextureViewDescriptorBuilder();
+    default int baseMipLevel() {
+        return 0;
     }
 
+    OptionalInt mipLevelCount();
+
+    default int baseArrayLayer() {
+        return 0;
+    }
+
+    OptionalInt arrayLayerCount();
+
+    @Value.NonAttribute
     @Override
-    public MemoryLayout nativeLayout() {
+    default MemoryLayout nativeLayout() {
         return WGPUTextureViewDescriptor.layout();
     }
 
     @Override
-    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        label.ifPresent(l -> WgpuUtils.setString(allocator, WGPUTextureViewDescriptor.label(segment), l));
-        WGPUTextureViewDescriptor.format(segment, format.map(TextureFormat::value).orElse(WGPUTextureFormat_Undefined()));
-        WGPUTextureViewDescriptor.dimension(segment, dimension.map(TextureViewDimension::value).orElse(WGPUTextureViewDimension_Undefined()));
-        WGPUTextureViewDescriptor.usage(segment, WgpuFlags.toNative(usage));
-        WGPUTextureViewDescriptor.aspect(segment, aspect.map(TextureAspect::value).orElse(WGPUTextureAspect_Undefined()));
-        WGPUTextureViewDescriptor.baseMipLevel(segment, baseMipLevel);
-        WGPUTextureViewDescriptor.mipLevelCount(segment, mipLevelCount.orElse(WGPU_MIP_LEVEL_COUNT_UNDEFINED()));
-        WGPUTextureViewDescriptor.baseArrayLayer(segment, baseArrayLayer);
-        WGPUTextureViewDescriptor.arrayLayerCount(segment, arrayLayerCount.orElse(WGPU_ARRAY_LAYER_COUNT_UNDEFINED()));
+    default void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        label().ifPresent(x -> WgpuUtils.setString(allocator, WGPUTextureViewDescriptor.label(segment), x));
+        WGPUTextureViewDescriptor.format(segment, format().map(TextureFormat::value).orElse(WGPUTextureFormat_Undefined()));
+        WGPUTextureViewDescriptor.dimension(segment, dimension().map(TextureViewDimension::value).orElse(WGPUTextureViewDimension_Undefined()));
+        WGPUTextureViewDescriptor.baseMipLevel(segment, baseMipLevel());
+        WGPUTextureViewDescriptor.mipLevelCount(segment, mipLevelCount().orElse(WGPU_MIP_LEVEL_COUNT_UNDEFINED()));
+        WGPUTextureViewDescriptor.baseArrayLayer(segment, baseArrayLayer());
+        WGPUTextureViewDescriptor.arrayLayerCount(segment, arrayLayerCount().orElse(WGPU_ARRAY_LAYER_COUNT_UNDEFINED()));
+        WGPUTextureViewDescriptor.aspect(segment, aspect().value());
+        WGPUTextureViewDescriptor.usage(segment, WgpuFlags.toNative(usage()));
     }
 }

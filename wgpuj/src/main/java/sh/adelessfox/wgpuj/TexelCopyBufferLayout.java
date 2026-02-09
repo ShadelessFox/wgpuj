@@ -3,30 +3,33 @@ package sh.adelessfox.wgpuj;
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUTexelCopyBufferLayout;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
-@Value.Builder
-public record TexelCopyBufferLayout(
-    long offset,
-    int bytesPerRow,
-    int rowsPerImage
-) implements WgpuStruct {
-    public static TexelCopyBufferLayoutBuilder builder() {
-        return new TexelCopyBufferLayoutBuilder();
+@WgpuStyle
+@Value.Immutable
+public interface TexelCopyBufferLayout extends WgpuStruct {
+    default long offset() {
+        return 0;
     }
 
+    int bytesPerRow();
+
+    int rowsPerImage();
+
+    @Value.NonAttribute
     @Override
-    public MemoryLayout nativeLayout() {
+    default MemoryLayout nativeLayout() {
         return WGPUTexelCopyBufferLayout.layout();
     }
 
     @Override
-    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WGPUTexelCopyBufferLayout.offset(segment, offset);
-        WGPUTexelCopyBufferLayout.bytesPerRow(segment, bytesPerRow);
-        WGPUTexelCopyBufferLayout.rowsPerImage(segment, rowsPerImage);
+    default void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        WGPUTexelCopyBufferLayout.offset(segment, offset());
+        WGPUTexelCopyBufferLayout.bytesPerRow(segment, bytesPerRow());
+        WGPUTexelCopyBufferLayout.rowsPerImage(segment, rowsPerImage());
     }
 }
