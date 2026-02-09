@@ -20,7 +20,7 @@ public interface BindGroupLayoutEntry extends WgpuStruct {
 
     BindingType type();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUBindGroupLayoutEntry.layout();

@@ -20,7 +20,7 @@ public interface TexelCopyBufferLayout extends WgpuStruct {
 
     int rowsPerImage();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUTexelCopyBufferLayout.layout();

@@ -16,7 +16,7 @@ public interface BlendState extends WgpuStruct {
 
     BlendComponent alpha();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUBlendState.layout();

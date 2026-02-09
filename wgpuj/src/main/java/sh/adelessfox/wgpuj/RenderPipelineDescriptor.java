@@ -29,7 +29,7 @@ public interface RenderPipelineDescriptor extends PipelineDescriptorBase, WgpuSt
 
     Optional<FragmentState> fragment();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPURenderPipelineDescriptor.layout();

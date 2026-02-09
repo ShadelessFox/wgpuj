@@ -24,7 +24,7 @@ public interface BlendComponent extends WgpuStruct {
         return BlendFactor.ZERO;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUBlendComponent.layout();

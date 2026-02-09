@@ -17,7 +17,7 @@ public interface TexelCopyBufferInfo extends WgpuStruct {
 
     Buffer buffer();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUTexelCopyBufferInfo.layout();

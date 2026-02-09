@@ -22,7 +22,7 @@ public interface Extent3D extends WgpuStruct {
         return 1;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUExtent3D.layout();

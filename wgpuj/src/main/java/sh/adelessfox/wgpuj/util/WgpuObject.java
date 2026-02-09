@@ -8,7 +8,7 @@ import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 
 public interface WgpuObject extends WgpuStruct, AutoCloseable {
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return ValueLayout.ADDRESS;

@@ -23,7 +23,7 @@ public interface BufferDescriptor extends ObjectDescriptorBase, WgpuStruct {
         return false;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUBufferDescriptor.layout();

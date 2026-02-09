@@ -25,7 +25,7 @@ public interface MultisampleState extends WgpuStruct {
         return false;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUMultisampleState.layout();

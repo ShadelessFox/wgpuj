@@ -23,7 +23,7 @@ public interface ColorTargetState extends WgpuStruct {
         return Set.of(ColorWrites.ALL);
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUColorTargetState.layout();

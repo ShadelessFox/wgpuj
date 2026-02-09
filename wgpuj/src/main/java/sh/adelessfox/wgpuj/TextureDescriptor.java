@@ -37,7 +37,7 @@ public interface TextureDescriptor extends ObjectDescriptorBase, WgpuStruct {
 
     List<TextureFormat> viewFormats();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUTextureDescriptor.layout();

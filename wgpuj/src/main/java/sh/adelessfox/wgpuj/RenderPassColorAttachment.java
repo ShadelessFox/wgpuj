@@ -25,7 +25,7 @@ public interface RenderPassColorAttachment extends WgpuStruct {
 
     Operations<Color> ops();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPURenderPassColorAttachment.layout();

@@ -28,7 +28,7 @@ public interface StencilFaceState extends WgpuStruct {
         return StencilOperation.KEEP;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUStencilFaceState.layout();

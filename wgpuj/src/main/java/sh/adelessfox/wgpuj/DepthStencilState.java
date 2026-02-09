@@ -32,7 +32,7 @@ public interface DepthStencilState extends WgpuStruct {
         return ImmutableDepthBiasState.of();
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUDepthStencilState.layout();

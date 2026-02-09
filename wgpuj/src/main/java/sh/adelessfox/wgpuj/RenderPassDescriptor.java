@@ -24,7 +24,7 @@ public interface RenderPassDescriptor extends ObjectDescriptorBase, WgpuStruct {
 
     Optional<RenderPassTimestampWrites> timestampWrites();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPURenderPassDescriptor.layout();

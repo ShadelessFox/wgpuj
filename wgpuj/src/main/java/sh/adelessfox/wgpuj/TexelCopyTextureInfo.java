@@ -27,7 +27,7 @@ public interface TexelCopyTextureInfo extends WgpuStruct {
         return TextureAspect.ALL;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUTexelCopyTextureInfo.layout();

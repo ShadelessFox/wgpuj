@@ -19,7 +19,7 @@ public interface BindGroupDescriptor extends ObjectDescriptorBase, WgpuStruct {
 
     List<BindGroupEntry> entries();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUBindGroupDescriptor.layout();

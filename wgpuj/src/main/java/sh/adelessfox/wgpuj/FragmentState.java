@@ -16,7 +16,7 @@ import java.util.List;
 public interface FragmentState extends ProgrammableStage, WgpuStruct {
     List<ColorTargetState> targets();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUFragmentState.layout();

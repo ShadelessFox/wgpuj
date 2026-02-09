@@ -24,7 +24,7 @@ public interface Origin3D extends WgpuStruct {
         return 0;
     }
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUOrigin3D.layout();

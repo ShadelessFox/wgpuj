@@ -16,7 +16,7 @@ import java.util.List;
 public interface BindGroupLayoutDescriptor extends ObjectDescriptorBase, WgpuStruct {
     List<BindGroupLayoutEntry> entries();
 
-    @Value.Derived
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUBindGroupLayoutDescriptor.layout();
