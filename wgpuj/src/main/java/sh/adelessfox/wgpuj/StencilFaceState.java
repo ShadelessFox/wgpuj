@@ -3,39 +3,41 @@ package sh.adelessfox.wgpuj;
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUStencilFaceState;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
+import sh.adelessfox.wgpuj.util.WgpuStyle;
 
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
-@Value.Builder
-public record StencilFaceState(
-    CompareFunction compare,
-    StencilOperation failOp,
-    StencilOperation depthFailOp,
-    StencilOperation passOp
-) implements WgpuStruct {
-    public static final StencilFaceState IGNORE = new StencilFaceState(
-        CompareFunction.ALWAYS,
-        StencilOperation.KEEP,
-        StencilOperation.KEEP,
-        StencilOperation.KEEP
-    );
+@WgpuStyle
+@Value.Immutable(singleton = true)
+public interface StencilFaceState extends WgpuStruct {
+    default CompareFunction compare() {
+        return CompareFunction.ALWAYS;
+    }
 
-    public static StencilFaceStateBuilder builder() {
-        return new StencilFaceStateBuilder();
+    default StencilOperation failOp() {
+        return StencilOperation.KEEP;
+    }
+
+    default StencilOperation depthFailOp() {
+        return StencilOperation.KEEP;
+    }
+
+    default StencilOperation passOp() {
+        return StencilOperation.KEEP;
     }
 
     @Override
-    public MemoryLayout nativeLayout() {
+    default MemoryLayout nativeLayout() {
         return WGPUStencilFaceState.layout();
     }
 
     @Override
-    public void toNative(SegmentAllocator allocator, MemorySegment segment) {
-        WGPUStencilFaceState.compare(segment, compare.value());
-        WGPUStencilFaceState.failOp(segment, failOp.value());
-        WGPUStencilFaceState.depthFailOp(segment, depthFailOp.value());
-        WGPUStencilFaceState.passOp(segment, passOp.value());
+    default void toNative(SegmentAllocator allocator, MemorySegment segment) {
+        WGPUStencilFaceState.compare(segment, compare().value());
+        WGPUStencilFaceState.failOp(segment, failOp().value());
+        WGPUStencilFaceState.depthFailOp(segment, depthFailOp().value());
+        WGPUStencilFaceState.passOp(segment, passOp().value());
     }
 }

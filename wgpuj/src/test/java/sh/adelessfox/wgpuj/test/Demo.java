@@ -133,23 +133,23 @@ public class Demo {
     }
 
     private static RenderPipeline createRenderPipeline(Device device, ShaderModule module, TextureFormat format) {
-        var vertex = VertexState.builder()
+        var vertex = ImmutableVertexState.builder()
             .module(module)
             .entryPoint("vs_main")
             .build();
 
-        var primitive = PrimitiveState.builder()
+        var primitive = ImmutablePrimitiveState.builder()
             .topology(PrimitiveTopology.TRIANGLE_LIST)
             .frontFace(FrontFace.CCW)
             .build();
 
-        var multisample = MultisampleState.builder()
+        var multisample = ImmutableMultisampleState.builder()
             .count(1)
             .mask(0xFFFFFFFF)
             .alphaToCoverageEnabled(false)
             .build();
 
-        var fragment = FragmentState.builder()
+        var fragment = ImmutableFragmentState.builder()
             .module(module)
             .entryPoint("fs_main")
             .addTargets(ColorTargetState.builder()
@@ -158,7 +158,7 @@ public class Demo {
                 .build())
             .build();
 
-        var renderPipelineDescriptor = RenderPipelineDescriptor.builder()
+        var renderPipelineDescriptor = ImmutableRenderPipelineDescriptor.builder()
             .vertex(vertex)
             .primitive(primitive)
             .multisample(multisample)
