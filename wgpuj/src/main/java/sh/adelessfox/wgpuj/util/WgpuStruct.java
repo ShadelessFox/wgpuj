@@ -7,10 +7,8 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
 
 public interface WgpuStruct {
-    @Value.Derived
     MemoryLayout nativeLayout();
 
-    @Value.Derived
     void toNative(SegmentAllocator allocator, MemorySegment segment);
 
     @Value.Derived

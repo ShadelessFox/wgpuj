@@ -2,6 +2,7 @@ package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPURenderPassDepthStencilAttachment;
+import sh.adelessfox.wgpuj.objects.TextureView;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 
 import java.lang.foreign.MemoryLayout;

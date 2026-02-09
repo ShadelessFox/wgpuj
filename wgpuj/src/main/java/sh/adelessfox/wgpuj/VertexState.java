@@ -16,6 +16,7 @@ import java.util.List;
 public interface VertexState extends ProgrammableStage, WgpuStruct {
     List<VertexBufferLayout> buffers();
 
+    @Value.Derived
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUVertexState.layout();

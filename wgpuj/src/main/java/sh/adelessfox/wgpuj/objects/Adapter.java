@@ -1,7 +1,8 @@
-package sh.adelessfox.wgpuj;
+package sh.adelessfox.wgpuj.objects;
 
 import sh.adelessfox.wgpu_native.WGPURequestDeviceCallback;
 import sh.adelessfox.wgpu_native.WGPURequestDeviceCallbackInfo;
+import sh.adelessfox.wgpuj.DeviceDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuObject;
 
 import java.lang.foreign.Arena;

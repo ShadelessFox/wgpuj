@@ -34,6 +34,7 @@ public interface PrimitiveState extends WgpuStruct {
         return false;
     }
 
+    @Value.Derived
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUPrimitiveState.layout();

@@ -1,6 +1,7 @@
 package sh.adelessfox.wgpuj;
 
 import sh.adelessfox.wgpu_native.WGPURenderPassTimestampWrites;
+import sh.adelessfox.wgpuj.objects.QuerySet;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 
 import java.lang.foreign.MemoryLayout;

@@ -2,6 +2,7 @@ package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPUPipelineLayoutDescriptor;
+import sh.adelessfox.wgpuj.objects.BindGroupLayout;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
 

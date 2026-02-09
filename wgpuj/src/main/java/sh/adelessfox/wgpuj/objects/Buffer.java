@@ -1,7 +1,9 @@
-package sh.adelessfox.wgpuj;
+package sh.adelessfox.wgpuj.objects;
 
 import sh.adelessfox.wgpu_native.WGPUBufferMapCallback;
 import sh.adelessfox.wgpu_native.WGPUBufferMapCallbackInfo;
+import sh.adelessfox.wgpuj.BufferUsage;
+import sh.adelessfox.wgpuj.MapMode;
 import sh.adelessfox.wgpuj.util.WgpuFlags;
 import sh.adelessfox.wgpuj.util.WgpuObject;
 import sh.adelessfox.wgpuj.util.WgpuUtils;

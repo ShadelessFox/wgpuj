@@ -1,5 +1,6 @@
-package sh.adelessfox.wgpuj;
+package sh.adelessfox.wgpuj.objects;
 
+import sh.adelessfox.wgpuj.*;
 import sh.adelessfox.wgpuj.util.WgpuObject;
 
 import java.lang.foreign.Arena;

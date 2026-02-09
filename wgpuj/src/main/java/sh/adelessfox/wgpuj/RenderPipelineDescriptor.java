@@ -2,6 +2,7 @@ package sh.adelessfox.wgpuj;
 
 import org.immutables.value.Value;
 import sh.adelessfox.wgpu_native.WGPURenderPipelineDescriptor;
+import sh.adelessfox.wgpuj.objects.PipelineLayout;
 import sh.adelessfox.wgpuj.util.WgpuStruct;
 import sh.adelessfox.wgpuj.util.WgpuStyle;
 import sh.adelessfox.wgpuj.util.WgpuUtils;
@@ -28,6 +29,7 @@ public interface RenderPipelineDescriptor extends PipelineDescriptorBase, WgpuSt
 
     Optional<FragmentState> fragment();
 
+    @Value.Derived
     @Override
     default MemoryLayout nativeLayout() {
         return WGPURenderPipelineDescriptor.layout();
