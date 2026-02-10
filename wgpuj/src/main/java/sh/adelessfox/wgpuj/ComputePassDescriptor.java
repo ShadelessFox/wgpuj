@@ -16,6 +16,7 @@ import java.util.Optional;
 public interface ComputePassDescriptor extends ObjectDescriptorBase, WgpuStruct {
     Optional<ComputePassTimestampWrites> timestampWrites();
 
+    @Value.NonAttribute
     @Override
     default MemoryLayout nativeLayout() {
         return WGPUComputePassDescriptor.layout();

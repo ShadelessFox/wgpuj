@@ -2,13 +2,14 @@ package sh.adelessfox.wgpuj.objects;
 
 import sh.adelessfox.wgpu_native.WGPURequestAdapterCallback;
 import sh.adelessfox.wgpu_native.WGPURequestAdapterCallbackInfo;
-import sh.adelessfox.wgpu_native.WGPURequestAdapterOptions;
 import sh.adelessfox.wgpuj.InstanceDescriptor;
+import sh.adelessfox.wgpuj.RequestAdapterOptions;
+import sh.adelessfox.wgpuj.SurfaceDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuObject;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
+import java.util.Optional;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
@@ -19,25 +20,39 @@ public record Instance(MemorySegment segment) implements WgpuObject {
         }
     }
 
-    public Adapter requestAdapter() {
+    public Surface createSurface(SurfaceDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
-            var result = arena.allocate(ValueLayout.ADDRESS);
+            return new Surface(wgpuInstanceCreateSurface(segment, descriptor.toNative(arena)));
+        }
+    }
 
-            var callback = WGPURequestAdapterCallback.allocate((status, adapter, _, userdata1, _) -> {
+    public Adapter requestAdapter() {
+        return requestAdapter(Optional.empty());
+    }
+
+    public Adapter requestAdapter(RequestAdapterOptions options) {
+        return requestAdapter(Optional.of(options));
+    }
+
+    private Adapter requestAdapter(Optional<RequestAdapterOptions> options) {
+        try (Arena arena = Arena.ofConfined()) {
+            var result = new MemorySegment[1];
+
+            var callback = WGPURequestAdapterCallbackInfo.allocate(arena);
+            WGPURequestAdapterCallbackInfo.callback(callback, WGPURequestAdapterCallback.allocate((status, adapter, _, _, _) -> {
                 if (status != WGPURequestAdapterStatus_Success()) {
                     throw new IllegalStateException("Failed to request adapter");
                 }
-                userdata1.reinterpret(8).set(ValueLayout.ADDRESS, 0, adapter);
-            }, arena);
+                result[0] = adapter;
+            }, arena));
 
-            var callbackInfo = WGPURequestAdapterCallbackInfo.allocate(arena);
-            WGPURequestAdapterCallbackInfo.callback(callbackInfo, callback);
-            WGPURequestAdapterCallbackInfo.userdata1(callbackInfo, result);
+            wgpuInstanceRequestAdapter(
+                arena,
+                segment,
+                options.map(x -> x.toNative(arena)).orElse(MemorySegment.NULL),
+                callback);
 
-            var options = WGPURequestAdapterOptions.allocate(arena);
-            wgpuInstanceRequestAdapter(arena, segment, options, callbackInfo);
-
-            return new Adapter(result.get(ValueLayout.ADDRESS, 0));
+            return new Adapter(result[0]);
         }
     }
 

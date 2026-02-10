@@ -25,7 +25,7 @@ public class Demo {
         }
         """;
 
-    static void main() throws InterruptedException {
+    static void main() {
         var instance = Instance.create(ImmutableInstanceDescriptor.builder()
             .addFlags(InstanceFlag.DEBUG, InstanceFlag.VALIDATION)
             .build());
