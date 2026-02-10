@@ -2,13 +2,14 @@ package sh.adelessfox.wgpuj.objects;
 
 import sh.adelessfox.wgpuj.*;
 import sh.adelessfox.wgpuj.util.WgpuObject;
+import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Device(Adapter adapter, MemorySegment segment) implements WgpuObject {
+public record Device(MemorySegment segment) implements WgpuObject {
     public BindGroup createBindGroup(BindGroupDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             return new BindGroup(wgpuDeviceCreateBindGroup(segment, descriptor.toNative(arena)));
@@ -70,6 +71,10 @@ public record Device(Adapter adapter, MemorySegment segment) implements WgpuObje
     }
 
     // AdapterInfo wgpuDeviceGetAdapterInfo();
+
+    public boolean poll(boolean wait) {
+        return wgpuDevicePoll(segment, WgpuUtils.toNative(wait), MemorySegment.NULL) == 1;
+    }
 
     public Queue getQueue() {
         return new Queue(wgpuDeviceGetQueue(segment));

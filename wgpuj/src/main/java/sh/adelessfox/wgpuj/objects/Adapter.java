@@ -11,7 +11,7 @@ import java.lang.foreign.ValueLayout;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
-public record Adapter(Instance instance, MemorySegment segment) implements WgpuObject {
+public record Adapter(MemorySegment segment) implements WgpuObject {
     public Device requestDevice(DeviceDescriptor descriptor) {
         try (Arena arena = Arena.ofConfined()) {
             var result = arena.allocate(ValueLayout.ADDRESS);
@@ -29,7 +29,7 @@ public record Adapter(Instance instance, MemorySegment segment) implements WgpuO
 
             wgpuAdapterRequestDevice(arena, segment, descriptor.toNative(arena), callbackInfo);
 
-            return new Device(this, result.get(ValueLayout.ADDRESS, 0));
+            return new Device(result.get(ValueLayout.ADDRESS, 0));
         }
     }
 
