@@ -52,7 +52,7 @@ public record Instance(MemorySegment segment) implements WgpuObject {
                 options.map(x -> x.toNative(arena)).orElse(MemorySegment.NULL),
                 callback);
 
-            return new Adapter(result[0]);
+            return new Adapter(MemorySegment.ofAddress(result[0].address()));
         }
     }
 

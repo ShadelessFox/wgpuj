@@ -5,11 +5,14 @@ import sh.adelessfox.wgpu_native.WGPUStringView;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SegmentAllocator;
+import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.IntFunction;
 import java.util.function.ObjIntConsumer;
 
 public final class WgpuUtils {
@@ -25,6 +28,22 @@ public final class WgpuUtils {
     public static void setString(SegmentAllocator allocator, MemorySegment segment, String text) {
         WGPUStringView.data(segment, allocator.allocateFrom(text));
         WGPUStringView.length(segment, text.length());
+    }
+
+    public static <T> List<T> getArray(
+        long count,
+        MemorySegment entries,
+        ValueLayout.OfInt layout,
+        IntFunction<T> mapper
+    ) {
+        if (count == 0) {
+            return List.of();
+        }
+        var out = new ArrayList<T>(Math.toIntExact(count));
+        for (int i = 0; i < count; i++) {
+            out.add(mapper.apply(entries.getAtIndex(layout, i)));
+        }
+        return List.copyOf(out);
     }
 
     public static <T extends WgpuStruct> void setArray(

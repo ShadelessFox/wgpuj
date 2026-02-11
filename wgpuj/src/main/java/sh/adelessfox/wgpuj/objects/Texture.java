@@ -31,11 +31,11 @@ public record Texture(MemorySegment segment) implements WgpuObject {
     }
 
     public TextureDimension getDimension() {
-        return WgpuEnum.valueOf(wgpuTextureGetDimension(segment), TextureDimension.class);
+        return WgpuEnum.ofNative(wgpuTextureGetDimension(segment), TextureDimension.class);
     }
 
     public TextureFormat getFormat() {
-        return WgpuEnum.valueOf(wgpuTextureGetFormat(segment), TextureFormat.class);
+        return WgpuEnum.ofNative(wgpuTextureGetFormat(segment), TextureFormat.class);
     }
 
     public int getHeight() {
@@ -51,7 +51,7 @@ public record Texture(MemorySegment segment) implements WgpuObject {
     }
 
     public Set<TextureUsage> getUsage() {
-        return WgpuFlags.setOf(wgpuTextureGetUsage(segment), TextureUsage.class);
+        return WgpuFlags.ofNative(wgpuTextureGetUsage(segment), TextureUsage.class);
     }
 
     public int getWidth() {

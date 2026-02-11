@@ -6,6 +6,7 @@ import sh.adelessfox.wgpuj.util.WgpuUtils;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.util.Optional;
 
 import static sh.adelessfox.wgpu_native.wgpu_h.*;
 
@@ -28,9 +29,19 @@ public record Device(MemorySegment segment) implements WgpuObject {
         }
     }
 
+    public CommandEncoder createCommandEncoder() {
+        return createCommandEncoder(Optional.empty());
+    }
+
     public CommandEncoder createCommandEncoder(CommandEncoderDescriptor descriptor) {
+        return createCommandEncoder(Optional.of(descriptor));
+    }
+
+    private CommandEncoder createCommandEncoder(Optional<CommandEncoderDescriptor> descriptor) {
         try (Arena arena = Arena.ofConfined()) {
-            return new CommandEncoder(wgpuDeviceCreateCommandEncoder(segment, descriptor.toNative(arena)));
+            return new CommandEncoder(wgpuDeviceCreateCommandEncoder(
+                segment,
+                descriptor.map(d -> d.toNative(arena)).orElse(MemorySegment.NULL)));
         }
     }
 

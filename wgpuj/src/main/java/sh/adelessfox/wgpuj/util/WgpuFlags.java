@@ -6,7 +6,7 @@ import java.util.Set;
 
 @SuppressWarnings("unused")
 public interface WgpuFlags<T extends Enum<T> & WgpuFlags<T>> extends WgpuEnum<T> {
-    static <T extends Enum<T> & WgpuFlags<T>> Set<T> setOf(long value, Class<T> cls) {
+    static <T extends Enum<T> & WgpuFlags<T>> Set<T> ofNative(long value, Class<T> cls) {
         var values = new HashSet<T>();
         for (T constant : cls.getEnumConstants()) {
             if ((constant.value() & value) != 0) {

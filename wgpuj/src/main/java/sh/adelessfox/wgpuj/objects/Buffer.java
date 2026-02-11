@@ -55,7 +55,7 @@ public record Buffer(Device device, MemorySegment segment) implements WgpuObject
     }
 
     public Set<BufferUsage> getUsage() {
-        return WgpuFlags.setOf(wgpuBufferGetUsage(segment), BufferUsage.class);
+        return WgpuFlags.ofNative(wgpuBufferGetUsage(segment), BufferUsage.class);
     }
 
     public void setLabel(String label) {

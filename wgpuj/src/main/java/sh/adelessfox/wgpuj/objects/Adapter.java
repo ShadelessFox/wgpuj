@@ -1,7 +1,9 @@
 package sh.adelessfox.wgpuj.objects;
 
+import sh.adelessfox.wgpu_native.WGPUAdapterInfo;
 import sh.adelessfox.wgpu_native.WGPURequestDeviceCallback;
 import sh.adelessfox.wgpu_native.WGPURequestDeviceCallbackInfo;
+import sh.adelessfox.wgpuj.AdapterInfo;
 import sh.adelessfox.wgpuj.DeviceDescriptor;
 import sh.adelessfox.wgpuj.util.WgpuObject;
 
@@ -37,7 +39,17 @@ public record Adapter(MemorySegment segment) implements WgpuObject {
                 descriptor.map(x -> x.toNative(arena)).orElse(MemorySegment.NULL),
                 callback);
 
-            return new Device(result[0]);
+            return new Device(MemorySegment.ofAddress(result[0].address()));
+        }
+    }
+
+    public AdapterInfo getInfo() {
+        try (Arena arena = Arena.ofConfined()) {
+            var segment = WGPUAdapterInfo.allocate(arena);
+            wgpuAdapterGetInfo(this.segment, segment);
+            var result = AdapterInfo.ofNative(segment);
+            wgpuAdapterInfoFreeMembers(segment);
+            return result;
         }
     }
 
